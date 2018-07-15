@@ -243,7 +243,7 @@
 
     
         <meta property="article:published_time" content="Mon Jul 09 2018 21:27:24 GMT+0800">
-        <meta property="article:modified_time" content="Mon Jul 09 2018 23:30:04 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jul 16 2018 00:43:24 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -266,7 +266,7 @@
     "mainEntityOfPage": "https://ccdv2.github.io/computgeo/index.html/index.html",
     "headline": "计算几何",
     "datePublished": "Mon Jul 09 2018 21:27:24 GMT+0800",
-    "dateModified": "Mon Jul 09 2018 23:30:04 GMT+0800",
+    "dateModified": "Mon Jul 16 2018 00:43:24 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -490,64 +490,63 @@
 <p>这是计算几何的主页<br><a id="more"></a></p>
 </blockquote>
 <ol>
-<li>线段  </li>
-</ol>
-<pre><code class="cpp">const double EPS = 1e-4;
-struct Point
-{
-    Point() {}
-    Point(double _x, double _y): x(_x), y(_y) {}
+<li><p>线段<br> 线段是对两个点的操作。。<br> 重载运算符，求交点等等。。  </p>
+<pre><code class="cpp"> const double EPS = 1e-4;
+ struct Point
+ {
+     Point() {}
+     Point(double _x, double _y): x(_x), y(_y) {}
 
-    double getDis(Point &amp;rhs)
-    {
-        double xx = x - rhs.x;
-        xx *= xx;
-        double yy = y - rhs.y;
-        yy *= yy;
-        return sqrt(xx + yy);
-    }
+     double getDis(Point &amp;rhs)
+     {
+         double xx = x - rhs.x;
+         xx *= xx;
+         double yy = y - rhs.y;
+         yy *= yy;
+         return sqrt(xx + yy);
+     }
 
-    double x, y;
-};
+     double x, y;
+ };
 
-Point operator -(Point lhs, Point rhs)//最好不要引用
-{
-    Point ret = Point(lhs.x - rhs.x, lhs.y - rhs.y);
-    return ret;
-}
+ Point operator -(Point lhs, Point rhs)//最好不要引用
+ {
+     Point ret = Point(lhs.x - rhs.x, lhs.y - rhs.y);
+     return ret;
+ }
 
-double operator ^(Point lhs, Point rhs)
-{
-    double ret = lhs.x * rhs.y - lhs.y * rhs.x;
-    return ret;
-}
+ double operator ^(Point lhs, Point rhs)
+ {
+     double ret = lhs.x * rhs.y - lhs.y * rhs.x;
+     return ret;
+ }
 
-bool isCross(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)//线段是否相交
-{
-    if(min(a.x, b.x) &lt;= max(c.x, d.x) &amp;&amp;
-        min(a.y, b.y) &lt;= max(c.y, d.y) &amp;&amp;
-        min(c.x, d.x) &lt;= max(a.x, b.x) &amp;&amp;
-        min(c.y, d.y) &lt;= max(a.y, b.y))
-    {
-        double u, v, w, z;
-        u = (c - a) ^ (b - a);
-        v = (d - a) ^ (b - a);
-        w = (a - c) ^ (d - c);
-        z = (b - c) ^ (d - c);
-        if(u * v &lt;= EPS &amp;&amp; w * z &lt;= EPS) return true;
-    }
-    return false;
-}
+ bool isCross(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)//线段是否相交
+ {
+     if(min(a.x, b.x) &lt;= max(c.x, d.x) &amp;&amp;
+         min(a.y, b.y) &lt;= max(c.y, d.y) &amp;&amp;
+         min(c.x, d.x) &lt;= max(a.x, b.x) &amp;&amp;
+         min(c.y, d.y) &lt;= max(a.y, b.y))
+     {
+         double u, v, w, z;
+         u = (c - a) ^ (b - a);
+         v = (d - a) ^ (b - a);
+         w = (a - c) ^ (d - c);
+         z = (b - c) ^ (d - c);
+         if(u * v &lt;= EPS &amp;&amp; w * z &lt;= EPS) return true;
+     }
+     return false;
+ }
 
-Point getIntersect(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)//在相交的前提下求交点
-{
-    double D = (a - b) ^ (c - d);
-    double a1 = b.y - a.y, a2 = d.y - c.y;
-    double b1 = a.x - b.x, b2 = c.x - d.x;
-    double c1 = a ^ (b - a), c2 = c ^ (d - c);
-    Point ret = Point((b2 * c1 - b1 * c2) / D, (a1 * c2 - a2 * c1) / D);
-    return ret;
-}
+ Point getIntersect(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)//在相交的前提下求交点
+ {
+     double D = (a - b) ^ (c - d);
+     double a1 = b.y - a.y, a2 = d.y - c.y;
+     double b1 = a.x - b.x, b2 = c.x - d.x;
+     double c1 = a ^ (b - a), c2 = c ^ (d - c);
+     Point ret = Point((b2 * c1 - b1 * c2) / D, (a1 * c2 - a2 * c1) / D);
+     return ret;
+ }
 </code></pre>
 <blockquote>
 <p>相关例题  </p>
@@ -555,6 +554,67 @@ Point getIntersect(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)//在�
 <p><a href="/computgeo/poj1556.html/">poj1556 线段相交 + 最短路</a><br><a href="/computgeo/poj2826.html/">poj2826 各种分类讨论。。</a>  </p>
 </blockquote>
 </blockquote>
+</li>
+<li><p>极角<br> 第一种方法：向量</p>
+<pre><code class="cpp"> int quadrant(Point t)
+ {
+     if(t.x &gt; 0 &amp;&amp; t.y &gt;= 0) return 1;
+     if(t.x &lt;= 0 &amp;&amp; t.y &gt; 0) return 2;
+     if(t.x &lt; 0 &amp;&amp; t.y &lt;= 0) return 3;
+     if(t.x &gt;= 0 &amp;&amp; t.y &lt; 0) return 4;
+     if(t.x == 0 &amp;&amp; t.y == 0) return 0;
+
+     perror(&quot;!!error&quot;);
+     printf(&quot;%lf %lf\n&quot;, t.x, t.y);
+     return -1;
+ }
+
+ bool cmp(Point &amp;a, Point &amp;b)//这里的a, b均是向量
+ {
+     int qa = quadrant(a), qb = quadrant(b);
+     if(qa == qb)
+     {
+         return (a ^ b) &lt; EPS;
+     }
+     return qa &lt; qb;
+ }
+</code></pre>
+<p> 第二种方法：</p>
+<pre><code class="cpp"> atan2(double y, double x);
+</code></pre>
+<p> -pi ~ pi  </p>
+<blockquote>
+<p>相关例题  </p>
+<blockquote>
+<p>没做出来。。算了  </p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>圆<br>一个点+半径</p>
+<blockquote>
+<p>相关例题  </p>
+<blockquote>
+<p><a href="/computgeo/poj1819.html/">poj1819 总之就是求圆心+分类讨论</a>  </p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>凸包<br>需要用到极角排序。</p>
+<blockquote>
+<p>相关例题  </p>
+<blockquote>
+<p><a href="/computgeo/poj1228.html/">poj1228 稳定凸包</a>  </p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>扫描线<br>需要排序+线段树。。</p>
+<blockquote>
+<p>相关例题  </p>
+<blockquote>
+<p><a href="/computgeo/poj1151.html/">poj1151 矩形扫描线。。</a>  </p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
 
         
     
@@ -703,7 +763,7 @@ Point getIntersect(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)//在�
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
@@ -721,7 +781,7 @@ Point getIntersect(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)//在�
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
