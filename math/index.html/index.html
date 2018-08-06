@@ -241,7 +241,7 @@
 
     
         <meta property="article:published_time" content="Wed Jul 25 2018 21:38:24 GMT+0800">
-        <meta property="article:modified_time" content="Wed Jul 25 2018 21:40:06 GMT+0800">
+        <meta property="article:modified_time" content="Mon Aug 06 2018 22:17:04 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +264,7 @@
     "mainEntityOfPage": "https://ccdv2.github.io/math/index.html/index.html",
     "headline": "数学",
     "datePublished": "Wed Jul 25 2018 21:38:24 GMT+0800",
-    "dateModified": "Wed Jul 25 2018 21:40:06 GMT+0800",
+    "dateModified": "Mon Aug 06 2018 22:17:04 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -483,7 +483,258 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>这里是数学相关的主页。<br><a id="more"></a><br><br><br>暂时懒得加东西。。</p>
+        <p>这里是数学相关的主页。<br><a id="more"></a><br><br></p>
+<ol>
+<li><p>素数筛 + 质因数分解<br> 由此可以引出来的知识点</p>
+<blockquote>
+<p>唯一分解定理 – 约数个数</p>
+</blockquote>
+<pre><code class="cpp"> typedef long long LL;
+ const int MAXN = 1e5 + 100;
+ const int MAXBOUND = 1e5 + 50;
+
+ int prime[MAXN], total;
+ bool check[MAXN];
+
+ void getPrime()//1 ~ total
+ {
+     memset(check, 1, sizeof(check));
+     for(LL i = 2; i &lt;= MAXBOUND; ++i)
+     {
+         if(check[i])
+         {
+             ++total;
+             prime[total] = i;
+         }
+         for(LL j = 1; j &lt;= total &amp;&amp; i * prime[j] &lt;= MAXBOUND; ++j)
+         {
+             check[i * prime[j]] = false;
+             if(i % prime[j] == 0) break;
+         }
+     }
+ }
+
+ int a[MAXN], b[MAXN], tot;
+
+ void getFactor(LL t)// 0 ~ tot-1
+ {
+     int i = 1;
+     LL cnt = 0;
+     while(prime[i] &lt; t &amp;&amp; i &lt;= total)
+     {
+         if(t % prime[i] == 0)
+         {
+             cnt = 0;
+             a[tot] = prime[i];
+             while(t % prime[i] == 0)
+             {
+                 ++cnt;
+                 t /= prime[i];
+             }
+             b[tot] = cnt;
+             ++tot;
+         }
+         ++i;
+     }
+     if(t != 1)
+     {
+         a[tot] = t;
+         b[tot] = 1;
+         ++tot;
+     }
+ }
+</code></pre>
+<blockquote>
+<p>相关例题</p>
+<blockquote>
+<p>TODO</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>欧拉函数</p>
+<pre><code class="cpp"> const int MAXN = 1e6 + 10;
+ const int MAXBOUND = 1e6 + 1;
+
+ int phi[MAXN], minDiv[MAXN];
+
+ void getPhi()
+ {
+     for(int i = 1; i &lt;= MAXBOUND; ++i)
+     {
+         minDiv[i] = i;
+     }
+
+     for(int i = 2; i * i &lt; MAXBOUND; ++i)
+     {
+         if(minDiv[i] == i)
+         {
+             for(int j = i * i; j &lt; MAXBOUND; j += i)
+             {
+                 minDiv[j] = i;
+             }
+         }
+     }
+     phi[1] = 1;
+     for(int i = 2; i &lt; MAXBOUND; ++i)
+     {
+         phi[i] = phi[i / minDiv[i]];
+         if((i / minDiv[i]) % minDiv[i] == 0)
+         {
+             phi[i] *= minDiv[i];
+         }
+         else
+         {
+             phi[i] *= minDiv[i] - 1;
+         }
+     }
+ }
+</code></pre>
+</li>
+<li><p>最大公约数、最小公倍数相关</p>
+</li>
+<li><p>快速幂</p>
+<pre><code class="cpp"> LL quickPow(LL a, LL i)
+ {
+     LL ret = 1;
+     while(i)
+     {
+         if(i &amp; 1)
+         {
+             ret = ret * a % mod;
+         }
+         a = a * a % mod;
+         i /= 2;
+     }
+     return ret;
+ }
+</code></pre>
+</li>
+<li><p>逆元<br> 对于p是质数（一般mod都是质数）</p>
+<pre><code class="cpp"> LL getInverse(LL t)
+ {
+     return quickPow(t, mod - 2);
+ }
+</code></pre>
+<p> 对于a n互质</p>
+<pre><code class="cpp"> LL extendGcd(LL a, LL b, LL x, LL y)
+ {
+     if(b == 0)
+     {
+         x = 1;
+         y = 0;
+         return a;
+     }
+     else
+     {
+         LL r = extendGcd(b, a % b, y, x);
+         y -= x * (a / b);
+         return r;
+     }
+ }
+
+ LL getInverse(LL a, LL n)
+ {
+     LL x, y;
+     extendGcd(a, n, x, y);
+     x = (x % n + n) % n;
+     return x;
+ }
+</code></pre>
+<p> 有一个东西叫逆元线性筛<br> 阶乘的逆元线性筛：</p>
+<pre><code class="cpp"> LL fac[MAXN], invf[MAXN];
+
+ void getFactorial()
+ {
+     fac[0] = 1;
+     for(LL i = 1; i &lt; MAXN; ++i)
+     {
+         fac[i] = fac[i - 1] * i;
+         fac[i] %= mod;
+     }
+
+     invf[MAXN - 1] = getInverse(fac[MAXN - 1]);
+     for(LL i = MAXN - 2; i &gt;= 0; --i)
+     {
+         invf[i] = invf[i + 1] * (i + 1) % mod;
+     }
+ }
+</code></pre>
+<p> 1 ~ n 的逆元线性筛(模p意义下)</p>
+<pre><code class="cpp"> LL inv[MAXN];
+
+ void getInverseN(int n, LL p)
+ {
+     inv[1] = 1;
+     for(int i = 2; i &lt;= n; ++i)
+     {
+         inv[i] = (p - p / i) * inv[p % i] % p;
+     }
+ }
+</code></pre>
+</li>
+<li><p>排列组合</p>
+<pre><code class="cpp"> LL getC(int n, int r)
+ {
+     if(r &lt; 0 || r &gt; n) return 0;
+     LL ret = fac[n] * invf[r] % mod;
+     ret = ret * invf[n - r] % mod;
+     return ret;
+ }
+
+ LL getInverseC(int n, int r)
+ {
+     LL ret = fac[r] * fac[n - r] % mod;
+     ret = ret * invf[n] % mod;
+     return ret;
+ }
+
+ LL getP(int n, int r)
+ {
+     LL ret = fac[n] * invf[r] % mod;
+     return ret;
+ }
+</code></pre>
+</li>
+<li><p>容斥原理</p>
+</li>
+<li><p>莫比乌斯反演</p>
+<pre><code class="cpp"> typedef long long LL;
+ const int MAXN = 1e5 + 100;
+ const int MAXBOUND = 1e5 + 50;
+
+ int prime[MAXN], total, mu[MAXN];
+ bool check[MAXN];
+
+ void getMobius()
+ {
+     mu[1] = 1;
+     memset(check, 1, sizeof(check));
+     for(LL i = 2; i &lt;= MAXBOUND; ++i)
+     {
+         if(check[i])
+         {
+             ++total;
+             prime[total] = i;
+             mu[i] = -1;
+         }
+         for(LL j = 1; j &lt;= total &amp;&amp; i * prime[j] &lt;= MAXBOUND; ++j)
+         {
+             check[i * prime[j]] = false;
+             if(i % prime[j] == 0)
+             {
+                 mu[i * prime[j]] = 0;
+                 break;
+             }
+             else
+             {
+                 mu[i * prime[j]] = -mu[i];
+             }
+         }
+     }
+ }
+</code></pre>
+</li>
+</ol>
 
         
     
