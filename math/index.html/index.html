@@ -241,7 +241,7 @@
 
     
         <meta property="article:published_time" content="Wed Jul 25 2018 21:38:24 GMT+0800">
-        <meta property="article:modified_time" content="Mon Aug 06 2018 22:17:04 GMT+0800">
+        <meta property="article:modified_time" content="Mon Aug 13 2018 21:46:43 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +264,7 @@
     "mainEntityOfPage": "https://ccdv2.github.io/math/index.html/index.html",
     "headline": "数学",
     "datePublished": "Wed Jul 25 2018 21:38:24 GMT+0800",
-    "dateModified": "Mon Aug 06 2018 22:17:04 GMT+0800",
+    "dateModified": "Mon Aug 13 2018 21:46:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -734,6 +734,271 @@
  }
 </code></pre>
 </li>
+<li><p>矩阵类</p>
+<pre><code class="cpp"> //0 ~ n - 1
+ //必要时在运算符内加取模操作
+ struct Matrix
+ {
+     const static int MAXN = 40;
+     ULL a[MAXN][MAXN];//注意类型
+     int n;
+     void init(int _n)
+     {
+         n = _n;
+         memset(a, 0, sizeof(a));
+         for(int i = 0; i &lt; n; ++i) a[i][i] = 1;
+     }
+     void clear(int _n = 0)
+     {
+         n = _n;
+         memset(a, 0, sizeof(a));
+     }
+     Matrix operator +(const Matrix &amp;rhs) const
+     {
+         Matrix temp;
+         temp.n = n;
+         for(int i = 0; i &lt; n; ++i)
+             for(int j = 0; j &lt; n; ++j)
+                 temp.a[i][j] = a[i][j] + rhs.a[i][j];
+         return temp;
+     }
+     Matrix operator -(const Matrix &amp;rhs) const
+     {
+         Matrix temp;
+         temp.n = n;
+         for(int i = 0; i &lt; n; ++i)
+             for(int j = 0; j &lt; n; ++j)
+                 temp.a[i][j] = a[i][j] - rhs.a[i][j];
+         return temp;
+     }
+     Matrix operator *(const Matrix &amp;rhs) const
+     {
+         Matrix temp;
+         temp.clear();
+         temp.n = n;
+         for(int i = 0; i &lt; n; ++i)
+             for(int j = 0; j &lt; n; ++j)
+                 for(int k = 0; k &lt; n; ++k)
+                     temp.a[i][j] += a[i][k] * rhs.a[k][j];
+         return temp;
+     }
+ };
+
+ Matrix quickPow(Matrix a, int i)
+ {
+     Matrix temp;
+     temp.init(a.n);
+     while(i)
+     {
+         if(i &amp; 1)
+         {
+             temp = temp * a;
+         }
+         a = a * a;
+         i /= 2;
+     }
+     return temp;
+ }
+</code></pre>
+<p><br></p>
+</li>
+<li><p>高精度非负整数</p>
+<pre><code class="cpp"> const int ten[4] = {1, 10, 100, 1000};
+ struct BigNumber
+ {
+     const static int MAXL = 1e3;
+     int d[MAXL];
+     BigNumber(string s)
+     {
+         int len = s.size();
+         d[0] = (len - 1) / 4 + 1;
+         for(int i = 1; i &lt; MAXL; ++i) d[i] = 0;
+         for(int i = len - 1, j, k; i &gt;= 0; --i)
+         {
+             j = (len - i - 1) / 4 + 1;
+             k = (len - i - 1) % 4;
+             d[j] += ten[k] * (s[i] - &#39;0&#39;);
+         }
+         while(d[0] &gt; 1 &amp;&amp; d[d[0]] == 0) --d[0];
+     }
+
+     BigNumber()
+     {
+         *this = BigNumber(string(&quot;0&quot;));
+     }
+
+     string toString()
+     {
+         string s(&quot;&quot;);
+         int i, j, temp;
+         for(i = 3; i &gt;= 1; --i) if(d[d[0]] &gt;= ten[i]) break;
+         temp = d[d[0]];
+         for(j = i; j &gt;= 0; --j)
+         {
+             s = s + (char)(temp / ten[j] + &#39;0&#39;);
+             temp %= ten[j];
+         }
+         for(i = d[0] - 1; i &gt; 0; --i)
+         {
+             temp = d[i];
+             for(j = 3; j &gt;= 0; --j)
+             {
+                 s = s + char(temp / ten[j] + &#39;0&#39;);
+                 temp %= ten[j];
+             }
+         }
+         return s;
+     }
+
+     BigNumber operator *(int k);
+ } zero(&quot;0&quot;);
+
+ bool operator &lt;(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
+ {
+     if(lhs.d[0] != rhs.d[0]) return lhs.d[0] &lt; rhs.d[0];
+     for(int i = lhs.d[0]; i &gt; 0; --i)
+     {
+         if(lhs.d[i] != rhs.d[i]) return lhs.d[i] &lt; rhs.d[i];
+     }
+     return false;
+ }
+
+ BigNumber operator +(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
+ {
+     BigNumber ret;
+     ret.d[0] = max(lhs.d[0], rhs.d[0]);
+     int x = 0;
+     for(int i = 1; i &lt;= ret.d[0]; ++i)
+     {
+         x = lhs.d[i] + rhs.d[i] + x;
+         ret.d[i] = x % 10000;
+         x /= 10000;
+     }
+     while(x != 0)
+     {
+         ret.d[++ret.d[0]] = x % 10000;
+         x /= 10000;
+     }
+     return ret;
+ }
+
+ BigNumber operator -(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
+ {
+     BigNumber ret;
+     ret.d[0] = lhs.d[0];
+     int x = 0;
+     for(int i = 1; i &lt;= ret.d[0]; ++i)
+     {
+         x = 10000 + lhs.d[i] - rhs.d[i] + x;
+         ret.d[i] = x % 10000;
+         x = x / 10000 - 1;
+     }
+     while((ret.d[0] &gt; 1) &amp;&amp; (ret.d[ret.d[0]] == 0)) --ret.d[0];
+     return ret;
+ }
+
+ BigNumber operator *(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
+ {
+     BigNumber ret;
+     ret.d[0] = lhs.d[0] + rhs.d[0];
+     for(int i = 1; i &lt;= lhs.d[0]; ++i)
+     {
+         int x = 0;
+         for(int j = 1; j &lt;= rhs.d[0]; ++j)
+         {
+             x = lhs.d[i] * rhs.d[j] + x + ret.d[i + j - 1];
+             ret.d[i + j - 1] = x % 10000;
+             x /= 10000;
+         }
+         ret.d[i + rhs.d[0]] = x;
+     }
+     while((ret.d[0] &gt; 1) &amp;&amp; (ret.d[ret.d[0]] == 0)) --ret.d[0];
+     return ret;
+ }
+
+ bool smaller(const BigNumber &amp;lhs, const BigNumber &amp;rhs, int delta)
+ {
+     if(lhs.d[0] + delta != rhs.d[0]) return lhs.d[0] + delta &lt; rhs.d[0];
+     for(int i = lhs.d[0]; i &gt; 0; --i)
+     {
+         if(lhs.d[i] != rhs.d[i + delta])
+             return lhs.d[i] &lt; rhs.d[i + delta];
+     }
+     return true;
+ }
+
+ void _minus(BigNumber &amp;lhs, BigNumber &amp;rhs, int delta)
+ {
+     int x = 0;
+     for(int i = 1; i &lt;= lhs.d[0] - delta; ++i)
+     {
+         x = 10000 + lhs.d[i + delta] - rhs.d[i] + x;
+         lhs.d[i + delta] = x % 10000;
+         x = x / 10000 - 1;
+     }
+     while(lhs.d[0] &gt; 1 &amp;&amp; lhs.d[lhs.d[0]] == 0) --lhs.d[0];
+ }
+
+ BigNumber BigNumber::operator *(int k)
+ {
+     BigNumber ret;
+     ret.d[0] = d[0];
+     int x = 0;
+     for(int i = 1; i &lt;= d[0]; ++i)
+     {
+         x = d[i] * k + x;
+         ret.d[i] = x % 10000;
+         x /= 10000;
+     }
+     while(x &gt; 0)
+     {
+         ret.d[++ret.d[0]] = x % 10000;
+         x /= 10000;
+     }
+      while(ret.d[0] &gt; 1 &amp;&amp; ret.d[ret.d[0]] == 0) --ret.d[0];
+      return ret;
+ }
+
+ //除法运算 余数在residue中
+ BigNumber residue, mid1[15];
+ BigNumber operator /(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
+ {
+     BigNumber ret;
+     residue = lhs;
+     mid1[0] = rhs;
+     for(int i = 1; i &lt;= 13; ++i)
+     {
+         mid1[i] = mid1[i - 1] * 2;
+     }
+     for(int i = lhs.d[0] - rhs.d[0]; i &gt;= 0; --i)
+     {
+         int temp = 8192;
+         for(int j = 13; j &gt;= 0; --j)
+         {
+             if(smaller(mid1[j], residue, i))
+             {
+                 _minus(residue, mid1[j], i);
+                 ret.d[i + 1] += temp;
+             }
+             temp /= 2;
+         }
+     }
+     ret.d[0] = max(1, lhs.d[0] - rhs.d[0] + 1);
+     while(ret.d[0] &gt; 1 &amp;&amp; ret.d[ret.d[0]] == 0) --ret.d[0];
+     return ret;
+ }
+
+ bool operator ==(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
+ {
+     if(lhs.d[0] != rhs.d[0]) return false;
+     for(int i = 1; i &lt;= lhs.d[0]; ++i)
+     {
+         if(lhs.d[i] != rhs.d[i]) return false;
+     }
+     return true;
+ }
+</code></pre>
+</li>
 </ol>
 
         
@@ -883,7 +1148,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
@@ -901,7 +1166,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/IO/">IO<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/">dfs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/剪枝/">剪枝<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/博弈论/">博弈论<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/字符串/">字符串<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
