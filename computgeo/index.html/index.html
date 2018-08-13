@@ -491,35 +491,28 @@
 </blockquote>
 <ol>
 <li><p>线段<br> 线段是对两个点的操作。。<br> 重载运算符，求交点等等。。  </p>
-<pre><code class="cpp"> const double EPS = 1e-4;
+<pre><code class="cpp"> const double EPS = 1e-6;
+
  struct Point
  {
      Point() {}
      Point(double _x, double _y): x(_x), y(_y) {}
-
-     double getDis(Point &amp;rhs)
+     double getDis(Point rhs)
      {
-         double xx = x - rhs.x;
-         xx *= xx;
-         double yy = y - rhs.y;
-         yy *= yy;
-         return sqrt(xx + yy);
+         double xx = rhs.x - x, yy = rhs.y - y;
+         return sqrt(xx * xx + yy * yy);
      }
+
+     void input(){scanf(&quot;%lf%lf&quot;, &amp;x, &amp;y);}
 
      double x, y;
  };
-
- Point operator -(Point lhs, Point rhs)//最好不要引用
- {
-     Point ret = Point(lhs.x - rhs.x, lhs.y - rhs.y);
-     return ret;
- }
-
- double operator ^(Point lhs, Point rhs)
- {
-     double ret = lhs.x * rhs.y - lhs.y * rhs.x;
-     return ret;
- }
+ double operator ^(Point lhs, Point rhs){return lhs.x * rhs.y - lhs.y * rhs.x;}
+ Point operator +(Point lhs, Point rhs){return Point(lhs.x + rhs.x, lhs.y + rhs.y);}
+ Point operator -(Point lhs, Point rhs){return Point(lhs.x - rhs.x, lhs.y - rhs.y);}
+ Point operator /(Point lhs, double rhs){return Point(lhs.x / rhs, lhs.y / rhs);}
+ Point operator *(Point lhs, double rhs){return Point(lhs.x * rhs, lhs.y * rhs);}
+ double operator *(Point lhs, Point rhs){return lhs.x * rhs.x + lhs.y * rhs.y;}
 
  bool isCross(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)//线段是否相交
  {
@@ -602,15 +595,28 @@
 <blockquote>
 <p>相关例题  </p>
 <blockquote>
-<p><a href="/computgeo/poj1228.html/">poj1228 稳定凸包</a>  </p>
+<p><a href="/computgeo/poj1228.html/">poj1228 稳定凸包</a><br><a href="/computgeo/poj1584.html/">poj1584 多边形是否为凸包+点是否在多边形内+圆是否能放到凸包内</a><br><a href="/computgeo/poj1873.html/">poj1873 求凸包模板在这里！</a><br><a href="/computgeo/poj2540.html/">poj2540 求多边形面积+半平面切割多边形</a></p>
 </blockquote>
 </blockquote>
 </li>
-<li><p>扫描线<br>需要排序+线段树。。</p>
-<blockquote>
+<li>扫描线<br>需要排序+线段树。。<blockquote>
 <p>相关例题  </p>
 <blockquote>
-<p><a href="/computgeo/poj1151.html/">poj1151 矩形扫描线。。</a>  </p>
+<p><a href="/computgeo/poj1151.html/">poj1151 矩形面积并</a><br><a href="/computgeo/poj1177.html/">poj1177 矩形并的周长</a></p>
+</blockquote>
+</blockquote>
+</li>
+<li>半平面  <blockquote>
+<p>相关例题</p>
+<blockquote>
+<p><a href="/computgeo/poj2540.html/">poj2540 求多边形面积+半平面切割多边形</a></p>
+</blockquote>
+</blockquote>
+</li>
+<li>旋转卡壳<br>听说旋转卡壳能解决很多问题。。<blockquote>
+<p>相关例题</p>
+<blockquote>
+<p><a href="/computgeo/poj2187.html/">poj2187 最远点对</a></p>
 </blockquote>
 </blockquote>
 </li>
@@ -763,7 +769,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
@@ -781,7 +787,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/IO/">IO<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/">dfs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/剪枝/">剪枝<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/博弈论/">博弈论<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/字符串/">字符串<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">18</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/IO/">IO<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/">dfs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/剪枝/">剪枝<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/博弈论/">博弈论<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/字符串/">字符串<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">11</span></a>
             </ul>
         </li>
         
