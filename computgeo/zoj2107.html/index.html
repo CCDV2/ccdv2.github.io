@@ -45,7 +45,7 @@
     
     <title>
         
-            分类: dfs | 
+            zoj2107 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" itemprop="description" content="分治法解决最近点对">
+    <meta name="keywords" content=",acm,计算几何">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-seaside-light.min.css?b71t6V/NeTk95fu056Paxw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -214,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/categories/acm/dfs/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/computgeo/zoj2107.html/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -229,13 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/categories/acm/dfs/">
+    <meta property="og:url" content="https://ccdv2.github.io/computgeo/zoj2107.html/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: dfs | CCDV2&#39;s nest">
+    <meta property="og:title" content="zoj2107 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="">
-    
+    <meta property="og:description" content="分治法解决最近点对">
+    <meta property="og:article:tag" content="acm"> <meta property="og:article:tag" content="计算几何"> 
 
+    
+        <meta property="article:published_time" content="Wed Aug 15 2018 19:56:23 GMT+0800">
+        <meta property="article:modified_time" content="Wed Aug 15 2018 20:00:59 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -243,13 +249,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/categories/acm/dfs/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/computgeo/zoj2107.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://ccdv2.github.io/computgeo/zoj2107.html/index.html",
+    "headline": "zoj2107",
+    "datePublished": "Wed Aug 15 2018 19:56:23 GMT+0800",
+    "dateModified": "Wed Aug 15 2018 20:00:59 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "CCDV2",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/1590.png"
+        },
+        "description": "高海千歌 is the 最高！（大雾）"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "CCDV2&#39;s nest",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/1590.png"
+        }
+    },
+    "keywords": ",acm,计算几何",
+    "description": "分治法解决最近点对",
+}
+</script>
 
 
     
@@ -283,100 +319,329 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
     
 
-    <!-- Normal Post -->
-    
-        
-            
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/others/pruning.html/">剪枝</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            神奇的剪枝操作
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/others/pruning.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>8月 13, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/acm/">acm</a>, <a class="post_category-link" href="/categories/acm/dfs/">dfs</a>, <a class="post_category-link" href="/categories/acm/dfs/剪枝/">剪枝</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                zoj2107
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/1590.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CCDV2</strong>
+        <span>8月 15, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/acm/">acm</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/计算几何/">计算几何</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=zoj2107&url=https://ccdv2.github.io/computgeo/zoj2107.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=zoj2107&url=https://ccdv2.github.io/computgeo/zoj2107.html/index.html&via=CCDV2" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/computgeo/zoj2107.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/computgeo/zoj2107.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>分治法解决最近点对<br><a id="more"></a><br>模板题。。<br>将n个点按x坐标进行排序，分为左右两半，分别求出两半内的最近点对的距离，取最小值设为当前答案，设为ans。然后考虑把两个集合并，在分割线处还有可能会有更优的答案。取分割线左右ans距离内的点，按y坐标排序，用每个点与其左右6个点的距离更新答案即可。（没错是复制下来的）  </p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cmath&gt;
+#include &lt;algorithm&gt;
+#include &lt;set&gt;
+#include &lt;vector&gt;
+using namespace std;
+const int MAXN = 1e5 + 5;
+const double EPS = 1e-6;
+double PI;
+struct Point
+{
+    Point() {}
+    Point(double _x, double _y): x(_x), y(_y) {}
+    double getDis(Point rhs)
+    {
+        double xx = rhs.x - x, yy = rhs.y - y;
+        return sqrt(xx * xx + yy * yy);
+    }
+
+    void input(){scanf(&quot;%lf%lf&quot;, &amp;x, &amp;y);}
+    double x, y;
+};
+double operator ^(Point lhs, Point rhs){return lhs.x * rhs.y - lhs.y * rhs.x;}
+Point operator +(Point lhs, Point rhs){return Point(lhs.x + rhs.x, lhs.y + rhs.y);}
+Point operator -(Point lhs, Point rhs){return Point(lhs.x - rhs.x, lhs.y - rhs.y);}
+Point operator /(Point lhs, double rhs){return Point(lhs.x / rhs, lhs.y / rhs);}
+Point operator *(Point lhs, double rhs){return Point(lhs.x * rhs, lhs.y * rhs);}
+
+Point point[MAXN];
+int n, s[MAXN];
+
+bool cmpx(int i, int j)
+{
+    return point[i].x &lt; point[j].x - EPS;
+}
+
+bool cmpy(int i, int j)
+{
+    return point[i].y &lt; point[j].y - EPS;
+}
+
+double _minDist(int l, int r)
+{
+    double ans = 1e100;
+    if(r - l &lt;= 20)
+    {
+        for(int i = l; i &lt;= r; ++i)
+        {
+            for(int j = i + 1; j &lt;= r; ++j)
+            {
+                ans = min(ans, point[s[i]].getDis(point[s[j]]));
+            }
+        }
+        return ans;
+    }
+    int tl, tr;
+    int m = (l + r) / 2;
+    ans = min(_minDist(l, m), _minDist(m + 1, r));
+    for(tl = l; point[s[tl]].x &lt; point[s[m]].x - ans; ++tl);
+    for(tr = r; point[s[tr]].x &gt; point[s[m]].x + ans; --tr);
+    sort(s + tl, s + tr + 1, cmpy);
+    for(int i = tl; i &lt;= tr; ++i)
+    {
+        for(int j = i + 1; j &lt;= min(tr, i + 6); ++j)
+        {
+            ans = min(ans, point[s[i]].getDis(point[s[j]]));
+        }
+    }
+    sort(s + tl, s + tr + 1, cmpx);
+    return ans;
+}
+
+double getMinDist()
+{
+    for(int i = 0; i &lt; n; ++i) s[i] = i;
+    sort(s, s + n, cmpx);
+    return _minDist(0, n - 1);
+}
+
+int main()
+{
+    while(scanf(&quot;%d&quot;, &amp;n) &amp;&amp; n != 0)
+    {
+        for(int i = 0; i &lt; n; ++i) point[i].input();
+        printf(&quot;%.2lf\n&quot;, getMinDist() / 2.0);
+    }
+}
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzY3Ni8xNDIwNw==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/computgeo/hdu3007.html/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/computgeo/poj2187.html/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -695,6 +960,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -707,6 +976,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
