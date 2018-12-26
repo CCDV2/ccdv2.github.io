@@ -45,6 +45,8 @@
     
     <title>
         
+            点的属性 | 
+        
         CCDV2&#39;s nest
     </title>
 
@@ -53,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" itemprop="description" content="点的属性只有颜色和大小。。">
+    <meta name="keywords" content=",CG,openGL">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -232,14 +234,14 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://ccdv2.github.io/CG/attributes/point.html/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CCDV2&#39;s nest">
+    <meta property="og:title" content="点的属性 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="">
-    
+    <meta property="og:description" content="点的属性只有颜色和大小。。">
+    <meta property="og:article:tag" content="CG"> <meta property="og:article:tag" content="openGL"> 
 
     
-        <meta property="article:published_time" content="Tue Dec 25 2018 23:07:59 GMT+0800">
-        <meta property="article:modified_time" content="Tue Dec 25 2018 23:56:17 GMT+0800">
+        <meta property="article:published_time" content="Wed Dec 26 2018 09:24:20 GMT+0800">
+        <meta property="article:modified_time" content="Wed Dec 26 2018 09:32:01 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -260,9 +262,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://ccdv2.github.io/CG/attributes/point.html/index.html",
-    "headline": "",
-    "datePublished": "Tue Dec 25 2018 23:07:59 GMT+0800",
-    "dateModified": "Tue Dec 25 2018 23:56:17 GMT+0800",
+    "headline": "点的属性",
+    "datePublished": "Wed Dec 26 2018 09:24:20 GMT+0800",
+    "dateModified": "Wed Dec 26 2018 09:32:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -280,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": "",
-    "description": "",
+    "keywords": ",CG,openGL",
+    "description": "点的属性只有颜色和大小。。",
 }
 </script>
 
@@ -369,7 +371,7 @@
         
     
             <p class="article-headline-p">
-                
+                点的属性
             </p>
         </div>
 
@@ -388,7 +390,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>12月 25, 2018</span>
+        <span>12月 26, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -406,6 +408,15 @@
 
     <!-- Tags (bookmark) -->
     
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/CG/">CG</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/openGL/">openGL</a>
+    </ul>
+    
 
     <!-- Share -->
     
@@ -420,7 +431,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=https://ccdv2.github.io/CG/attributes/point.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=点的属性&url=https://ccdv2.github.io/CG/attributes/point.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -429,7 +440,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=https://ccdv2.github.io/CG/attributes/point.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=点的属性&url=https://ccdv2.github.io/CG/attributes/point.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -472,7 +483,44 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <p>点的属性只有颜色和大小。。<br><a id="more"></a><br>大小接收的是一个浮点数，如果不经过反走样，会直接舍入到1的整数倍，而且显示一个方块。。<br>注意调整大小时，必须在glBegin之外调整。。（买了一本假书）。。</p>
+<pre><code class="cpp">#include&lt;Windows.h&gt;
+#include&lt;GL/glut.h&gt;
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3d(1.0, 0.0, 0.0);
+    glPointSize(10.0);
+    glBegin(GL_POINTS);
+    {
+        //假书。。。
+        //glPointSize(1.0);
+        glVertex2i(300, 300);
+        //glPointSize(2.0);
+        glVertex2i(400, 400);
+        glVertex2i(500, 500);
+    }
+    glEnd();
+    glFlush();
+}
+
+int main(int argc, char *argv[])
+{
+    glutInit(&amp;argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(800, 600);
+    glutCreateWindow(&quot;Point attribute&quot;);
+    glClearColor(1.0, 1.0, 1.0, 0.0);
+    glMatrixMode(GL_PROJECTION);
+    gluOrtho2D(0.0, 800.0, 0.0, 600.0);
+
+    glutDisplayFunc(display);
+
+    glutMainLoop();
+}
+</code></pre>
+
         
     
 
@@ -528,7 +576,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/CG/starter/chart.html/" id="post_nav-older" class="next-content">
+        <a href="/CG/attributes/color.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -638,7 +686,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/CG/">CG<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/CG/openGL/">openGL<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">29</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/IO/">IO<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/">dfs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/剪枝/">剪枝<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/博弈论/">博弈论<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/字符串/">字符串<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数据结构/">数据结构<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">17</span></a>
+                <a class="sidebar_archives-link" href="/categories/CG/">CG<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/CG/openGL/">openGL<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">29</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/IO/">IO<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/">dfs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/剪枝/">剪枝<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/博弈论/">博弈论<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/字符串/">字符串<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数据结构/">数据结构<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">17</span></a>
             </ul>
         </li>
         
