@@ -241,7 +241,7 @@
 
     
         <meta property="article:published_time" content="Fri Dec 28 2018 23:51:36 GMT+0800">
-        <meta property="article:modified_time" content="Fri Dec 28 2018 23:54:12 GMT+0800">
+        <meta property="article:modified_time" content="Sat Dec 29 2018 00:05:54 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +264,7 @@
     "mainEntityOfPage": "https://ccdv2.github.io/CV/classification/nearestneighbor.html/index.html",
     "headline": "最近邻算法",
     "datePublished": "Fri Dec 28 2018 23:51:36 GMT+0800",
-    "dateModified": "Fri Dec 28 2018 23:54:12 GMT+0800",
+    "dateModified": "Sat Dec 29 2018 00:05:54 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -486,31 +486,31 @@
         <p>最近邻算法是最朴素的一种想法，比较两张图片之间每个像素差异大小来确定分类。<br><a id="more"></a></p>
 <pre><code class="python">import numpy as np
 
-#最近邻算法
+# 最近邻算法
 class NearsetNeigbor:
     def __init__(self):
         pass
 
-    #@param X   对应图片集
-    #@param y   分类标号
+    # @param X   对应图片集
+    # @param y   分类标号
     def train(self, X, y):
         self.Xtr = X
         self.ytr = y
 
-    #用1范数的最近邻给出预测结果
-    #@param X   待预测图片集
-    #@return    最有可能的分类
+    # 用1范数的最近邻给出预测结果
+    # @param X   待预测图片集
+    # @return    最有可能的分类
     def predict(self, X):
         numTest = X.shape[0]
 
-        #构建一个大小与待预测图片相同的全零矩阵，数值类型与标号的类型相同
+        # 构建一个大小与待预测图片相同的全零矩阵，数值类型与标号的类型相同
         Ypred = np.zeros(numTest, dtype = self.ytr.dtype)
 
         for i in xrange(numTest):
-            #逐行进行计算并求和
+            # 逐行进行计算并求和
             distances = np.sum(np.abs(self.Xtr - X[i,:]), axis = 1)
 
-            #找出对于第几个测试集是最小的，给出标号
+            # 找出对于第几个测试集是最小的，给出标号
             minIndex = np.argmin(distances)
             Ypred[i] = self.ytr[minIndex]
 
