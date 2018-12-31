@@ -45,7 +45,7 @@
     
     <title>
         
-            分类: 网络流 | 
+            两层神经网络 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" itemprop="description" content="训练一个简单的两层神经网络">
+    <meta name="keywords" content=",CV,神经网络">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-seaside-light.min.css?b71t6V/NeTk95fu056Paxw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -214,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/categories/acm/网络流/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/CV/network/twolayernetwork.html/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -229,13 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/categories/acm/网络流/">
+    <meta property="og:url" content="https://ccdv2.github.io/CV/network/twolayernetwork.html/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 网络流 | CCDV2&#39;s nest">
+    <meta property="og:title" content="两层神经网络 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="">
-    
+    <meta property="og:description" content="训练一个简单的两层神经网络">
+    <meta property="og:article:tag" content="CV"> <meta property="og:article:tag" content="神经网络"> 
 
+    
+        <meta property="article:published_time" content="Mon Dec 31 2018 12:46:50 GMT+0800">
+        <meta property="article:modified_time" content="Mon Dec 31 2018 18:28:16 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -243,13 +249,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/categories/acm/网络流/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/CV/network/twolayernetwork.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://ccdv2.github.io/CV/network/twolayernetwork.html/index.html",
+    "headline": "两层神经网络",
+    "datePublished": "Mon Dec 31 2018 12:46:50 GMT+0800",
+    "dateModified": "Mon Dec 31 2018 18:28:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "CCDV2",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/1590.png"
+        },
+        "description": "高海千歌 is the 最高！（大雾）"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "CCDV2&#39;s nest",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/1590.png"
+        }
+    },
+    "keywords": ",CV,神经网络",
+    "description": "训练一个简单的两层神经网络",
+}
+</script>
 
 
     
@@ -283,100 +319,373 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#损失函数计算"><span class="post-toc-number">1.</span> <span class="post-toc-text">损失函数计算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正向传播计算得分"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">正向传播计算得分</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正向传播计算损失"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">正向传播计算损失</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反向传播计算梯度"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">反向传播计算梯度</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#训练函数"><span class="post-toc-number">2.</span> <span class="post-toc-text">训练函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#随机选择小部分样本"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">随机选择小部分样本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#改变权重"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">改变权重</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#预测函数"><span class="post-toc-number">3.</span> <span class="post-toc-text">预测函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用当前模型训练神经网络"><span class="post-toc-number">4.</span> <span class="post-toc-text">用当前模型训练神经网络</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#调超参"><span class="post-toc-number">5.</span> <span class="post-toc-text">调超参</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题"><span class="post-toc-number">6.</span> <span class="post-toc-text">问题</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一个bug"><span class="post-toc-number">7.</span> <span class="post-toc-text">一个bug</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/networkflow/index.html/">网络流</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这里是网络流的主页
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/networkflow/index.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>8月 06, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/acm/">acm</a>, <a class="post_category-link" href="/categories/acm/网络流/">网络流</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                两层神经网络
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/1590.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CCDV2</strong>
+        <span>12月 31, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/CV/">CV</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/神经网络/">神经网络</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=两层神经网络&url=https://ccdv2.github.io/CV/network/twolayernetwork.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=两层神经网络&url=https://ccdv2.github.io/CV/network/twolayernetwork.html/index.html&via=CCDV2" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/CV/network/twolayernetwork.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/CV/network/twolayernetwork.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>训练一个简单的两层神经网络<br><a id="more"></a><br>第一层使用了ReLU,第二层直接乘以权重。<br>评估的方法为softmax</p>
+<h1 id="损失函数计算"><a href="#损失函数计算" class="headerlink" title="损失函数计算"></a>损失函数计算</h1><h2 id="正向传播计算得分"><a href="#正向传播计算得分" class="headerlink" title="正向传播计算得分"></a>正向传播计算得分</h2><pre><code class="python">h1 = np.maximum(X.dot(W1) + b1, 0) # 第一层使用了ReLU
+h2 = h1.dot(W2) + b2
+scores = h2
+# print(scores.shape)
+</code></pre>
+<h2 id="正向传播计算损失"><a href="#正向传播计算损失" class="headerlink" title="正向传播计算损失"></a>正向传播计算损失</h2><p>和softmax算法一样</p>
+<pre><code class="python">maxScore = np.reshape(np.max(scores, axis = 1), (N, 1)) # N行1列
+probability = np.exp(scores - maxScore) / np.sum(np.exp(scores - maxScore), axis = 1, keepdims = True)
+correctClass = np.zeros_like(probability)
+correctClass[np.arange(N), y] = 1.0
+
+loss = -np.sum(correctClass * np.log(probability)) / N
+loss += reg * (np.sum(W1 * W1) + np.sum(W2 * W2))
+</code></pre>
+<h2 id="反向传播计算梯度"><a href="#反向传播计算梯度" class="headerlink" title="反向传播计算梯度"></a>反向传播计算梯度</h2><p>所谓的反向传播。其实就是计算梯度的链式求导法则。<br>在标WHY的地方，一开始并没有系数2，结果发现会有3e-1左右的误差，加上2之后就对了。。看来是以前写错了。。</p>
+<pre><code class="python">dScores = probability - correctClass
+dScores /= N
+dW2 = np.dot(h1.T, dScores)
+db2 = np.sum(dScores, axis = 0)
+
+#ReLU是一个与0取max的函数，因此那些值小于0的变化设置为0
+dh1 = np.dot(dScores, W2.T)
+dh1[h1 &lt;= 0] = 0
+
+dW1 = np.dot(X.T, dh1)
+db1 = np.sum(dh1, axis = 0)
+
+# WHY?????
+dW2 += 2 * reg * W2
+dW1 += 2 * reg * W1
+
+grads[&quot;W1&quot;] = dW1
+grads[&quot;b1&quot;] = db1
+grads[&quot;W2&quot;] = dW2
+grads[&quot;b2&quot;] = db2
+</code></pre>
+<h1 id="训练函数"><a href="#训练函数" class="headerlink" title="训练函数"></a>训练函数</h1><h2 id="随机选择小部分样本"><a href="#随机选择小部分样本" class="headerlink" title="随机选择小部分样本"></a>随机选择小部分样本</h2><pre><code class="python">index = np.random.choice(num_train, batch_size, replace = True)
+X_batch = X[index,:]
+y_batch = y[index]
+</code></pre>
+<h2 id="改变权重"><a href="#改变权重" class="headerlink" title="改变权重"></a>改变权重</h2><p>原来是这么写的，怕字典是复制的，所以改成了第二种写法。。</p>
+<pre><code class="python">dW1, db1 = grads[&quot;W1&quot;], grads[&quot;b1&quot;]
+dW2, db2 = grads[&quot;W2&quot;], grads[&quot;b2&quot;]
+
+W1, b1 = self.params[&#39;W1&#39;], self.params[&#39;b1&#39;]
+W2, b2 = self.params[&#39;W2&#39;], self.params[&#39;b2&#39;]
+
+W1 += -learning_rate * dW1
+W2 += -learning_rate * dW2
+b1 += -learning_rate * db1.reshape(-1) # 这之前前面有keepdim
+b2 += -learning_rate * db2.reshape(-1)
+</code></pre>
+<p>第二种写法：</p>
+<pre><code class="python"># 同时修改了前面的keepdim
+self.params[&#39;W2&#39;] -= learning_rate * grads[&#39;W2&#39;]
+self.params[&#39;b2&#39;] -= learning_rate * grads[&#39;b2&#39;]
+self.params[&#39;W1&#39;] -= learning_rate * grads[&#39;W1&#39;]
+self.params[&#39;b1&#39;] -= learning_rate * grads[&#39;b1&#39;]
+</code></pre>
+<h1 id="预测函数"><a href="#预测函数" class="headerlink" title="预测函数"></a>预测函数</h1><pre><code class="python"># 果然very simple。。又一个自己写的QAQ
+W1, b1 = self.params[&#39;W1&#39;], self.params[&#39;b1&#39;]
+W2, b2 = self.params[&#39;W2&#39;], self.params[&#39;b2&#39;]
+
+h1 = np.maximum(X.dot(W1) + b1, 0) # 第一层使用了ReLU
+h2 = h1.dot(W2) + b2
+scores = h2
+
+y_pred = np.argmax(scores, axis = 1)
+</code></pre>
+<h1 id="用当前模型训练神经网络"><a href="#用当前模型训练神经网络" class="headerlink" title="用当前模型训练神经网络"></a>用当前模型训练神经网络</h1><p>结果发现准确率只有28.7%，并不算很高。</p>
+<blockquote>
+<p>What’s wrong?. Looking at the visualizations above, we see that the loss is decreasing more or less linearly, which seems to suggest that the learning rate may be too low. Moreover, there is no gap between the training and validation accuracy, suggesting that the model we used has low capacity, and that we should increase its size. On the other hand, with a very large model we would expect to see more overfitting, which would manifest itself as a very large gap between the training and validation accuracy.</p>
+</blockquote>
+<p>这说明了几点问题</p>
+<ol>
+<li>损失曲线近似于线性减少，说明学习速率可能有点低</li>
+<li>在验证集和测试集的准确率之间，没有明显区别，说明我们的训练容量太小，应该加大容量。换句话说，非常大的样本集我们会看到过拟合的现象，过拟合会导致两者的准率有一定差别。</li>
+</ol>
+<h1 id="调超参"><a href="#调超参" class="headerlink" title="调超参"></a>调超参</h1><p>为了提高准确率，我们需要调超参。（或者用其它任何想用的trick）<br>类似于之前的做法，我们在区间上选取许多点进行测试。。</p>
+<pre><code class="python">learning_rates = [1.5e-3, 2.5e-3]
+regularization_strengths = [1e-5, 2e-5]
+layer_sizes = [40, 50, 60]
+best_val = -1.0
+
+part = 5 # 把区间平均n等分，得到n+1个点
+print(&quot;Rate\t\tStrength\tHiddenSize\tAccuracy\tIsbetter&quot;)
+for i in range(part + 1):
+    for j in range(part + 1):
+        for size in layer_sizes:
+            rate = i * (learning_rates[1] - learning_rates[0]) / part + learning_rates[0] # 当前步长
+            strength = j * (regularization_strengths[1] - regularization_strengths[0]) / part + regularization_strengths[0] # 当前惩罚系数
+            net = TwoLayerNet(input_size, size, num_classes)
+            net.train(X_train, y_train, X_val, y_val,
+                num_iters=1000, batch_size=200,
+                learning_rate=rate, learning_rate_decay=0.95,
+                reg=strength, verbose=False)
+            # 看训练集上效果怎么样
+            yTrainpred = net.predict(X_train)
+            trainAccuracy = np.mean(y_train == yTrainpred)
+            # 看验证集上效果怎么样
+            yValpred = net.predict(X_val)
+            valAccuracy = np.mean(y_val == yValpred)
+            # 选取验证集上最好的那个
+            if(best_val &lt; valAccuracy):
+                best_val = valAccuracy
+                best_net = net
+                print(&quot;%f\t%.7f\t%d\t\t%f\t**&quot; %(rate, strength, size, valAccuracy))
+            else:
+                print(&quot;%f\t%.7f\t%d\t\t%f&quot; %(rate, strength, size, valAccuracy))
+print(&quot;Done&quot;)
+</code></pre>
+<p>在调参的过程中，我发现了一些比较好的参数(格式放到网上就乱了。。)<br>Rate        Strength    HiddenSize    ValidatoinAccuracy    TestAccuracy<br>0.002000    0.0000150    50            0.503000            0.464<br>0.001700    0.0000180    60            0.495000            0.479<br>这就可以看到之前所谓的 <strong>gap</strong> 了</p>
+<p>另外，对于模型可视化，这里还是能稍微看到类似轮廓的东西的。。</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><blockquote>
+<p>Now that you have trained a Neural Network classifier, you may find that your testing accuracy is much lower than the training accuracy. In what ways can we decrease this gap? Select all that apply.</p>
+<ol>
+<li>Train on a larger dataset.</li>
+<li>Add more hidden units.</li>
+<li>Increase the regularization strength.</li>
+<li>None of the above.</li>
+</ol>
+</blockquote>
+<p><em>Your answer</em>:<br>1、3<br><em>Your explanation:</em><br>更大的训练集和惩罚系数可以增强泛化能力、但是过多隐藏层会导致模型过拟合。但要注意，样本也不应该太多（太多同样导致过拟合）。</p>
+<h1 id="一个bug"><a href="#一个bug" class="headerlink" title="一个bug"></a>一个bug</h1><p>在训练数据的过程中，对于特定的参数，我发现了这样的问题：<br>遇到了log里为0的情况：</p>
+<blockquote>
+<p>Rate 0.003200 Strength 0.00003000<br>C:\Users\xxx\spring1718_assignment1\assignment1\cs231n\classifiers\neural_net.py:103: RuntimeWarning: divide by zero encountered in log<br>  loss = -np.sum(correctClass * np.log(probability)) / N</p>
+</blockquote>
+<p>发现之前某个值是NaN，后面就一直错误了：</p>
+<blockquote>
+<p>Rate 0.004400 Strength 0.00003000<br>  C:\Users\xxx\spring1718_assignment1\assignment1\cs231n\classifiers\neural_net.py:99: RuntimeWarning: overflow encountered in subtract<br>    probability = np.exp(scores - maxScore) / np.sum(np.exp(scores - maxScore), axis = 1, keepdims = True)<br>  C:\Users\xxx\spring1718_assignment1\assignment1\cs231n\classifiers\neural_net.py:99: RuntimeWarning: invalid value encountered in subtract<br>    probability = np.exp(scores - maxScore) / np.sum(np.exp(scores - maxScore), axis = 1, keepdims = True)<br>  C:\Users\xxx\spring1718_assignment1\assignment1\cs231n\classifiers\neural_net.py:78: RuntimeWarning: invalid value encountered in maximum<br>    h1 = np.maximum(X.dot(W1) + b1, 0) # 第一层使用了ReLU<br>  D:\ProgramData\Anaconda3\lib\site-packages\numpy\core\fromnumeric.py:83: RuntimeWarning: invalid value encountered in reduce<br>    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)<br>  C:\Users\xxx\spring1718_assignment1\assignment1\cs231n\classifiers\neural_net.py:122: RuntimeWarning: invalid value encountered in less_equal<br>    dh1[h1 &lt;= 0] = 0<br>  C:\Users\xxx\spring1718_assignment1\assignment1\cs231n\classifiers\neural_net.py:257: RuntimeWarning: invalid value encountered in maximum<br>    h1 = np.maximum(X.dot(W1) + b1, 0) # 第一层使用了ReLU</p>
+</blockquote>
+<p>定位这组超参，大概会在第100多次迭代的时候出现除以0的warning。<br>根据错误原因，是log里面出现了0，然而在取e的幂的时候已经减去了最大值，因此猜测最大值过大。<br>print(maxScore)，发现最后都膨胀到1e33的地步。。<br>所以个人猜想，有可能是因为有些超参会让神经网络变得不稳定吧。。类似一个正反馈、或者说趋向于正无穷的过程。。<br>遇到这些超参的话，貌似应该不选择他们，否则会影响最后输出的结果。<br>PS：应该进行归一化了。。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzY3Ni8xNDIwNw==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/CV/classification/softmax.html/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -695,6 +1004,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -707,6 +1020,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
