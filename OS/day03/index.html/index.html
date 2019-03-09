@@ -45,7 +45,7 @@
     
     <title>
         
-            K近邻算法 | 
+            Day03 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="补全assignment1中的KNN算法。">
-    <meta name="keywords" content=",CV,分类算法">
+    <meta name="description" itemprop="description" content="今天来学习制作IPL、显示一个最基础的图形界面（对操作系统进行基础的启动设置），以及导入c语言。">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/CV/classification/knn.html/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day03//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/CV/classification/knn.html/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day03//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="K近邻算法 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day03 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="补全assignment1中的KNN算法。">
-    <meta property="og:article:tag" content="CV"> <meta property="og:article:tag" content="分类算法"> 
+    <meta property="og:description" content="今天来学习制作IPL、显示一个最基础的图形界面（对操作系统进行基础的启动设置），以及导入c语言。">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Sat Dec 29 2018 23:05:31 GMT+0800">
-        <meta property="article:modified_time" content="Sun Dec 30 2018 09:51:06 GMT+0800">
+        <meta property="article:published_time" content="Sat Mar 09 2019 16:38:25 GMT+0800">
+        <meta property="article:modified_time" content="Sat Mar 09 2019 19:02:19 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/CV/classification/knn.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day03/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/CV/classification/knn.html/index.html",
-    "headline": "K近邻算法",
-    "datePublished": "Sat Dec 29 2018 23:05:31 GMT+0800",
-    "dateModified": "Sun Dec 30 2018 09:51:06 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day03/index.html/index.html",
+    "headline": "Day03",
+    "datePublished": "Sat Mar 09 2019 16:38:25 GMT+0800",
+    "dateModified": "Sat Mar 09 2019 19:02:19 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",CV,分类算法",
-    "description": "补全assignment1中的KNN算法。",
+    "keywords": ",OS",
+    "description": "今天来学习制作IPL、显示一个最基础的图形界面（对操作系统进行基础的启动设置），以及导入c语言。",
 }
 </script>
 
@@ -348,7 +348,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#双层循环"><span class="post-toc-number">1.</span> <span class="post-toc-text">双层循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题1"><span class="post-toc-number">2.</span> <span class="post-toc-text">问题1</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#预测函数"><span class="post-toc-number">3.</span> <span class="post-toc-text">预测函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题2"><span class="post-toc-number">4.</span> <span class="post-toc-text">问题2</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#单层循环"><span class="post-toc-number">5.</span> <span class="post-toc-text">单层循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#无循环"><span class="post-toc-number">6.</span> <span class="post-toc-text">无循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#比较花费时间"><span class="post-toc-number">7.</span> <span class="post-toc-text">比较花费时间</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#交叉验证"><span class="post-toc-number">8.</span> <span class="post-toc-text">交叉验证</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#选择超参"><span class="post-toc-number">9.</span> <span class="post-toc-text">选择超参</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题3"><span class="post-toc-number">10.</span> <span class="post-toc-text">问题3</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#何为IPL"><span class="post-toc-number">1.</span> <span class="post-toc-text">何为IPL</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些问题与感想"><span class="post-toc-number">2.</span> <span class="post-toc-text">一些问题与感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#汇编语言中标签的顺序也很重要"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">汇编语言中标签的顺序也很重要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#并不是从0开始导入C语言"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">并不是从0开始导入C语言</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#制作真正的IPL"><span class="post-toc-number">3.</span> <span class="post-toc-text">制作真正的IPL</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#段寄存器表示地址"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">段寄存器表示地址</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看内存分布图"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">查看内存分布图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#makefile里的变量替换"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">makefile里的变量替换</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#试错"><span class="post-toc-number">4.</span> <span class="post-toc-text">试错</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#读到18扇区"><span class="post-toc-number">5.</span> <span class="post-toc-text">读到18扇区</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#读到10个柱面"><span class="post-toc-number">6.</span> <span class="post-toc-text">读到10个柱面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#着手开发操作系统"><span class="post-toc-number">7.</span> <span class="post-toc-text">着手开发操作系统</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最简单的操作系统"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">最简单的操作系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#向一个空软盘保存文件"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">向一个空软盘保存文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#从启动区执行操作系统"><span class="post-toc-number">8.</span> <span class="post-toc-text">从启动区执行操作系统</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#确认操作系统的执行情况"><span class="post-toc-number">9.</span> <span class="post-toc-text">确认操作系统的执行情况</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其它修改的地方"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">其它修改的地方</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#32位模式前期准备"><span class="post-toc-number">10.</span> <span class="post-toc-text">32位模式前期准备</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开始导入C语言"><span class="post-toc-number">11.</span> <span class="post-toc-text">开始导入C语言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#C语言翻译成机器代码的过程"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">C语言翻译成机器代码的过程</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现HLT"><span class="post-toc-number">12.</span> <span class="post-toc-text">实现HLT</span></a></li></ol>
     </ul>
     
 
@@ -380,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                K近邻算法
+                Day03
             </p>
         </div>
 
@@ -399,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>12月 29, 2018</span>
+        <span>3月 09, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CV/">CV</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/分类算法/">分类算法</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -440,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=K近邻算法&url=https://ccdv2.github.io/CV/classification/knn.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day03&url=https://ccdv2.github.io/OS/day03/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -449,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=K近邻算法&url=https://ccdv2.github.io/CV/classification/knn.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day03&url=https://ccdv2.github.io/OS/day03/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -458,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/CV/classification/knn.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day03/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -467,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/CV/classification/knn.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day03/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -492,95 +492,229 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>补全assignment1中的KNN算法。<br><a id="more"></a><br>每次我绞尽脑汁写了一个c++风格的代码，又跑不出结果后。。偷偷摸摸看了一眼别人的代码。。WC还有这个函数。。WC还有这种写法。。。emmmmm自闭了</p>
-<h1 id="双层循环"><a href="#双层循环" class="headerlink" title="双层循环"></a>双层循环</h1><pre><code class="python"># 这个可以和之前最近邻进行一下类比，注意提取每一行的写法
-dists[i][j] = np.sqrt(np.sum(np.square(self.X_train[j,:] - X[i,:])))
-</code></pre>
-<h1 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h1><blockquote>
-<ul>
-<li>What in the data is the cause behind the distinctly bright rows?  </li>
-<li>What causes the columns?    </li>
-</ul>
+        <p>今天来学习制作IPL、显示一个最基础的图形界面（对操作系统进行基础的启动设置），以及导入c语言。<br><a id="more"></a></p>
+<h1 id="何为IPL"><a href="#何为IPL" class="headerlink" title="何为IPL"></a>何为IPL</h1><p>IPL(Initial Program Loader，启动程序装载器)，在操作系统启动的时候，只会装载固定地址的很小字节（例如初始的512B），初始的部分即为IPL。在这里我们需要写一些汇编代码，来读取接下来的内容，或是启动操作系统的一些功能。</p>
+<h1 id="一些问题与感想"><a href="#一些问题与感想" class="headerlink" title="一些问题与感想"></a>一些问题与感想</h1><h2 id="汇编语言中标签的顺序也很重要"><a href="#汇编语言中标签的顺序也很重要" class="headerlink" title="汇编语言中标签的顺序也很重要"></a>汇编语言中标签的顺序也很重要</h2><p>类似c语言函数的声明顺序，汇编语言也是有前后依赖的关系的。在抄代码的时候，就随意把汇编语言中的函数放了个位置，结果意外地不能用了。</p>
+<h2 id="并不是从0开始导入C语言"><a href="#并不是从0开始导入C语言" class="headerlink" title="并不是从0开始导入C语言"></a>并不是从0开始导入C语言</h2><p>如果说要真的从零开始导入C语言的话，那恐怕我们得先用汇编写一个编译器，之后再一步步导入各种库函数。本书直接把一些现成的函数给我们了，毕竟这也不是OS的主要部分，虽然有点遗憾，但也能理解吧。</p>
+<p>下面是真正的书中内容</p>
+<h1 id="制作真正的IPL"><a href="#制作真正的IPL" class="headerlink" title="制作真正的IPL"></a>制作真正的IPL</h1><blockquote>
+<p>harib00a</p>
 </blockquote>
-<p>答：<br>那些看起来与其他训练图片都不像的测试图片会显得更亮<br>有些训练图片离所有测试图片都很远。。<br>总之。。就是有些点会比较孤立。。</p>
-<h1 id="预测函数"><a href="#预测函数" class="headerlink" title="预测函数"></a>预测函数</h1><pre><code class="python"># argsort用于给出排序之后对应的原来的下标
-# 我们取下标的前k个，给出对应的y_train[i]的值
-# bincount即桶排序，用于求出每个数出现的次数
-# 之后再返回那个出现次数最多的，因为是优先选最小的，直接argmax即可
-closest_y = self.y_train[np.argsort(dists[i,:])[:k]]
-y_pred[i] = np.argmax(np.bincount(closest_y))
-</code></pre>
-<h1 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h1><blockquote>
-<p>We can also other distance metrics such as L1 distance.<br>The performance of a Nearest Neighbor classifier that uses L1 distance will not change if (Select all that apply.):</p>
-<ol>
-<li>The data is preprocessed by subtracting the mean.</li>
-<li>The data is preprocessed by subtracting the mean and dividing by the standard deviation.</li>
-<li>The coordinate axes for the data are rotated.</li>
-<li>None of the above.  </li>
-</ol>
-</blockquote>
-<p><em>Your Answer</em>:<br>1、2<br><em>Your explanation</em>:<br>首先L1范数会随坐标轴变化而变化，首先排除3.<br>对于1、2，线性变换不会改变L1范数相对次序，所以不变。<br>之后用F范数来检查两个矩阵是否有差异。。</p>
-<h1 id="单层循环"><a href="#单层循环" class="headerlink" title="单层循环"></a>单层循环</h1><p>单层循环更像是用个语法糖，与双层循环差别不大</p>
-<pre><code class="python">dists[i,:] = np.sqrt(np.sum(np.square(self.X_train - X[i,:]), axis = 1))
-</code></pre>
-<h1 id="无循环"><a href="#无循环" class="headerlink" title="无循环"></a>无循环</h1><p>不用循环的主要思想是(x - y) ^ 2 = x ^ 2 - 2xy + y ^ 2<br>这样可以简化计算复杂度</p>
-<pre><code class="python">dists = np.multiply(np.dot(X, self.X_train.T), -2)
-# keepdims保留了其维数，使得在之后的加法里可以广播
-dists = np.add(dists, np.sum(np.square(X), axis = 1, keepdims = True))
-dists = np.add(dists, np.sum(np.square(self.X_train), axis = 1))
-dists = np.sqrt(dists)
-</code></pre>
-<h1 id="比较花费时间"><a href="#比较花费时间" class="headerlink" title="比较花费时间"></a>比较花费时间</h1><p>Two loop version took 33.835573 seconds<br>One loop version took 74.891847 seconds<br>No loop version took 0.359040 seconds<br>可见还是无循环的快很多</p>
-<h1 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h1><p>将数据集分成测试集和验证集，调出最好的超参。</p>
-<blockquote>
-<p>将数据等分  </p>
-</blockquote>
-<pre><code class="python">X_train_folds = np.array_split(X_train, num_folds)
-y_train_folds = np.array_split(y_train, num_folds)
-</code></pre>
-<blockquote>
-<p>交叉验证  </p>
-</blockquote>
-<pre><code class="python">for k in k_choices:
-    accuracies = []
-    for i in range(num_folds):
-        # 将数组间竖直排列
-        XtrainSets = np.vstack(X_train_folds[0 : i] + X_train_folds[i + 1:])
-        # 将数组间水平排列
-        ytrainSets = np.hstack(y_train_folds[0 : i] + y_train_folds[i + 1:])
-        XtestSets = X_train_folds[i]
-        ytestSets = y_train_folds[i]
+<p>在程序核心部分内，我们加入了读取磁盘的操作。<br>当然，我们需要查阅相关说明后，发现 AH = 0x02时是读盘内容。对于其它关键字的意思，会在代码注释里给出。</p>
+<pre><code class="c">; 读取磁盘
+    MOV AX, 0x0820
+    MOV ES, AX
+    MOV CH, 0 ; 柱面0
+    MOV DH, 0 ; 磁头0
+    MOV CL, 2 ; 扇区2
 
-        classifier.train(XtrainSets, ytrainSets)
-        dists = classifier.compute_distances_no_loops(XtestSets)
-        # 由于最后一格看起来是与别的变量冲突了，直接全部加上了下划线。。
-        _y_test_pred = classifier.predict_labels(dists, k)
-
-        _num_correct = np.sum(_y_test_pred == ytestSets)
-        _num_test = ytestSets.shape[0]
-
-        accuracy = float(_num_correct) / _num_test
-        accuracies.append(accuracy)
-    k_to_accuracies[k] = accuracies
+    MOV AH, 0x02 ; AH = 0x02 读盘
+    MOV AL, 1 ; 1个扇区
+    MOV BX, 0
+    MOV DL, 0x00 ; A驱动器
+    INT 0x13 ; 调用磁盘BIOS
+    JC error
 </code></pre>
-<h1 id="选择超参"><a href="#选择超参" class="headerlink" title="选择超参"></a>选择超参</h1><p>best_k = 10<br>此时正确率有28.2%</p>
-<h1 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h1><blockquote>
-<p>Which of the following statements about k-Nearest Neighbor (k-NN) are true in a classification setting, and for all k? Select all that apply.</p>
-<ol>
-<li>The training error of a 1-NN will always be better than that of 5-NN.</li>
-<li>The test error of a 1-NN will always be better than that of a 5-NN.</li>
-<li>The decision boundary of the k-NN classifier is linear.</li>
-<li>The time needed to classify a test example with the k-NN classifier grows with the size of the training set.</li>
-<li>None of the above.</li>
-</ol>
+<h2 id="段寄存器表示地址"><a href="#段寄存器表示地址" class="headerlink" title="段寄存器表示地址"></a>段寄存器表示地址</h2><p>其实计组课上也有类似的知识点，用 ES &lt;&lt; 4 + BX 来拼接成想要的地址。在汇编中的用法：</p>
+<pre><code class="c">MOV AL, [ES:BX]
+</code></pre>
+<p>其实，平常写的地址也是默认的段寄存器。如</p>
+<pre><code class="c">MOV CX, [1234] 其实是 MOV CX, [DS:1234]
+</code></pre>
+<p>当然要默认把DS设置为0</p>
+<h2 id="查看内存分布图"><a href="#查看内存分布图" class="headerlink" title="查看内存分布图"></a>查看内存分布图</h2><p>在我们想要把程序装载入内存的某些地址的时候，我们先查一下那个地方是否已经被用上了，不然冲突了就不好了。</p>
+<h2 id="makefile里的变量替换"><a href="#makefile里的变量替换" class="headerlink" title="makefile里的变量替换"></a>makefile里的变量替换</h2><p>说是变量，其实更像c语言里的宏定义，可以做到很方便的只需要在一个地方改动即可。</p>
+<h1 id="试错"><a href="#试错" class="headerlink" title="试错"></a>试错</h1><blockquote>
+<p>harib00b</p>
 </blockquote>
-<p><em>Your Answer</em>:<br>1 4<br><em>Your explanation</em>:  </p>
-<ol>
-<li>1NN对于训练集的误差肯定<strong>没有</strong>，但对于测试集可能会出现较大误差。因此虽然1NN训练误差小，但是不一定能进行有效的预测。  </li>
-<li>这个不一定。因为1NN存在过拟合、噪音影响等问题  </li>
-<li>决策边界不是线性的，kNN本来就不是线性选择器  </li>
-<li>因为要与每个训练集作比较，时间肯定会增长  </li>
-</ol>
+<p>在读软盘的时候，经常容易出错。所以我们可以加入少量的尝试。<br>代码接在00a之后</p>
+<pre><code class="c">MOV SI, 0 ; 记录失败次数的寄存器
+
+retry:
+MOV AH, 0x02 ; AH = 0x02 读盘
+MOV AL, 1 ; 1个扇区
+MOV BX, 0
+MOV DL, 0x00 ; A驱动器
+INT 0x13 ; 调用磁盘BIOS
+JNC fin ; 没出错的话跳转到fin
+ADD SI, 1 ; 往SI加1
+CMP SI, 5 ; 比较SI与5
+JAE error ; SI &gt;= 5　跳转到error
+MOV AH, 0x00
+MOV DL, 0x00 ; A驱动器
+INT 0x13 ; 重置驱动器
+JMP retry
+</code></pre>
+<h1 id="读到18扇区"><a href="#读到18扇区" class="headerlink" title="读到18扇区"></a>读到18扇区</h1><blockquote>
+<p>harib00c</p>
+</blockquote>
+<p>我们可以设置一个循环，这样可以一直读18个扇区。主要更新的部分为next的标签。<br>前三行其实就是等价 ES += 20，只是这个寄存器不能直接加。。</p>
+<pre><code class="c">next:
+    MOV AX, ES ; 把内存地址后移0x200
+    ADD AX, 0x0020
+    MOV ES, AX ; 因为没有ADD ES, 0x020指令，所以这里稍微绕个弯（把ES数放到AX里，加了之后再放回来）
+    ADD CL, 1 ; 往CL里加1
+    CMP CL, 18 ; 比较CL与18
+    JBE readloop ; 如果CL &lt;= 18 跳转至readloop
+</code></pre>
+<h1 id="读到10个柱面"><a href="#读到10个柱面" class="headerlink" title="读到10个柱面"></a>读到10个柱面</h1><blockquote>
+<p>harib00d</p>
+</blockquote>
+<p>在next里继续添加一些东西，开始读下一个柱面。这样就能往内存里装载180KB了。<br>显然，CH在不断增加，读取下一个柱面。</p>
+<pre><code class="c">next:
+    MOV AX, ES ; 把内存地址后移0x200
+    ADD AX, 0x0020
+    MOV ES, AX ; 因为没有ADD ES, 0x020指令，所以这里稍微绕个弯（把ES数放到AX里，加了之后再放回来）
+    ADD CL, 1 ; 往CL里加1
+    CMP CL, 18 ; 比较CL与18
+    JBE readloop ; 如果CL &lt;= 18 跳转至readloop
+    MOV CL, 1
+    ADD DH, 1
+    CMP DH, 2
+    JB readloop ; 如果DH &lt; 2 跳转到 readloop
+    MOV DH, 0
+    ADD CH, 1
+    CMP CH, CYLS ; 如果CH &lt; CYLS, 跳转到readloop
+    JB readloop
+</code></pre>
+<p>另外，开头有一句</p>
+<pre><code class="c">CYLS EQU 10 ; CYLS = 10
+</code></pre>
+<h1 id="着手开发操作系统"><a href="#着手开发操作系统" class="headerlink" title="着手开发操作系统"></a>着手开发操作系统</h1><blockquote>
+<p>harib00e</p>
+</blockquote>
+<h2 id="最简单的操作系统"><a href="#最简单的操作系统" class="headerlink" title="最简单的操作系统"></a>最简单的操作系统</h2><p>目前还是一个最简单的操作系统，只有停机操作。</p>
+<pre><code class="c">fin:
+    HLT
+    JMP fin
+</code></pre>
+<p>保存为nas文件后，编译成sys文件，然后通过edimg保存到磁盘映像img里。</p>
+<h2 id="向一个空软盘保存文件"><a href="#向一个空软盘保存文件" class="headerlink" title="向一个空软盘保存文件"></a>向一个空软盘保存文件</h2><p>文件名会写在 0x002600以后的地方<br>文件的内容会写在 0x004200以后的地方</p>
+<p>所以接下来我们只要执行0x004200地方的东西，就可以执行这个程序了。</p>
+<h1 id="从启动区执行操作系统"><a href="#从启动区执行操作系统" class="headerlink" title="从启动区执行操作系统"></a>从启动区执行操作系统</h1><blockquote>
+<p>harib00f</p>
+</blockquote>
+<p>刚才说的情况是空磁盘，我们知道启动区从0x8000开始，所以0x4200的内容在0xc200的地址上。所以只要指明地址是0xc200就能执行想要的程序了。<br>更新一下haribote.nas</p>
+<pre><code class="c">ORG 0xc200 ; 指定程序开始地址
+
+fin:
+HLT
+JMP fin
+</code></pre>
+<p>更新一下ipl.nas</p>
+<pre><code class="c">next:
+    MOV AX, ES ; 把内存地址后移0x200
+    ADD AX, 0x0020
+    MOV ES, AX ; 因为没有ADD ES, 0x020指令，所以这里稍微绕个弯（把ES数放到AX里，加了之后再放回来）
+    ADD CL, 1 ; 往CL里加1
+    CMP CL, 18 ; 比较CL与18
+    JBE readloop ; 如果CL &lt;= 18 跳转至readloop
+    MOV CL, 1
+    ADD DH, 1
+    CMP DH, 2
+    JB readloop ; 如果DH &lt; 2 跳转到 readloop
+    MOV DH, 0
+    ADD CH, 1
+    CMP CH, CYLS ; 如果CH &lt; CYLS, 跳转到readloop
+    JB readloop
+
+; 读取完毕后执行haribote.sys
+    JMP 0xc200
+</code></pre>
+<h1 id="确认操作系统的执行情况"><a href="#确认操作系统的执行情况" class="headerlink" title="确认操作系统的执行情况"></a>确认操作系统的执行情况</h1><blockquote>
+<p>harib00g</p>
+</blockquote>
+<p>通过调用显卡，我们可以看到一个漆黑的画面了。<br>PS：其实我写的这个代码有一个bug，所以看起来很奇怪（怎么这么长）。。到了day04才发现。。<br>haribote.nas</p>
+<pre><code class="c">ORG 0xc200 ; 指定程序开始地址
+MOV AL 0x13 ; VGA显卡，320*200*8位彩色
+MOV AH, 0x00
+INT 0x10
+
+fin:
+HLT
+JMP fin
+</code></pre>
+<h2 id="其它修改的地方"><a href="#其它修改的地方" class="headerlink" title="其它修改的地方"></a>其它修改的地方</h2><p>把ipl.nas 修改了为 ipl10.nas ,表示只能读取前10个柱面。还添加了磁盘读取的结束地址。<br>当然也要改makefile（作者应该觉得我们已经会了吧）。</p>
+<h1 id="32位模式前期准备"><a href="#32位模式前期准备" class="headerlink" title="32位模式前期准备"></a>32位模式前期准备</h1><blockquote>
+<p>harib00h</p>
+</blockquote>
+<p>BIOS需要16位机器语言，所以我们在16位下写好各种准备工作后，再进入32位模式。<br>BIOS准备了各种键盘状态、画面状态<br>haribote.nas</p>
+<pre><code class="c">; haribote-os
+; TAB=4
+
+; 有关BOOT_INFO
+CYLS EQU 0x0ff0 ; 设定启动区
+LEDS EQU 0x0ff1
+VMODE EQU 0x0ff2 ; 关于颜色数目的信息。颜色的位数
+SCRNX EQU 0x0ff4 ; 分辨率的X(screen X)
+SCRNY EQU 0x0ff6 ; 分辨率的Y(screen Y)
+VRAM EQU 0x0ff8 ; 图像缓冲区的开始地址
+
+    ORG 0xc200 ; 指定程序开始地址
+    MOV AL 0x13 ; VGA显卡，320*200*8位彩色
+    MOV AH, 0x00
+    INT 0x10
+    MOV BYTE [VMODE], 8 ; 记录画面模式
+    MOV WORD [SCRNX], 320
+    MOV WORD [SCRNY], 200
+    MOV DWORD [VRAM], 0x000a0000
+
+; 用BIOS取得键盘上各种LED指示灯的状态
+    MOV AH, 0x02
+    INT 0x16 ; KEYBOARD BIOS
+    MOV [LEDS], AL
+
+fin:
+    HLT
+    JMP fin
+</code></pre>
+<p>其中，VRAM即为我们说的video RAM，用于显示每一个像素的颜色。这个地址当然也是设定好的，不能随便用。</p>
+<h1 id="开始导入C语言"><a href="#开始导入C语言" class="headerlink" title="开始导入C语言"></a>开始导入C语言</h1><blockquote>
+<p>harib00i</p>
+</blockquote>
+<p>终于开始导入C语言了。当然C语言不是凭空不需要汇编就能写好的，所以作者直接给我们添加了些意义不明代码。没办法，只好把asmhead.nas复制过来好了。<br>来看C语言部分，还是很简单，很熟悉的。</p>
+<pre><code class="c">void HariMain(void)
+{
+fin:
+    /* 写不了HLT */
+    goto fin;
+}
+</code></pre>
+<h2 id="C语言翻译成机器代码的过程"><a href="#C语言翻译成机器代码的过程" class="headerlink" title="C语言翻译成机器代码的过程"></a>C语言翻译成机器代码的过程</h2><p>感觉这个过程要比平常直接.c .o .exe 更多啊。<br>翻译过程如下：<br>.c(C)-&gt;.gas(gas汇编)-&gt;.nas(nas汇编)-&gt;.obj(目标文件，需link)-&gt;.bim(二进制映像文件)-&gt;.hrb(对应的操作系统)-&gt;.sys<br>为了实现各层的指令，makefile也有了很多改动。到这里我就感觉梳理makefile的依赖关系已经比较麻烦了）。</p>
+<h1 id="实现HLT"><a href="#实现HLT" class="headerlink" title="实现HLT"></a>实现HLT</h1><blockquote>
+<p>harib00j</p>
+</blockquote>
+<p>在这部我们初步尝试了c语言之后，现在可以尝试汇编(_func)与c(func)。就写一个简单的HLT指令。<br>naskfunc.nas</p>
+<pre><code class="c">; naskfunc
+; TAB=4
+
+[FORMAT &quot;WCOFF&quot;] ; 制作目标文件的模式
+[BITS 32] ; 制作32位模式用的机械语言
+
+; 制作目标文件的信息
+
+[FILE &quot;naskfunc.nas&quot;] ; 源文件名信息
+    GLOBAL _io_hlt ; 程序中包含的函数名
+
+; 以下是实际的函数
+
+[SECTION .text] ; 目标文件中写了这些之后再写的程序
+
+_io_hlt: ; void io_hlt(void)
+    HLT
+    RET
+</code></pre>
+<p>c程序中，只需要声明一下就好了<br>bootpack.c</p>
+<pre><code class="c">void io_hlt(void);
+
+void HariMain(void)
+{
+fin:
+    io_hlt(); /* 执行naskfunc.nas的_io_hlt */
+    goto fin;
+}
+</code></pre>
+<p>在makefile里添加对应的naskfunc.nas 终于完成了。</p>
 
         
     
@@ -623,21 +757,13 @@ y_train_folds = np.array_split(y_train, num_folds)
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/CV/classification/svm.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/CV/classification/nearestneighbor.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day02/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
