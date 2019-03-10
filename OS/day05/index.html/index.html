@@ -45,7 +45,7 @@
     
     <title>
         
-            填充区的属性 | 
+            Day05 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="填充区的属性有：填充图案、纹理和插值图案、线框图、前向面等等。">
-    <meta name="keywords" content=",CG,openGL">
+    <meta name="description" itemprop="description" content="今天在开头讲了用c语言接收启动信息，之后是各种图形界面的优化，最后稍微提及了一点GDT和IDT的知识。">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/CG/attributes/fill.html/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day05//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/CG/attributes/fill.html/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day05//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="填充区的属性 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day05 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="填充区的属性有：填充图案、纹理和插值图案、线框图、前向面等等。">
-    <meta property="og:article:tag" content="CG"> <meta property="og:article:tag" content="openGL"> 
+    <meta property="og:description" content="今天在开头讲了用c语言接收启动信息，之后是各种图形界面的优化，最后稍微提及了一点GDT和IDT的知识。">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Wed Dec 26 2018 10:25:34 GMT+0800">
-        <meta property="article:modified_time" content="Wed Dec 26 2018 10:46:15 GMT+0800">
+        <meta property="article:published_time" content="Sun Mar 10 2019 11:05:18 GMT+0800">
+        <meta property="article:modified_time" content="Sun Mar 10 2019 12:13:39 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/CG/attributes/fill.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day05/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/CG/attributes/fill.html/index.html",
-    "headline": "填充区的属性",
-    "datePublished": "Wed Dec 26 2018 10:25:34 GMT+0800",
-    "dateModified": "Wed Dec 26 2018 10:46:15 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day05/index.html/index.html",
+    "headline": "Day05",
+    "datePublished": "Sun Mar 10 2019 11:05:18 GMT+0800",
+    "dateModified": "Sun Mar 10 2019 12:13:39 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",CG,openGL",
-    "description": "填充区的属性有：填充图案、纹理和插值图案、线框图、前向面等等。",
+    "keywords": ",OS",
+    "description": "今天在开头讲了用c语言接收启动信息，之后是各种图形界面的优化，最后稍微提及了一点GDT和IDT的知识。",
 }
 </script>
 
@@ -348,7 +348,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#填充图案"><span class="post-toc-number">1.</span> <span class="post-toc-text">填充图案</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#纹理和插值图案"><span class="post-toc-number">2.</span> <span class="post-toc-text">纹理和插值图案</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线框图"><span class="post-toc-number">3.</span> <span class="post-toc-text">线框图</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前向面"><span class="post-toc-number">4.</span> <span class="post-toc-text">前向面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#填充图案、插值图案、线框图示例"><span class="post-toc-number">5.</span> <span class="post-toc-text">填充图案、插值图案、线框图示例</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些问题与感想"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些问题与感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#C语言指针的底层用法（续）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">C语言指针的底层用法（续）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用位图来显示图形"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">用位图来显示图形</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#GDT与IDT"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">GDT与IDT</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#接收启动信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">接收启动信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#试用结构体、试用箭头记号"><span class="post-toc-number">3.</span> <span class="post-toc-text">试用结构体、试用箭头记号</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#显示字符"><span class="post-toc-number">4.</span> <span class="post-toc-text">显示字符</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增加字体、显示字符串"><span class="post-toc-number">5.</span> <span class="post-toc-text">增加字体、显示字符串</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#显示变量值"><span class="post-toc-number">6.</span> <span class="post-toc-text">显示变量值</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#显示鼠标指针"><span class="post-toc-number">7.</span> <span class="post-toc-text">显示鼠标指针</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#GDT与IDT的初始化"><span class="post-toc-number">8.</span> <span class="post-toc-text">GDT与IDT的初始化</span></a></li></ol>
     </ul>
     
 
@@ -380,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                填充区的属性
+                Day05
             </p>
         </div>
 
@@ -399,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>12月 26, 2018</span>
+        <span>3月 10, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -423,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CG/">CG</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/openGL/">openGL</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -440,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=填充区的属性&url=https://ccdv2.github.io/CG/attributes/fill.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day05&url=https://ccdv2.github.io/OS/day05/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -449,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=填充区的属性&url=https://ccdv2.github.io/CG/attributes/fill.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day05&url=https://ccdv2.github.io/OS/day05/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -458,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/CG/attributes/fill.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day05/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -467,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/CG/attributes/fill.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day05/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -492,97 +492,293 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>填充区的属性有：填充图案、纹理和插值图案、线框图、前向面等等。<br><a id="more"></a></p>
-<h1 id="填充图案"><a href="#填充图案" class="headerlink" title="填充图案"></a>填充图案</h1><p>填充图案可由类似位图的形式实现，从屏幕左下角开始平铺，与多边形相交部分显示。</p>
-<h1 id="纹理和插值图案"><a href="#纹理和插值图案" class="headerlink" title="纹理和插值图案"></a>纹理和插值图案</h1><p>为了达到真实的效果，经常需要对不同顶点赋以不同颜色，中间的颜色渐变即为插值颜色。使用方法与线的插值类似。</p>
-<h1 id="线框图"><a href="#线框图" class="headerlink" title="线框图"></a>线框图</h1><p>对于一个多边形，可以选择只显示边、只显示点等。需要用到这个函数：</p>
-<pre><code class="cpp">glPolygonMode(face, displayMode);
-</code></pre>
-<p>第一个参数指定前向面还是后向面，第二个参数指定填充方式。  </p>
-<p>对于一个三维多边形，由于算法误差，填充多边形的方法可能在边之间生成缝隙，称作<strong>缝线</strong>。为了消除边的不重叠，可以使用如下函数：</p>
-<pre><code class="cpp">glEnable(GL_POLYGON_OFFSET_FILL);
-glPolygonOffset(factor1, factor2);
-</code></pre>
-<p>第二个函数用来调整位移。具体计算公式为depthOffset = factor1 • maxSlope + factor2 • const<br>emmm以后再说吧。。</p>
-<p>在显示线框图的时候，有一些边我们并不希望它显示，这时候可以用glEdgeFlag来屏蔽接下来的点生成的边。与顶点数组类似，也有边标志数组，用法为：</p>
-<pre><code class="cpp">glEnableClientState(GL_EDGE_FLAG_ARRAY);
-glEdgeFlagPointer(offset, edgeFlagArray);
-</code></pre>
-<p>当然喜欢的话也可以搞交错数组。。</p>
-<h1 id="前向面"><a href="#前向面" class="headerlink" title="前向面"></a>前向面</h1><p>默认逆时针是前向面，但是也可以通过</p>
-<pre><code class="cpp">//GL_CW or GL_CCW
-glFrontFace(vertexOrder);
-</code></pre>
-<p>来修改</p>
-<h1 id="填充图案、插值图案、线框图示例"><a href="#填充图案、插值图案、线框图示例" class="headerlink" title="填充图案、插值图案、线框图示例"></a>填充图案、插值图案、线框图示例</h1><pre><code class="cpp">#include&lt;Windows.h&gt;
-#include&lt;GL/glut.h&gt;
+        <p>今天在开头讲了用c语言接收启动信息，之后是各种图形界面的优化，最后稍微提及了一点GDT和IDT的知识。<br><a id="more"></a></p>
+<h1 id="一些问题与感想"><a href="#一些问题与感想" class="headerlink" title="一些问题与感想"></a>一些问题与感想</h1><h2 id="C语言指针的底层用法（续）"><a href="#C语言指针的底层用法（续）" class="headerlink" title="C语言指针的底层用法（续）"></a>C语言指针的底层用法（续）</h2><p>今天提到了在基础类型之外，我们还可以定义结构体，通过转换成结构体类型指针，来一次性读入更多内存，或者是把不同内存解释为不同的意义。<br>但是不太清楚的一点是结构体会存在对齐问题的，因此是不是也不能随意地去用结构体指针去指地址？</p>
+<h2 id="用位图来显示图形"><a href="#用位图来显示图形" class="headerlink" title="用位图来显示图形"></a>用位图来显示图形</h2><p>今天提到的图形界面内容，全部是用位图来展示的，这样做确实可以比较方便地在像素级别上显示图像，也方便看到最后的成果。</p>
+<h2 id="GDT与IDT"><a href="#GDT与IDT" class="headerlink" title="GDT与IDT"></a>GDT与IDT</h2><p>GDT(global descriptor table)，用于把内存分为多个段之后，记录段大小、起始地址以及管理属性。这样每个段都可以看作起始地址0来处理，分给不同的程序。<br>IDT(interrupt descriptor table)，用于记录中断号对应的函数。</p>
+<p>进入正题</p>
+<h1 id="接收启动信息"><a href="#接收启动信息" class="headerlink" title="接收启动信息"></a>接收启动信息</h1><blockquote>
+<p>harib02a</p>
+</blockquote>
+<p>从内存中读入相关的启动信息，放到c语言里</p>
+<pre><code class="c">char *vram;
+int xsize, ysize;
+short *binfo_scrnx, *binfo_scrny;
+int *binfo_vram;
 
-GLubyte fillPattern[] =
+init_palette();
+
+binfo_scrnx = (short *)0x0ff4;
+binfo_scrny = (short *)0x0ff6;
+binfo_vram = (int *)0x0ff8;
+
+xsize = *binfo_scrnx;
+ysize = *binfo_scrny;
+vram = (char *)*binfo_vram;
+</code></pre>
+<h1 id="试用结构体、试用箭头记号"><a href="#试用结构体、试用箭头记号" class="headerlink" title="试用结构体、试用箭头记号"></a>试用结构体、试用箭头记号</h1><blockquote>
+<p>harib02b<br>harib02c</p>
+</blockquote>
+<p>把启动信息封装称一个结构体，这样做到一次性载入所有启动信息。</p>
+<pre><code class="c">struct BOOTINFO
 {
-    0xff, 0x00, 0xff,
-    0x00, 0xff, 0x00,
-    0xff, 0x00, 0xff
+    char cyls, leds, vmode, reserve;
+    short scrnx, scrny;
+    char *vram;
 };
 
-void display()
+void HariMain(void)
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    char *vram;
+    int xsize, ysize;
+    struct BOOTINFO *binfo;
 
-    glPolygonStipple(fillPattern);
-    glEnable(GL_POLYGON_STIPPLE);
-    glColor3d(1.0, 0.0, 0.0);
-    glBegin(GL_POLYGON);
+    init_palette();
+
+    binfo = (struct BOOTINFO *)0x0ff0;
+    xsize = binfo-&gt;scrnx;
+    ysize = binfo-&gt;scrny;
+    vram = binfo-&gt;vram;
+</code></pre>
+<h1 id="显示字符"><a href="#显示字符" class="headerlink" title="显示字符"></a>显示字符</h1><blockquote>
+<p>harib02d</p>
+</blockquote>
+<p>用位图的方式显示一个字符A，其实就是看哪些地方应该为黑，哪些地方应该为白罢了。</p>
+<pre><code class="c">void HariMain(void)
+{
+    static char font_A[16] =
     {
-        glVertex2i(300, 300);
-        glVertex2i(400, 300);
-        glVertex2i(500, 400);
-        glVertex2i(400, 400);
-    }
-    glEnd();
-    glDisable(GL_POLYGON_STIPPLE);
+        0x00, 0x18, 0x18, 0x18, 0x18, 0x24, 0x24, 0x24,
+        0x24, 0x7e, 0x42, 0x42, 0x42, 0xe7, 0x00, 0x00
+    };
 
-    glShadeModel(GL_SMOOTH);
-    glBegin(GL_TRIANGLES);
+    struct BOOTINFO *binfo = (struct BOOTINFO *)0x0ff0;
+
+    init_palette();
+    init_screen(binfo-&gt;vram, binfo-&gt;scrnx, binfo-&gt;scrny);
+    putfont8(binfo-&gt;vram, binfo-&gt;scrnx, 10, 10, COL8_FFFFFF, font_A);
+
+
+    for(;;)
     {
-        glColor3d(1.0, 0.0, 0.0);
-        glVertex2i(100, 100);
-        glColor3d(0.0, 1.0, 0.0);
-        glVertex2i(200, 100);
-        glColor3d(0.0, 0.0, 1.0);
-        glVertex2i(150, 173);
+        io_hlt(); /* 执行naskfunc.nas的_io_hlt */
     }
-    glEnd();
-
-    glPolygonMode(GL_FRONT, GL_LINE);
-    glBegin(GL_TRIANGLES);
-    {
-        glVertex2i(300, 100);
-        glEdgeFlag(GL_FALSE);//下个点引出的边将不可见
-        glVertex2i(400, 100);
-        glEdgeFlag(GL_TRUE);
-        glVertex2i(350, 173);
-    }
-    glEnd();
-    glPolygonMode(GL_FRONT, GL_FILL);
-
-    glFlush();
 }
 
-int main(int argc, char *argv[])
+void putfont8(char *vram, int xsize, int x, int y, char c, char *font)
 {
-    glutInit(&amp;argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowSize(800, 600);
-    glutCreateWindow(&quot;fill&quot;);
-    glClearColor(1.0, 1.0, 1.0, 0.0);
-    glMatrixMode(GL_PROJECTION);
-    gluOrtho2D(0.0, 800.0, 0.0, 600.0);
-
-    glutDisplayFunc(display);
-
-    glutMainLoop();
+    int i;
+    char *p, d; /*data*/
+    for(i = 0; i &lt; 16; ++i)
+    {
+        p = vram + (y + i) * xsize + x;
+        d = font[i];
+        int bit = 0x80;
+        int cnt = 0;
+        for(; bit != 0x00; bit &gt;&gt;= 1)
+        {
+            if((d &amp; bit) != 0) p[cnt] = c;
+            ++cnt;
+        }
+    }
 }
 </code></pre>
+<p>其中我用了for循环代替了书上对应位与的操作，效果应该是一样的。</p>
+<h1 id="增加字体、显示字符串"><a href="#增加字体、显示字符串" class="headerlink" title="增加字体、显示字符串"></a>增加字体、显示字符串</h1><blockquote>
+<p>harib02e<br>harib02f</p>
+</blockquote>
+<p>我们导入了一个现成的字体库，然后对这个字体库用某个软件进行编译连接，就可以在c语言里用上了。<br>当然，光显示单个字符太累了，所以可以想办法做一个显示字符串的函数，</p>
+<pre><code class="c">void HariMain(void)
+{
+    extern char hankaku[4096];
+
+    struct BOOTINFO *binfo = (struct BOOTINFO *)0x0ff0;
+
+    init_palette();
+    init_screen(binfo-&gt;vram, binfo-&gt;scrnx, binfo-&gt;scrny);
+    putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 8, 8, COL8_FFFFFF, &quot;ABC 321&quot;);
+    putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 31, 31, COL8_000000, &quot;Haribote OS.&quot;);
+    putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 30, 30, COL8_FFFFFF, &quot;Haribote OS.&quot;);
+
+
+    for(;;)
+    {
+        io_hlt(); /* 执行naskfunc.nas的_io_hlt */
+    }
+}
+
+void putfont8_asc(char *vram, int xsize, int x, int y, char c, unsigned char *s)
+{
+    extern char hankaku[4096];
+    for(; *s != 0x00; ++s)
+    {
+        putfont8(vram, xsize, x, y, c, hankaku + *s * 16);
+        x += 8;
+    }
+}
+</code></pre>
+<h1 id="显示变量值"><a href="#显示变量值" class="headerlink" title="显示变量值"></a>显示变量值</h1><blockquote>
+<p>harib02g</p>
+</blockquote>
+<p>我们可以把数字转化成字符串，这样就能在屏幕上打印出来了。需要用到&lt;stdio.h&gt;里的sprintf</p>
+<pre><code class="c">char s[105];
+sprintf(s, &quot;scrnx = %d&quot;, binfo-&gt;scrnx);
+putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 16, 64, COL8_FFFFFF, s);
+</code></pre>
+<p>熟悉C语言还是很好理解的</p>
+<h1 id="显示鼠标指针"><a href="#显示鼠标指针" class="headerlink" title="显示鼠标指针"></a>显示鼠标指针</h1><blockquote>
+<p>harib02h</p>
+</blockquote>
+<p>同样的鼠标位图，不需要太多解释</p>
+<pre><code class="c">void HariMain(void)
+{
+    struct BOOTINFO *binfo = (struct BOOTINFO *)0x0ff0;
+    extern char hankaku[4096];
+
+    init_palette();
+    init_screen(binfo-&gt;vram, binfo-&gt;scrnx, binfo-&gt;scrny);
+    putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 8, 8, COL8_FFFFFF, &quot;ABC 321&quot;);
+    putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 31, 31, COL8_000000, &quot;Haribote OS.&quot;);
+    putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 30, 30, COL8_FFFFFF, &quot;Haribote OS.&quot;);
+
+    char s[105];
+    sprintf(s, &quot;scrnx = %d&quot;, binfo-&gt;scrnx);
+    putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 16, 64, COL8_FFFFFF, s);
+
+    int mx = (binfo-&gt;scrnx - 16) / 2; /* 使得鼠标坐标在中央 */
+    int my = (binfo-&gt;scrny - 28 - 16) / 2;
+    char mcursor[256];
+    init_mouse_cursor8(mcursor, COL8_008484);
+    putblock8_8(binfo-&gt;vram, binfo-&gt;scrnx, 16, 16, mx, my, mcursor, 16);
+
+    for(;;)
+    {
+        io_hlt(); /* 执行naskfunc.nas的_io_hlt */
+    }
+}
+
+void init_mouse_cursor8(char *mouse, char bc)
+{
+    static char cursor[16][16] =
+    {
+        &quot;**************..&quot;,
+        &quot;*OOOOOOOOOOO*...&quot;,
+        &quot;*OOOOOOOOOO*....&quot;,
+        &quot;*OOOOOOOOO*.....&quot;,
+        &quot;*OOOOOOOO*......&quot;,
+        &quot;*OOOOOOO*.......&quot;,
+        &quot;*OOOOOOO*.......&quot;,
+        &quot;*OOOOOOOO*......&quot;,
+        &quot;*OOOO**OOO*.....&quot;,
+        &quot;*OOO*..*OOO*....&quot;,
+        &quot;*OO*....*OOO*...&quot;,
+        &quot;*O*......*OOO*..&quot;,
+        &quot;**........*OOO*.&quot;,
+        &quot;*..........*OOO*&quot;,
+        &quot;............*OO*&quot;,
+        &quot;.............***&quot;
+    };
+    int x, y;
+    for(y = 0; y &lt; 16; ++y)
+    {
+        for(x = 0; x &lt; 16; ++x)
+        {
+            if(cursor[y][x] == &#39;*&#39;)
+                mouse[y * 16 + x] = COL8_000000;
+            if(cursor[y][x] == &#39;O&#39;)
+                mouse[y * 16 + x] = COL8_FFFFFF;
+            if(cursor[y][x] == &#39;.&#39;)
+                mouse[y * 16 + x] = bc;
+        }
+    }
+}
+
+void putblock8_8(char *vram, int vxsize, int pxsize, int pysize, int px0, int py0, char *buf, int bxsize)
+{
+    int x, y;
+    for(y = 0; y &lt; pysize; ++y)
+    {
+        for(x = 0; x &lt; pxsize; ++x)
+        {
+            vram[(py0 + y) * vxsize + (px0 + x)] = buf[y * bxsize + x];
+        }
+    }
+}
+</code></pre>
+<p>不过得吐槽一下字符串不给\0的位置，编译器一堆warning。。。</p>
+<h1 id="GDT与IDT的初始化"><a href="#GDT与IDT的初始化" class="headerlink" title="GDT与IDT的初始化"></a>GDT与IDT的初始化</h1><blockquote>
+<p>harib02i</p>
+</blockquote>
+<p>已经介绍过GDT与IDT了，直接看代码</p>
+<pre><code class="c">struct SEGMENT_DESCRIPTOR
+{
+    short limit_low, base_low;
+    char base_mid, access_right;
+    char limit_high, base_high;
+};
+
+struct GATE_DESCRIPTOR
+{
+    short offset_low, selector;
+    char dw_count, access_right;
+    short offset_high;
+};
+
+void init_gdtidt(void);
+void set_segmdesc(struct SEGMENT_DESCRIPTOR *sd, unsigned int limit, int base, int ar);
+void set_gatedesc(struct GATE_DESCRIPTOR *gd, int offset, int selector, int ar);
+void load_gdtr(int limit, int addr);
+void load_idtr(int limit, int addr);
+
+void init_gdtidt()
+{
+    struct SEGMENT_DESCRIPTOR *gdt = (struct SEGMENT_DESCRIPTOR *)0x00270000;
+    struct GATE_DESCRIPTOR *idt = (struct GATE_DESCRIPTOR *)0x0026f800;
+    int i;
+    // init gdt
+    for(i = 0; i &lt; 8192; ++i)
+    {
+        set_segmdesc(gdt + i, 0, 0, 0);
+    }
+    set_segmdesc(gdt + 1, 0xffffffff, 0x00000000, 0x4092);
+    set_segmdesc(gdt + 2, 0x0007ffff, 0x00280000, 0x409a); // 为bootpack.hrb准备
+    load_gdtr(0xffff, 0x00270000);
+
+    // init idt
+    for(i = 0; i &lt; 256; ++i)
+    {
+        set_gatedesc(idt + i, 0, 0, 0);
+    }
+    load_idtr(0x7ff, 0x0026f800);
+}
+
+
+void set_segmdesc(struct SEGMENT_DESCRIPTOR *sd, unsigned int limit, int base, int ar)
+{
+    if(limit &gt; 0xfffff)
+    {
+        ar |= 0x8000; /*G_bit = 1*/
+        limit /= 0x1000;
+    }
+    sd-&gt;limit_low = limit &amp; 0xffff;
+    sd-&gt;base_low = base &amp; 0xffff;
+    sd-&gt;base_mid = (base &gt;&gt; 16) &amp; 0xff;
+    sd-&gt;access_right = ar &amp; 0xff;
+    sd-&gt;limit_high = ((limit &gt;&gt; 16) &amp; 0x0f) | ((ar &gt;&gt; 8) &amp; 0xf0);
+    sd-&gt;base_high = (base &gt;&gt; 24) &amp; 0xff;
+}
+
+
+void set_gatedesc(struct GATE_DESCRIPTOR *gd, int offset, int selector, int ar)
+{
+    gd-&gt;offset_low = offset &amp; 0xffff;
+    gd-&gt;selector = selector;
+    gd-&gt;dw_count = (ar &gt;&gt; 8) &amp; 0xff;
+    gd-&gt;access_right = ar &amp; 0xff;
+    gd-&gt;offset_high = (offset &gt;&gt; 16) &amp; 0xffff;
+}
+</code></pre>
+<p>我们把GDT放到了0x270000 ~ 0x27ffff的地方，IDT放到了0x26f800 ~ 0x26ffff<br>明天会对这些属性进一步讲解，今天先到这里了。</p>
 
         
     
@@ -625,21 +821,13 @@ int main(int argc, char *argv[])
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/CG/attributes/character.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/CG/attributes/line.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day04/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
