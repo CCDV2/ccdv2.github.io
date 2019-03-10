@@ -45,7 +45,7 @@
     
     <title>
         
-            数学 | 
+            Day04 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="这里是数学相关的主页。">
-    <meta name="keywords" content=",acm,数学">
+    <meta name="description" itemprop="description" content="今天主要讲了C语言接近底层的指针用法，以及有关显卡设置的一些方法。">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/math//">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day04//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/math//">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day04//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="数学 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day04 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="这里是数学相关的主页。">
-    <meta property="og:article:tag" content="acm"> <meta property="og:article:tag" content="数学"> 
+    <meta property="og:description" content="今天主要讲了C语言接近底层的指针用法，以及有关显卡设置的一些方法。">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Wed Jul 25 2018 21:38:24 GMT+0800">
-        <meta property="article:modified_time" content="Sat Dec 22 2018 13:03:26 GMT+0800">
+        <meta property="article:published_time" content="Sun Mar 10 2019 09:58:24 GMT+0800">
+        <meta property="article:modified_time" content="Sun Mar 10 2019 11:01:29 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/math/index.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day04/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/math/index.html/index.html",
-    "headline": "数学",
-    "datePublished": "Wed Jul 25 2018 21:38:24 GMT+0800",
-    "dateModified": "Sat Dec 22 2018 13:03:26 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day04/index.html/index.html",
+    "headline": "Day04",
+    "datePublished": "Sun Mar 10 2019 09:58:24 GMT+0800",
+    "dateModified": "Sun Mar 10 2019 11:01:29 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",acm,数学",
-    "description": "这里是数学相关的主页。",
+    "keywords": ",OS",
+    "description": "今天主要讲了C语言接近底层的指针用法，以及有关显卡设置的一些方法。",
 }
 </script>
 
@@ -342,6 +342,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些问题与感想"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些问题与感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#C语言指针的底层用法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">C语言指针的底层用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#书里提到的并不完整"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">书里提到的并不完整</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用C语言实现内存写入"><span class="post-toc-number">2.</span> <span class="post-toc-text">用C语言实现内存写入</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#条纹图案"><span class="post-toc-number">3.</span> <span class="post-toc-text">条纹图案</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#挑战指针"><span class="post-toc-number">4.</span> <span class="post-toc-text">挑战指针</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#指针的应用"><span class="post-toc-number">5.</span> <span class="post-toc-text">指针的应用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#色号设定"><span class="post-toc-number">6.</span> <span class="post-toc-text">色号设定</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#绘制矩形"><span class="post-toc-number">7.</span> <span class="post-toc-text">绘制矩形</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#今天的成果"><span class="post-toc-number">8.</span> <span class="post-toc-text">今天的成果</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -371,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                数学
+                Day04
             </p>
         </div>
 
@@ -390,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>7月 25, 2018</span>
+        <span>3月 10, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/acm/">acm</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/数学/">数学</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -431,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=数学&url=https://ccdv2.github.io/math/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day04&url=https://ccdv2.github.io/OS/day04/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -440,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=数学&url=https://ccdv2.github.io/math/index.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day04&url=https://ccdv2.github.io/OS/day04/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -449,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/math/index.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day04/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -458,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/math/index.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day04/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -483,523 +492,402 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>这里是数学相关的主页。<br><a id="more"></a><br><br></p>
+        <p>今天主要讲了C语言接近底层的指针用法，以及有关显卡设置的一些方法。<br><a id="more"></a></p>
+<h1 id="一些问题与感想"><a href="#一些问题与感想" class="headerlink" title="一些问题与感想"></a>一些问题与感想</h1><h2 id="C语言指针的底层用法"><a href="#C语言指针的底层用法" class="headerlink" title="C语言指针的底层用法"></a>C语言指针的底层用法</h2><p>我们知道，汇编里有 BYTE、WORD、DWORD，可以进行对应字节数的地址操作。相应的，C语言中我们可以使用char、short、int类型的指针来达到相同的效果（不得不说这种直接操作内存想法第一次见，毕竟以前也用不到）。</p>
+<h2 id="书里提到的并不完整"><a href="#书里提到的并不完整" class="headerlink" title="书里提到的并不完整"></a>书里提到的并不完整</h2><p>例如有时候，书中只说明了c文件的改动，但是发现居然多了个函数声明，却没有实现。这时候应该就要想到naskfunc可能也改动了，赶紧去看看别的文件吧。</p>
+<p>进入正题</p>
+<h1 id="用C语言实现内存写入"><a href="#用C语言实现内存写入" class="headerlink" title="用C语言实现内存写入"></a>用C语言实现内存写入</h1><blockquote>
+<p>harib01a</p>
+</blockquote>
+<p>写一个对应的汇编函数，实现8位内存写入，当然前面global里也要写。</p>
+<pre><code class="c">_write_mem8: ; void write_mem8(int addr, int data);
+    MOV ECX, [ESP + 4] ; [ESP + 4]中存放了地址，将其读入ECX
+    MOV AL, [ESP + 8] ; [ESP + 8]中存放了数据， 将其读入AL
+    MOV [ECX], AL
+    RET
+</code></pre>
+<p>在这里我们看到了传参的写法：传入的时候，从右到左将参数压入栈顶（这部分编译器帮我们写的），取出的时候从左到右将参数取出。<br>c语言部分</p>
+<pre><code class="c">void io_hlt(void);
+void write_mem8(int addr, int data);
+
+void HariMain(void)
+{
+    int i;
+    /*把VRAM全都写入了15， 颜色为白*/
+    for(i = 0xa0000; i &lt;= 0xaffff; ++i)
+    {
+        write_mem8(i, 15); /*MOV BYTE [i], 15*/
+    }
+    for(;;)
+    {
+        io_hlt(); /* 执行naskfunc.nas的_io_hlt */
+    }
+}
+</code></pre>
+<p>对于我们来说应该不难理解。现在出来的结果是显示屏为白色。</p>
+<h1 id="条纹图案"><a href="#条纹图案" class="headerlink" title="条纹图案"></a>条纹图案</h1><blockquote>
+<p>harib01b</p>
+</blockquote>
+<p>我们在vram里写点别的，弄个条纹图案</p>
+<pre><code class="c">void io_hlt(void);
+void write_mem8(int addr, int data);
+
+void HariMain(void)
+{
+    int i;
+    /*把VRAM 形成条纹图案*/
+    for(i = 0xa0000; i &lt;= 0xaffff; ++i)
+    {
+        write_mem8(i, i &amp; 0x0f); /*MOV BYTE [i], 15*/
+    }
+    for(;;)
+    {
+        io_hlt(); /* 执行naskfunc.nas的_io_hlt */
+    }
+}
+</code></pre>
+<p>进行与运算后，地址对应的颜色每16位就会重复一次，对应到屏幕上就是条纹图案了。</p>
+<h1 id="挑战指针"><a href="#挑战指针" class="headerlink" title="挑战指针"></a>挑战指针</h1><blockquote>
+<p>harib01c</p>
+</blockquote>
+<p>接下来是指针比较高级的用法，用指针来直接改写内存，开头已经提到过了，还是挺值得琢磨一下的。</p>
+<pre><code class="c">void io_hlt(void);
+void write_mem8(int addr, int data);
+
+void HariMain(void)
+{
+    int i;
+    char *p;
+    /*把VRAM 形成条纹图案*/
+    for(i = 0xa0000; i &lt;= 0xaffff; ++i)
+    {
+        p = (char *)i; /*代入地址，很高级的写法啊*/
+        *p = i &amp; 0x0f;
+    }
+    for(;;)
+    {
+        io_hlt(); /* 执行naskfunc.nas的_io_hlt */
+    }
+}
+</code></pre>
+<p>当然，为了编译器不发出太多警告，还是强制转换一下指针类型比较好。<br>对于C语言指针的语法，这里就不说了。</p>
+<h1 id="指针的应用"><a href="#指针的应用" class="headerlink" title="指针的应用"></a>指针的应用</h1><blockquote>
+<p>harib01d<br>harib01e</p>
+</blockquote>
+<p>其实就是数组与指针的转化。</p>
+<pre><code class="c">p = (char *)0xa0000;
+
+for(i = 0; i &lt;= 0xffff; ++i)
+{
+    p[i] = i &amp; 0x0f; /*与*(p + i)等价*/
+}
+</code></pre>
+<p>当然，也要明白数组写法不仅仅是数组，理解为地址+偏移量就可以了。</p>
+<h1 id="色号设定"><a href="#色号设定" class="headerlink" title="色号设定"></a>色号设定</h1><blockquote>
+<p>harib01f</p>
+</blockquote>
+<p>这里相当于建立了颜色的索引表，也就是调色板(palette)。我们可以指定256种颜色来使用，每种颜色可对应一个24位的8位RGB颜色。<br>接下来往.c里添加初始化调色板，以及设置调色板等操作。</p>
+<pre><code class="c">void io_hlt(void);
+void io_cli(void);
+void io_out8(int port, int data);
+int io_load_eflags(void);
+void io_store_eflags(int eflags);
+
+void init_palette(void);
+void set_palette(int start, int end, unsigned char *rgb);
+
+
+void HariMain(void)
+{
+    int i;
+    char *p;
+
+    init_palette();
+
+    p = (char *)0xa0000;
+
+    for(i = 0; i &lt;= 0xffff; ++i)
+    {
+        p[i] = i &amp; 0x0f;
+    }
+    for(;;)
+    {
+        io_hlt(); /* 执行naskfunc.nas的_io_hlt */
+    }
+}
+
+void init_palette(void)
+{
+    static unsigned char table_rgb[16 * 3] =
+    {
+        0x00, 0x00, 0x00, /*0:黑*/
+        0xff, 0x00, 0x00, /*1:亮红*/
+        0x00, 0xff, 0x00, /*2:亮绿*/
+        0xff, 0xff, 0x00, /*3:亮黄*/
+        0x00, 0x00, 0xff, /*4:亮蓝*/
+        0xff, 0x00, 0xff, /*5:亮紫*/
+        0x00, 0xff, 0xff, /*6:浅亮蓝*/
+        0xff, 0xff, 0xff, /*7:白*/
+        0xc6, 0xc6, 0xc6, /*8:亮灰*/
+        0x84, 0x00, 0x00, /*9:暗红*/
+        0x00, 0x84, 0x00, /*10:暗绿*/
+        0x84, 0x84, 0x00, /*11:暗黄*/
+        0x00, 0x00, 0x84, /*12:暗青*/
+        0x84, 0x00, 0x84, /*13:暗紫*/
+        0x00, 0x84, 0x84, /*14:浅暗蓝*/
+        0x84, 0x84, 0x84  /*15:暗灰*/
+    };
+    set_palette(0, 15, table_rgb);
+    return;
+}
+
+void set_palette(int start, int end, unsigned char *rgb)
+{
+    int i, eflags;
+    eflags = io_load_eflags(); /*记录中断许可标志的值*/
+    io_cli(); /*将中断许可的标志置为0， 禁止中断*/
+    io_out8(0x03c8, start);
+    for(i = start; i &lt;= end; ++i)
+    {
+        io_out8(0x03c9, rgb[0] / 4); /*右移两位，最高两位为0*/
+        io_out8(0x03c9, rgb[1] / 4);
+        io_out8(0x03c9, rgb[2] / 4);
+        rgb += 3;
+    }
+    io_store_eflags(eflags); /*复原中断许可标志*/
+    return;
+}
+</code></pre>
+<p>值得注意的几点：</p>
 <ol>
-<li><p>素数筛 + 质因数分解<br> 由此可以引出来的知识点</p>
-<blockquote>
-<p>唯一分解定理 – 约数个数</p>
-</blockquote>
-<pre><code class="cpp"> typedef long long LL;
- const int MAXN = 1e5 + 100;
- const int MAXBOUND = 1e5 + 50;
-
- int prime[MAXN], total;
- bool check[MAXN];
-
- void getPrime()//1 ~ total
- {
-     memset(check, 1, sizeof(check));
-     for(LL i = 2; i &lt;= MAXBOUND; ++i)
-     {
-         if(check[i])
-         {
-             ++total;
-             prime[total] = i;
-         }
-         for(LL j = 1; j &lt;= total &amp;&amp; i * prime[j] &lt;= MAXBOUND; ++j)
-         {
-             check[i * prime[j]] = false;
-             if(i % prime[j] == 0) break;
-         }
-     }
- }
-
- int a[MAXN], b[MAXN], tot;
-
- void getFactor(LL t)// 0 ~ tot-1
- {
-     int i = 1;
-     LL cnt = 0;
-     while(prime[i] &lt; t &amp;&amp; i &lt;= total)
-     {
-         if(t % prime[i] == 0)
-         {
-             cnt = 0;
-             a[tot] = prime[i];
-             while(t % prime[i] == 0)
-             {
-                 ++cnt;
-                 t /= prime[i];
-             }
-             b[tot] = cnt;
-             ++tot;
-         }
-         ++i;
-     }
-     if(t != 1)
-     {
-         a[tot] = t;
-         b[tot] = 1;
-         ++tot;
-     }
- }
-</code></pre>
-<blockquote>
-<p>相关例题</p>
-<blockquote>
-<p>TODO</p>
-</blockquote>
-</blockquote>
-</li>
-<li><p>欧拉函数</p>
-<pre><code class="cpp"> const int MAXN = 1e6 + 10;
- const int MAXBOUND = 1e6 + 1;
-
- int phi[MAXN], minDiv[MAXN];
-
- void getPhi()
- {
-     for(int i = 1; i &lt;= MAXBOUND; ++i)
-     {
-         minDiv[i] = i;
-     }
-
-     for(int i = 2; i * i &lt; MAXBOUND; ++i)
-     {
-         if(minDiv[i] == i)
-         {
-             for(int j = i * i; j &lt; MAXBOUND; j += i)
-             {
-                 minDiv[j] = i;
-             }
-         }
-     }
-     phi[1] = 1;
-     for(int i = 2; i &lt; MAXBOUND; ++i)
-     {
-         phi[i] = phi[i / minDiv[i]];
-         if((i / minDiv[i]) % minDiv[i] == 0)
-         {
-             phi[i] *= minDiv[i];
-         }
-         else
-         {
-             phi[i] *= minDiv[i] - 1;
-         }
-     }
- }
-</code></pre>
-</li>
-<li><p>最大公约数、最小公倍数相关</p>
-</li>
-<li><p>快速幂</p>
-<pre><code class="cpp"> LL quickPow(LL a, LL i)
- {
-     LL ret = 1;
-     while(i)
-     {
-         if(i &amp; 1)
-         {
-             ret = ret * a % mod;
-         }
-         a = a * a % mod;
-         i /= 2;
-     }
-     return ret;
- }
-</code></pre>
-</li>
-<li><p>逆元<br> 对于p是质数（一般mod都是质数）</p>
-<pre><code class="cpp"> LL getInverse(LL t)
- {
-     return quickPow(t, mod - 2);
- }
-</code></pre>
-<p> 对于a n互质</p>
-<pre><code class="cpp"> LL extendGcd(LL a, LL b, LL x, LL y)
- {
-     if(b == 0)
-     {
-         x = 1;
-         y = 0;
-         return a;
-     }
-     else
-     {
-         LL r = extendGcd(b, a % b, y, x);
-         y -= x * (a / b);
-         return r;
-     }
- }
-
- LL getInverse(LL a, LL n)
- {
-     LL x, y;
-     extendGcd(a, n, x, y);
-     x = (x % n + n) % n;
-     return x;
- }
-</code></pre>
-<p> 有一个东西叫逆元线性筛<br> 阶乘的逆元线性筛：</p>
-<pre><code class="cpp"> LL fac[MAXN], invf[MAXN];
-
- void getFactorial()
- {
-     fac[0] = 1;
-     for(LL i = 1; i &lt; MAXN; ++i)
-     {
-         fac[i] = fac[i - 1] * i;
-         fac[i] %= mod;
-     }
-
-     invf[MAXN - 1] = getInverse(fac[MAXN - 1]);
-     for(LL i = MAXN - 2; i &gt;= 0; --i)
-     {
-         invf[i] = invf[i + 1] * (i + 1) % mod;
-     }
- }
-</code></pre>
-<p> 1 ~ n 的逆元线性筛(模p意义下)</p>
-<pre><code class="cpp"> LL inv[MAXN];
-
- void getInverseN(int n, LL p)
- {
-     inv[1] = 1;
-     for(int i = 2; i &lt;= n; ++i)
-     {
-         inv[i] = (p - p / i) * inv[p % i] % p;
-     }
- }
-</code></pre>
-</li>
-<li><p>排列组合</p>
-<pre><code class="cpp"> LL getC(int n, int r)
- {
-     if(r &lt; 0 || r &gt; n) return 0;
-     LL ret = fac[n] * invf[r] % mod;
-     ret = ret * invf[n - r] % mod;
-     return ret;
- }
-
- LL getInverseC(int n, int r)
- {
-     LL ret = fac[r] * fac[n - r] % mod;
-     ret = ret * invf[n] % mod;
-     return ret;
- }
-
- LL getP(int n, int r)
- {
-     LL ret = fac[n] * invf[r] % mod;
-     return ret;
- }
-</code></pre>
-</li>
-<li><p>容斥原理</p>
-</li>
-<li><p>莫比乌斯反演</p>
-<pre><code class="cpp"> typedef long long LL;
- const int MAXN = 1e5 + 100;
- const int MAXBOUND = 1e5 + 50;
-
- int prime[MAXN], total, mu[MAXN];
- bool check[MAXN];
-
- void getMobius()
- {
-     mu[1] = 1;
-     memset(check, 1, sizeof(check));
-     for(LL i = 2; i &lt;= MAXBOUND; ++i)
-     {
-         if(check[i])
-         {
-             ++total;
-             prime[total] = i;
-             mu[i] = -1;
-         }
-         for(LL j = 1; j &lt;= total &amp;&amp; i * prime[j] &lt;= MAXBOUND; ++j)
-         {
-             check[i * prime[j]] = false;
-             if(i % prime[j] == 0)
-             {
-                 mu[i * prime[j]] = 0;
-                 break;
-             }
-             else
-             {
-                 mu[i * prime[j]] = -mu[i];
-             }
-         }
-     }
- }
-</code></pre>
-</li>
-<li><p>矩阵类</p>
-<pre><code class="cpp"> //0 ~ n - 1
- //必要时在运算符内加取模操作
- struct Matrix
- {
-     const static int MAXN = 40;
-     ULL a[MAXN][MAXN];//注意类型
-     int n;
-     void init(int _n)
-     {
-         n = _n;
-         memset(a, 0, sizeof(a));
-         for(int i = 0; i &lt; n; ++i) a[i][i] = 1;
-     }
-     void clear(int _n = 0)
-     {
-         n = _n;
-         memset(a, 0, sizeof(a));
-     }
-     Matrix operator +(const Matrix &amp;rhs) const
-     {
-         Matrix temp;
-         temp.n = n;
-         for(int i = 0; i &lt; n; ++i)
-             for(int j = 0; j &lt; n; ++j)
-                 temp.a[i][j] = a[i][j] + rhs.a[i][j];
-         return temp;
-     }
-     Matrix operator -(const Matrix &amp;rhs) const
-     {
-         Matrix temp;
-         temp.n = n;
-         for(int i = 0; i &lt; n; ++i)
-             for(int j = 0; j &lt; n; ++j)
-                 temp.a[i][j] = a[i][j] - rhs.a[i][j];
-         return temp;
-     }
-     Matrix operator *(const Matrix &amp;rhs) const
-     {
-         Matrix temp;
-         temp.clear();
-         temp.n = n;
-         for(int i = 0; i &lt; n; ++i)
-             for(int j = 0; j &lt; n; ++j)
-                 for(int k = 0; k &lt; n; ++k)
-                     temp.a[i][j] += a[i][k] * rhs.a[k][j];
-         return temp;
-     }
- };
-
- Matrix quickPow(Matrix a, int i)
- {
-     Matrix temp;
-     temp.init(a.n);
-     while(i)
-     {
-         if(i &amp; 1)
-         {
-             temp = temp * a;
-         }
-         a = a * a;
-         i /= 2;
-     }
-     return temp;
- }
-</code></pre>
-<p><br></p>
-</li>
-<li><p>高精度非负整数</p>
-<pre><code class="cpp"> const int ten[4] = {1, 10, 100, 1000};
- struct BigNumber
- {
-     const static int MAXL = 1e3;
-     int d[MAXL];
-     BigNumber(string s)
-     {
-         int len = s.size();
-         d[0] = (len - 1) / 4 + 1;
-         for(int i = 1; i &lt; MAXL; ++i) d[i] = 0;
-         for(int i = len - 1, j, k; i &gt;= 0; --i)
-         {
-             j = (len - i - 1) / 4 + 1;
-             k = (len - i - 1) % 4;
-             d[j] += ten[k] * (s[i] - &#39;0&#39;);
-         }
-         while(d[0] &gt; 1 &amp;&amp; d[d[0]] == 0) --d[0];
-     }
-
-     BigNumber()
-     {
-         *this = BigNumber(string(&quot;0&quot;));
-     }
-
-     string toString()
-     {
-         string s(&quot;&quot;);
-         int i, j, temp;
-         for(i = 3; i &gt;= 1; --i) if(d[d[0]] &gt;= ten[i]) break;
-         temp = d[d[0]];
-         for(j = i; j &gt;= 0; --j)
-         {
-             s = s + (char)(temp / ten[j] + &#39;0&#39;);
-             temp %= ten[j];
-         }
-         for(i = d[0] - 1; i &gt; 0; --i)
-         {
-             temp = d[i];
-             for(j = 3; j &gt;= 0; --j)
-             {
-                 s = s + char(temp / ten[j] + &#39;0&#39;);
-                 temp %= ten[j];
-             }
-         }
-         return s;
-     }
-
-     BigNumber operator *(int k);
- } zero(&quot;0&quot;);
-
- bool operator &lt;(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
- {
-     if(lhs.d[0] != rhs.d[0]) return lhs.d[0] &lt; rhs.d[0];
-     for(int i = lhs.d[0]; i &gt; 0; --i)
-     {
-         if(lhs.d[i] != rhs.d[i]) return lhs.d[i] &lt; rhs.d[i];
-     }
-     return false;
- }
-
- BigNumber operator +(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
- {
-     BigNumber ret;
-     ret.d[0] = max(lhs.d[0], rhs.d[0]);
-     int x = 0;
-     for(int i = 1; i &lt;= ret.d[0]; ++i)
-     {
-         x = lhs.d[i] + rhs.d[i] + x;
-         ret.d[i] = x % 10000;
-         x /= 10000;
-     }
-     while(x != 0)
-     {
-         ret.d[++ret.d[0]] = x % 10000;
-         x /= 10000;
-     }
-     return ret;
- }
-
- BigNumber operator -(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
- {
-     BigNumber ret;
-     ret.d[0] = lhs.d[0];
-     int x = 0;
-     for(int i = 1; i &lt;= ret.d[0]; ++i)
-     {
-         x = 10000 + lhs.d[i] - rhs.d[i] + x;
-         ret.d[i] = x % 10000;
-         x = x / 10000 - 1;
-     }
-     while((ret.d[0] &gt; 1) &amp;&amp; (ret.d[ret.d[0]] == 0)) --ret.d[0];
-     return ret;
- }
-
- BigNumber operator *(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
- {
-     BigNumber ret;
-     ret.d[0] = lhs.d[0] + rhs.d[0];
-     for(int i = 1; i &lt;= lhs.d[0]; ++i)
-     {
-         int x = 0;
-         for(int j = 1; j &lt;= rhs.d[0]; ++j)
-         {
-             x = lhs.d[i] * rhs.d[j] + x + ret.d[i + j - 1];
-             ret.d[i + j - 1] = x % 10000;
-             x /= 10000;
-         }
-         ret.d[i + rhs.d[0]] = x;
-     }
-     while((ret.d[0] &gt; 1) &amp;&amp; (ret.d[ret.d[0]] == 0)) --ret.d[0];
-     return ret;
- }
-
- bool smaller(const BigNumber &amp;lhs, const BigNumber &amp;rhs, int delta)
- {
-     if(lhs.d[0] + delta != rhs.d[0]) return lhs.d[0] + delta &lt; rhs.d[0];
-     for(int i = lhs.d[0]; i &gt; 0; --i)
-     {
-         if(lhs.d[i] != rhs.d[i + delta])
-             return lhs.d[i] &lt; rhs.d[i + delta];
-     }
-     return true;
- }
-
- void _minus(BigNumber &amp;lhs, BigNumber &amp;rhs, int delta)
- {
-     int x = 0;
-     for(int i = 1; i &lt;= lhs.d[0] - delta; ++i)
-     {
-         x = 10000 + lhs.d[i + delta] - rhs.d[i] + x;
-         lhs.d[i + delta] = x % 10000;
-         x = x / 10000 - 1;
-     }
-     while(lhs.d[0] &gt; 1 &amp;&amp; lhs.d[lhs.d[0]] == 0) --lhs.d[0];
- }
-
- BigNumber BigNumber::operator *(int k)
- {
-     BigNumber ret;
-     ret.d[0] = d[0];
-     int x = 0;
-     for(int i = 1; i &lt;= d[0]; ++i)
-     {
-         x = d[i] * k + x;
-         ret.d[i] = x % 10000;
-         x /= 10000;
-     }
-     while(x &gt; 0)
-     {
-         ret.d[++ret.d[0]] = x % 10000;
-         x /= 10000;
-     }
-      while(ret.d[0] &gt; 1 &amp;&amp; ret.d[ret.d[0]] == 0) --ret.d[0];
-      return ret;
- }
-
- //除法运算 余数在residue中
- BigNumber residue, mid1[15];
- BigNumber operator /(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
- {
-     BigNumber ret;
-     residue = lhs;
-     mid1[0] = rhs;
-     for(int i = 1; i &lt;= 13; ++i)
-     {
-         mid1[i] = mid1[i - 1] * 2;
-     }
-     for(int i = lhs.d[0] - rhs.d[0]; i &gt;= 0; --i)
-     {
-         int temp = 8192;
-         for(int j = 13; j &gt;= 0; --j)
-         {
-             if(smaller(mid1[j], residue, i))
-             {
-                 _minus(residue, mid1[j], i);
-                 ret.d[i + 1] += temp;
-             }
-             temp /= 2;
-         }
-     }
-     ret.d[0] = max(1, lhs.d[0] - rhs.d[0] + 1);
-     while(ret.d[0] &gt; 1 &amp;&amp; ret.d[ret.d[0]] == 0) --ret.d[0];
-     return ret;
- }
-
- bool operator ==(const BigNumber &amp;lhs, const BigNumber &amp;rhs)
- {
-     if(lhs.d[0] != rhs.d[0]) return false;
-     for(int i = 1; i &lt;= lhs.d[0]; ++i)
-     {
-         if(lhs.d[i] != rhs.d[i]) return false;
-     }
-     return true;
- }
-</code></pre>
-</li>
+<li>unsigned类型很重要，不然解释成负数，或者右移补符号位，都不是我们想要的结果</li>
+<li>作者帮我们写好了中断相关的函数，在设置颜色的时候要关中断</li>
+<li>EFLAGS寄存器里存储了各种flag（顾名思义），系统在中断的时候要检查一下相应位是0还是1。</li>
 </ol>
+<p>汇编语言部分</p>
+<pre><code class="c">; naskfunc
+; TAB=4
+
+[FORMAT &quot;WCOFF&quot;]                ; 制作目标文件的格式
+[INSTRSET &quot;i486p&quot;]                ; 使用到486为止的命令
+[BITS 32]                        ; 制作32位模式的机器语言
+[FILE &quot;naskfunc.nas&quot;]            ; 源程序文件名
+
+        GLOBAL    _io_hlt, _io_cli, _io_sti, _io_stihlt
+        GLOBAL    _io_in8,  _io_in16,  _io_in32
+        GLOBAL    _io_out8, _io_out16, _io_out32
+        GLOBAL    _io_load_eflags, _io_store_eflags
+
+[SECTION .text]
+
+_io_hlt:    ; void io_hlt(void);
+        HLT
+        RET
+
+_io_cli:    ; void io_cli(void);
+        CLI
+        RET
+
+_io_sti:    ; void io_sti(void);
+        STI
+        RET
+
+_io_stihlt:    ; void io_stihlt(void);
+        STI
+        HLT
+        RET
+
+_io_in8:    ; int io_in8(int port);
+        MOV        EDX,[ESP+4]        ; port
+        MOV        EAX,0
+        IN        AL,DX
+        RET
+
+_io_in16:    ; int io_in16(int port);
+        MOV        EDX,[ESP+4]        ; port
+        MOV        EAX,0
+        IN        AX,DX
+        RET
+
+_io_in32:    ; int io_in32(int port);
+        MOV        EDX,[ESP+4]        ; port
+        IN        EAX,DX
+        RET
+
+_io_out8:    ; void io_out8(int port, int data);
+        MOV        EDX,[ESP+4]        ; port
+        MOV        AL,[ESP+8]        ; data
+        OUT        DX,AL
+        RET
+
+_io_out16:    ; void io_out16(int port, int data);
+        MOV        EDX,[ESP+4]        ; port
+        MOV        EAX,[ESP+8]        ; data
+        OUT        DX,AX
+        RET
+
+_io_out32:    ; void io_out32(int port, int data);
+        MOV        EDX,[ESP+4]        ; port
+        MOV        EAX,[ESP+8]        ; data
+        OUT        DX,EAX
+        RET
+
+_io_load_eflags:    ; int io_load_eflags(void);
+        PUSHFD        ; 指PUSH EFLAGS
+        POP        EAX
+        RET
+
+_io_store_eflags:    ; void io_store_eflags(int eflags);
+        MOV        EAX,[ESP+4]
+        PUSH    EAX
+        POPFD        ; 指POP EFLAGS
+        RET
+</code></pre>
+<p>这里有一些IO指令：IN, OUT，还有对标志位操作的PUSHFD和POPFD。<br>另外，EAX的值在RET时会当作返回值。<br>现在的结果是条纹颜色会不一样。</p>
+<h1 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h1><blockquote>
+<p>harib01g</p>
+</blockquote>
+<p>现在我们可以通过填充像素，来画点、画线、画矩形。接下来就画个矩形吧。<br>自己写的和书上的不太一样，用enum代替了define，省些笔墨。</p>
+<pre><code class="c">void io_hlt(void);
+void io_cli(void);
+void io_out8(int port, int data);
+int io_load_eflags(void);
+void io_store_eflags(int eflags);
+
+void init_palette(void);
+void set_palette(int start, int end, unsigned char *rgb);
+
+void boxfill8(unsigned char *vram, int xsize, unsigned char c, int x0, int y0, int x1, int y1);
+
+enum COL
+{
+    COL8_000000,
+    COL8_FF0000,
+    COL8_00FF00,
+    COL8_FFFF00,
+    COL8_0000FF,
+    COL8_FF00FF,
+    COL8_00FFFF,
+    COL8_FFFFFF,
+    COL8_C6C6C6,
+    COL8_840000,
+    COL8_008400,
+    COL8_848400,
+    COL8_000084,
+    COL8_840084,
+    COL8_008484,
+    COL8_848484
+};
+
+void HariMain(void)
+{
+    char *p;
+
+    init_palette();
+
+    p = (char *)0xa0000;
+
+    boxfill8(p, 320, COL8_FF0000, 20, 20, 120, 120);
+    boxfill8(p, 320, COL8_00FF00, 70, 50, 170, 150);
+    boxfill8(p, 320, COL8_0000FF, 120, 80, 220, 180);
+
+    for(;;)
+    {
+        io_hlt(); /* 执行naskfunc.nas的_io_hlt */
+    }
+}
+
+void init_palette(void)
+{
+    static unsigned char table_rgb[16 * 3] =
+    {
+        0x00, 0x00, 0x00, /*0:黑*/
+        0xff, 0x00, 0x00, /*1:亮红*/
+        0x00, 0xff, 0x00, /*2:亮绿*/
+        0xff, 0xff, 0x00, /*3:亮黄*/
+        0x00, 0x00, 0xff, /*4:亮蓝*/
+        0xff, 0x00, 0xff, /*5:亮紫*/
+        0x00, 0xff, 0xff, /*6:浅亮蓝*/
+        0xff, 0xff, 0xff, /*7:白*/
+        0xc6, 0xc6, 0xc6, /*8:亮灰*/
+        0x84, 0x00, 0x00, /*9:暗红*/
+        0x00, 0x84, 0x00, /*10:暗绿*/
+        0x84, 0x84, 0x00, /*11:暗黄*/
+        0x00, 0x00, 0x84, /*12:暗青*/
+        0x84, 0x00, 0x84, /*13:暗紫*/
+        0x00, 0x84, 0x84, /*14:浅暗蓝*/
+        0x84, 0x84, 0x84  /*15:暗灰*/
+    };
+    set_palette(0, 15, table_rgb);
+    return;
+}
+
+void set_palette(int start, int end, unsigned char *rgb)
+{
+    int i, eflags;
+    eflags = io_load_eflags(); /*记录中断许可标志的值*/
+    io_cli(); /*将中断许可的标志置为0， 禁止中断*/
+    io_out8(0x03c8, start);
+    for(i = start; i &lt;= end; ++i)
+    {
+        io_out8(0x03c9, rgb[0] / 4);
+        io_out8(0x03c9, rgb[1] / 4);
+        io_out8(0x03c9, rgb[2] / 4);
+        rgb += 3;
+    }
+    io_store_eflags(eflags); /*复原中断许可标志*/
+    return;
+}
+
+void boxfill8(unsigned char *vram, int xsize, unsigned char c, int x0, int y0, int x1, int y1)
+{
+    int x, y;
+    for(y = y0; y &lt;= y1; ++y)
+    {
+        for(x = x0; x &lt;= x1; ++x)
+        {
+            vram[y * xsize + x] = c;
+        }
+    }
+}
+</code></pre>
+<p>这上面用一个一维数组来代替了二维数组，其实计算好相对的偏移量，这么写也完全没有问题。<br>那可能会说，为什么不用二维数组呢？因为二维数组必须要固定第二维，否则编译器就不知道该如何偏移。比起这样，不如我们在传参时多传一点，自己计算个偏移量更加灵活。</p>
+<h1 id="今天的成果"><a href="#今天的成果" class="headerlink" title="今天的成果"></a>今天的成果</h1><blockquote>
+<p>harib01h</p>
+</blockquote>
+<p>现在通过画矩形，来画一个初见雏形的操作系统。<br>添加部分：</p>
+<pre><code class="c">void HariMain(void)
+{
+    char *vram = (char *)0xa0000;
+    int xsize = 320, ysize = 200;
+
+    init_palette();
+
+
+    boxfill8(vram, xsize, COL8_008484,  0,         0,          xsize -  1, ysize - 29);
+    boxfill8(vram, xsize, COL8_C6C6C6,  0,         ysize - 28, xsize -  1, ysize - 28);
+    boxfill8(vram, xsize, COL8_FFFFFF,  0,         ysize - 27, xsize -  1, ysize - 27);
+    boxfill8(vram, xsize, COL8_C6C6C6,  0,         ysize - 26, xsize -  1, ysize -  1);
+
+    boxfill8(vram, xsize, COL8_FFFFFF,  3,         ysize - 24, 59,         ysize - 24);
+    boxfill8(vram, xsize, COL8_FFFFFF,  2,         ysize - 24,  2,         ysize -  4);
+    boxfill8(vram, xsize, COL8_848484,  3,         ysize -  4, 59,         ysize -  4);
+    boxfill8(vram, xsize, COL8_848484, 59,         ysize - 23, 59,         ysize -  5);
+    boxfill8(vram, xsize, COL8_000000,  2,         ysize -  3, 59,         ysize -  3);
+    boxfill8(vram, xsize, COL8_000000, 60,         ysize - 24, 60,         ysize -  3);
+
+    boxfill8(vram, xsize, COL8_848484, xsize - 47, ysize - 24, xsize -  4, ysize - 24);
+    boxfill8(vram, xsize, COL8_848484, xsize - 47, ysize - 23, xsize - 47, ysize -  4);
+    boxfill8(vram, xsize, COL8_FFFFFF, xsize - 47, ysize -  3, xsize -  4, ysize -  3);
+    boxfill8(vram, xsize, COL8_FFFFFF, xsize -  3, ysize - 24, xsize -  3, ysize -  3);
+
+    for(;;)
+    {
+        io_hlt(); /* 执行naskfunc.nas的_io_hlt */
+    }
+}
+</code></pre>
+<p>最终效果<br><img src="data:image/png;base64,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wgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAEQRwgAAAETphvCkEAYAACBCN4Q3TwhhAAAAEghhAAAAoghhAAAAoghhAAAAovhhWQAAAETphnAngoUwAAAA404IAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEEUIAwAAEKUbwhNCGAAAgAhzITwhhAEAAEjgqdEAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABEEcIAAABE6Q/hy7ZvLwAAADCu/uy663pD+L4nnigAAAAwrm68887eEP7Zz35WAAAAYFzdd999vSH87LPPFgAAABhXe/bs6Q3h3/zm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" alt="final"><br>所以说渐变其实都是一个个矩形叠加起来的。。<br>今天任务总算完成了，明天再说。</p>
 
         
     
@@ -1042,21 +930,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/networkflow/index.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/computgeo/poj1151.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day03/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
