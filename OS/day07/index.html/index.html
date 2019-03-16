@@ -45,7 +45,7 @@
     
     <title>
         
-            分类: 分类算法 | 
+            Day07 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" itemprop="description" content="今天继续完善了中断处理，还有如何获取中断的信息。">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-seaside-light.min.css?b71t6V/NeTk95fu056Paxw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -214,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/categories/CV/神经网络/分类算法/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day07//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -229,13 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/categories/CV/神经网络/分类算法/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day07//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 分类算法 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day07 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="">
-    
+    <meta property="og:description" content="今天继续完善了中断处理，还有如何获取中断的信息。">
+    <meta property="og:article:tag" content="OS"> 
 
+    
+        <meta property="article:published_time" content="Sat Mar 16 2019 14:20:11 GMT+0800">
+        <meta property="article:modified_time" content="Sat Mar 16 2019 16:32:05 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -243,13 +249,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/categories/CV/神经网络/分类算法/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day07/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day07/index.html/index.html",
+    "headline": "Day07",
+    "datePublished": "Sat Mar 16 2019 14:20:11 GMT+0800",
+    "dateModified": "Sat Mar 16 2019 16:32:05 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "CCDV2",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/1590.png"
+        },
+        "description": "高海千歌 is the 最高！（大雾）"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "CCDV2&#39;s nest",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/1590.png"
+        }
+    },
+    "keywords": ",OS",
+    "description": "今天继续完善了中断处理，还有如何获取中断的信息。",
+}
+</script>
 
 
     
@@ -283,100 +319,520 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些问题和感想"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些问题和感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#FIFO缓冲区的实现"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">FIFO缓冲区的实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#鼠标中断以及键盘中断接受数据"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">鼠标中断以及键盘中断接受数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#各种参数的设置"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">各种参数的设置</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#获取按键编码"><span class="post-toc-number">2.</span> <span class="post-toc-text">获取按键编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#加快中断处理"><span class="post-toc-number">3.</span> <span class="post-toc-text">加快中断处理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#制作FIFO缓冲区"><span class="post-toc-number">4.</span> <span class="post-toc-text">制作FIFO缓冲区</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#改善FIFO缓冲区"><span class="post-toc-number">5.</span> <span class="post-toc-text">改善FIFO缓冲区</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#整理FIFO缓冲区"><span class="post-toc-number">6.</span> <span class="post-toc-text">整理FIFO缓冲区</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总算讲到鼠标了"><span class="post-toc-number">7.</span> <span class="post-toc-text">总算讲到鼠标了</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#从鼠标接受数据"><span class="post-toc-number">8.</span> <span class="post-toc-text">从鼠标接受数据</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/CV/network/features.html/">图像特征练习</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            期末结束后又回来啦~
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/CV/network/features.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>1月 24, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CV/">CV</a>, <a class="post_category-link" href="/categories/CV/神经网络/">神经网络</a>, <a class="post_category-link" href="/categories/CV/神经网络/分类算法/">分类算法</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Day07
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/1590.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CCDV2</strong>
+        <span>3月 16, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day07&url=https://ccdv2.github.io/OS/day07/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day07&url=https://ccdv2.github.io/OS/day07/index.html/index.html&via=CCDV2" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day07/index.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day07/index.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>今天继续完善了中断处理，还有如何获取中断的信息。<br><a id="more"></a></p>
+<h1 id="一些问题和感想"><a href="#一些问题和感想" class="headerlink" title="一些问题和感想"></a>一些问题和感想</h1><h2 id="FIFO缓冲区的实现"><a href="#FIFO缓冲区的实现" class="headerlink" title="FIFO缓冲区的实现"></a>FIFO缓冲区的实现</h2><p>因为中断请求（比如鼠标、键盘）可能短时间内会发送很多次，为了不要太影响当前正在执行的程序，我们可以对中断做一个缓冲区。当系统空闲，或者隔一段时间，再去看这个缓冲区里有没有东西。<br>作者最后用一个数组做的循环队列来存储这些缓冲。</p>
+<pre><code class="c">struct FIFO8
+{
+    unsigned char *buf;
+    int p, q, size, free, flags;
+};
+
+//初始化FIFO缓冲区
+void fifo8_init(struct FIFO8 *fifo, int size, unsigned char *buf)
+{
+    fifo-&gt;size = size;
+    fifo-&gt;buf = buf;
+    fifo-&gt;free = size; // 缓冲区大小
+    fifo-&gt;flags = 0;
+    fifo-&gt;p = 0; //下一个数据写入位置
+    fifo-&gt;q = 0; //下一个数据读出位置
+}
+
+#define FLAGS_OVERRUN 0x0001
+
+//向FIFO传送数据并保存
+int fifo8_put(struct FIFO8 *fifo, unsigned char data)
+{
+    if(fifo-&gt;free == 0)
+    {
+        // 空余没有了，溢出
+        fifo-&gt;flags |= FLAGS_OVERRUN;
+        return -1;
+    }
+    fifo-&gt;buf[fifo-&gt;p] = data;
+    fifo-&gt;p++;
+    if(fifo-&gt;p == fifo-&gt;size)
+    {
+        fifo-&gt;p = 0;
+    }
+    fifo-&gt;free--;
+    return 0;
+}
+
+//从FIFO取得一个数据
+int fifo8_get(struct FIFO8 *fifo)
+{
+    int data;
+    if(fifo-&gt;free == fifo-&gt;size)
+    {
+        // 如果缓冲区为空，则返回-1
+        return -1;
+    }
+    data = fifo-&gt;buf[fifo-&gt;q];
+    fifo-&gt;q++;
+    if(fifo-&gt;q == fifo-&gt;size)
+    {
+        fifo-&gt;q = 0;
+    }
+    fifo-&gt;free++;
+    return data;
+}
+
+//报告一下到底积攒了多少数据
+int fifo8_status(struct FIFO8 *fifo)
+{
+    return fifo-&gt;size - fifo-&gt;free;
+}
+</code></pre>
+<h2 id="鼠标中断以及键盘中断接受数据"><a href="#鼠标中断以及键盘中断接受数据" class="headerlink" title="鼠标中断以及键盘中断接受数据"></a>鼠标中断以及键盘中断接受数据</h2><p>鼠标和键盘中断会从io接受数据，我们可以用对应的io_in8()函数来接收。<br>此外，如果想要计算机接受鼠标的中断，要先激活鼠标控制电路（控制电路——CPU），然后激活鼠标（鼠标——控制电路）。</p>
+<h2 id="各种参数的设置"><a href="#各种参数的设置" class="headerlink" title="各种参数的设置"></a>各种参数的设置</h2><p>接收各种中断，当然少不了各种IO地址。这些东西貌似作者直接给在代码里了。如果要真的自己做操作系统，恐怕要在各种参考资料里查询地址吧。。</p>
+<p>进入正题</p>
+<h1 id="获取按键编码"><a href="#获取按键编码" class="headerlink" title="获取按键编码"></a>获取按键编码</h1><blockquote>
+<p>harib04a</p>
+</blockquote>
+<p>我们现在让中断程序接收键盘发来的信息，比如按键编码、以及按下/释放。<br>int.c</p>
+<pre><code class="c">void inthandler21(int *esp)
+// 来自PS/2键盘的中断
+{
+    struct BOOTINFO *binfo = (struct BOOTINFO *)ADR_BOOTINFO;
+    unsigned char data, s[4];
+    io_out8(PIC0_OCW2, 0x61); //通知PIC “IRQ-01已经受理完毕”
+    data = io_in8(PORT_KEYDAT);
+
+    sprintf(s, &quot;%02X&quot;, data);
+    boxfill8(binfo-&gt;vram, binfo-&gt;scrnx, COL8_008484, 0, 16, 15, 31);
+    putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 0, 16, COL8_FFFFFF, s);
+}
+</code></pre>
+<p>io_out一句，当中断结束后，我们需要重新让PC监视中断程序，不然执行一次中断后就不再执行了。</p>
+<h1 id="加快中断处理"><a href="#加快中断处理" class="headerlink" title="加快中断处理"></a>加快中断处理</h1><blockquote>
+<p>harib04b</p>
+</blockquote>
+<p>当然，每按一下键盘就中断、显示字符，也太频繁调用操作系统了（其实感觉鼠标会更麻烦）。所以我们可以设置一个缓冲区，用来暂时存储中断信息。</p>
+<pre><code class="c">struct KEYBUF
+{
+    unsigned char data, flag;
+};
+
+struct KEYBUF keybuf;
+
+void inthandler21(int *esp)
+// 来自PS/2键盘的中断
+{
+    unsigned char data;
+    io_out8(PIC0_OCW2, 0x61); // 通知PIC IRQ-01已经受理完毕
+    data = io_in8(PORT_KEYDAT);
+    if(keybuf.flag == 0)
+    {
+        keybuf.data = data;
+        keybuf.flag = 1;
+    }
+}“
+”
+
+</code></pre>
+<p>这个缓冲区还比较简陋，只能存储一个数据（还不能弹出），不过先这么用着吧。<br>Harimain部分</p>
+<pre><code class="c">unsigned char i;
+for(;;)
+{
+    io_cli();
+    if(keybuf.flag == 0)
+    {
+        io_stihlt();
+    }
+    else
+    {
+        i = keybuf.data;
+        keybuf.flag = 0;
+        io_sti();
+        sprintf(s, &quot;%02X&quot;, i);
+        boxfill8(binfo-&gt;vram, binfo-&gt;scrnx, COL8_008484, 0, 16, 15, 31);
+        putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 0, 16, COL8_FFFFFF, s);
+    }
+}
+</code></pre>
+<p>cli先屏蔽中断，然后如果缓冲区没有东西，stihlt是恢复并暂停的意思。至于为什么要写一起，这样做是可以忽略sti和hlt之间的中断，否则突然有个数据进来就不好了。<br>其余的代码逻辑还是挺好懂的。</p>
+<h1 id="制作FIFO缓冲区"><a href="#制作FIFO缓冲区" class="headerlink" title="制作FIFO缓冲区"></a>制作FIFO缓冲区</h1><blockquote>
+<p>harib04c</p>
+</blockquote>
+<p>一个很暴力的队列，弹出靠的是把数组里所有元素向前移。。这里就不放代码了，毕竟直接看最终版本就行了。</p>
+<h1 id="改善FIFO缓冲区"><a href="#改善FIFO缓冲区" class="headerlink" title="改善FIFO缓冲区"></a>改善FIFO缓冲区</h1><blockquote>
+<p>harib04d</p>
+</blockquote>
+<p>用循环队列就好了。。很简单。。</p>
+<h1 id="整理FIFO缓冲区"><a href="#整理FIFO缓冲区" class="headerlink" title="整理FIFO缓冲区"></a>整理FIFO缓冲区</h1><blockquote>
+<p>harib04e</p>
+</blockquote>
+<p>我们把队列的各种操作封装成方法，这样就可以比较方便、而且容易理解地进行各种队列操作了。<br>FIFO的各种方法写在了前面，现在看一下最终版本的中断程序。<br>int.c</p>
+<pre><code class="c">struct FIFO8 keyfifo;
+
+void inthandler21(int *esp)
+// 来自PS/2键盘的中断
+{
+    unsigned char data;
+    io_out8(PIC0_OCW2, 0x61); // 通知PIC IRQ-01已经受理完毕
+    data = io_in8(PORT_KEYDAT);
+    fifo8_put(&amp;keyfifo, data);
+}
+</code></pre>
+<p>这样就简洁多了，然后是HariMain函数</p>
+<pre><code class="c">char s[40], mcursor[256], keybuf[32];
+
+fifo8_init(&amp;keyfifo, 32, keybuf);
+
+unsigned char i;
+int j;
+for(;;)
+{
+    io_cli();
+    if(fifo8_status(&amp;keyfifo) == 0)
+    {
+        io_stihlt();
+    }
+    else
+    {
+        i = fifo8_get(&amp;keyfifo);
+        io_sti();
+        sprintf(s, &quot;%02X&quot;, i);
+        boxfill8(binfo-&gt;vram, binfo-&gt;scrnx, COL8_008484, 0, 16, 15, 31);
+        putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 0, 16, COL8_FFFFFF, s);
+    }
+}
+</code></pre>
+<h1 id="总算讲到鼠标了"><a href="#总算讲到鼠标了" class="headerlink" title="总算讲到鼠标了"></a>总算讲到鼠标了</h1><blockquote>
+<p>harib04f</p>
+</blockquote>
+<p>鼠标中断号为IRQ12，然后是鼠标的一系列激活操作：先让键盘控制电路准备好，然后激活鼠标</p>
+<pre><code class="c">#define PORT_KEYDAT 0x0060
+#define PORT_KEYSTA 0x0064
+#define PORT_KEYCMD 0x0064
+#define KEYSTA_SEND_NOTREADY 0x02
+#define KEYCMD_WRITE_MODE 0x60
+#define KBC_MODE 0x47
+
+void wait_KBC_sendready(void)
+{
+    //等待键盘控制电路准备完毕
+    for(;;)
+    {
+        if((io_in8(PORT_KEYSTA) &amp; KEYSTA_SEND_NOTREADY) == 0)
+        {
+            return;
+        }
+    }
+    return;
+}
+
+void init_keyboard(void)
+{
+    //初始化键盘控制电路
+    wait_KBC_sendready();
+    io_out8(PORT_KEYCMD, KEYCMD_WRITE_MODE);
+    wait_KBC_sendready();
+    io_out8(PORT_KEYDAT, KBC_MODE);
+    return;
+}
+
+#define KEYCMD_SENDTO_MOUSE    0xd4
+#define MOUSECMD_ENABLE    0xf4
+
+void enable_mouse(void)
+{
+    //激活鼠标
+    wait_KBC_sendready();
+    io_out8(PORT_KEYCMD, KEYCMD_SENDTO_MOUSE);
+    wait_KBC_sendready();
+    io_out8(PORT_KEYDAT, MOUSECMD_ENABLE);
+    return; //顺利的话，键盘控制其会返送回ACK(0xfa)
+}
+</code></pre>
+<p>如果我们先io_out KEYCMD_SENDTO_MOUSE,接下来的io_out就会将数据写入鼠标。<br>这样我们就能接收到鼠标中断了。</p>
+<h1 id="从鼠标接受数据"><a href="#从鼠标接受数据" class="headerlink" title="从鼠标接受数据"></a>从鼠标接受数据</h1><blockquote>
+<p>harib04g</p>
+</blockquote>
+<p>接下来看一下鼠标的中断程序，还是比较相似的。</p>
+<pre><code class="c">struct FIFO8 mousefifo;
+
+void inthandler2c(int *esp)
+// 来自PS/2鼠标的中断
+{
+    unsigned char data;
+    io_out8(PIC1_OCW2, 0x64); // 通知PIC1 IRQ-12的受理已经完成
+    io_out8(PIC0_OCW2, 0x62); // 通知PIC0 IRQ-02的受理已经完成
+    data = io_in8(PORT_KEYDAT);
+    fifo8_put(&amp;mousefifo, data);
+}
+</code></pre>
+<p>首先要通知从PIC受理完成，然后再通知主PIC受理完成，不然主PIC会忽视从PIC的下一个中断请求。<br>然后鼠标数据的获取方法：<br>bootpack.c</p>
+<pre><code>fifo8_init(&amp;mousefifo, 256, mcursor);
+
+enable_mouse();
+
+unsigned char i;
+int j;
+for(;;)
+{
+    io_cli();
+    if((fifo8_status(&amp;keyfifo) + fifo8_status(&amp;mousefifo)) == 0)
+    {
+        io_stihlt();
+    }
+    else
+    {
+        if(fifo8_status(&amp;keyfifo) != 0)
+        {
+            i = fifo8_get(&amp;keyfifo);
+            io_sti();
+            sprintf(s, &quot;%02X&quot;, i);
+            boxfill8(binfo-&gt;vram, binfo-&gt;scrnx, COL8_008484, 0, 16, 15, 31);
+            putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 0, 16, COL8_FFFFFF, s);
+        }
+        else if(fifo8_status(&amp;mousefifo) != 0)
+        {
+            i = fifo8_get(&amp;mousefifo);
+            io_sti();
+            sprintf(s, &quot;%02X&quot;, i);
+            boxfill8(binfo-&gt;vram, binfo-&gt;scrnx, COL8_008484, 32, 16, 47, 31);
+            putfont8_asc(binfo-&gt;vram, binfo-&gt;scrnx, 32, 16, COL8_FFFFFF, s);
+        }
+
+    }
+}
+</code></pre><p>这样就可以获得来自鼠标的数据了。。。<br>明天继续。。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzY3Ni8xNDIwNw==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/OS/day06/index.html/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -695,6 +1151,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -707,6 +1167,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
