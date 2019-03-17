@@ -241,7 +241,7 @@
 
     
         <meta property="article:published_time" content="Sat Mar 16 2019 14:20:11 GMT+0800">
-        <meta property="article:modified_time" content="Sat Mar 16 2019 16:32:05 GMT+0800">
+        <meta property="article:modified_time" content="Sun Mar 17 2019 19:21:47 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +264,7 @@
     "mainEntityOfPage": "https://ccdv2.github.io/OS/day07/index.html/index.html",
     "headline": "Day07",
     "datePublished": "Sat Mar 16 2019 14:20:11 GMT+0800",
-    "dateModified": "Sat Mar 16 2019 16:32:05 GMT+0800",
+    "dateModified": "Sun Mar 17 2019 19:21:47 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -737,7 +737,7 @@ void inthandler2c(int *esp)
 }
 </code></pre>
 <p>首先要通知从PIC受理完成，然后再通知主PIC受理完成，不然主PIC会忽视从PIC的下一个中断请求。<br>然后鼠标数据的获取方法：<br>bootpack.c</p>
-<pre><code>fifo8_init(&amp;mousefifo, 256, mcursor);
+<pre><code class="c">fifo8_init(&amp;mousefifo, 256, mcursor);
 
 enable_mouse();
 
@@ -771,7 +771,8 @@ for(;;)
 
     }
 }
-</code></pre><p>这样就可以获得来自鼠标的数据了。。。<br>明天继续。。</p>
+</code></pre>
+<p>这样就可以获得来自鼠标的数据了。。。<br>明天继续。。</p>
 
         
     
