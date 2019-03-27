@@ -45,7 +45,7 @@
     
     <title>
         
-            poj1873 | 
+            Day12 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="此题大意是有n棵树(n &amp;lt; 15)，每棵树都有坐标，可形成的木材长度，价值。求砍掉一些树，这些树的价值尽可能小，使得剩余的树可以用木材围成一个凸包。并求剩余木材的长度">
-    <meta name="keywords" content=",acm,计算几何">
+    <meta name="description" itemprop="description" content="今天引入了定时器这个功能，并且优化了定时器中断的算法">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/computgeo/poj1873.html/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day12//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/computgeo/poj1873.html/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day12//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="poj1873 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day12 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="此题大意是有n棵树(n &amp;lt; 15)，每棵树都有坐标，可形成的木材长度，价值。求砍掉一些树，这些树的价值尽可能小，使得剩余的树可以用木材围成一个凸包。并求剩余木材的长度">
-    <meta property="og:article:tag" content="acm"> <meta property="og:article:tag" content="计算几何"> 
+    <meta property="og:description" content="今天引入了定时器这个功能，并且优化了定时器中断的算法">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Mon Aug 13 2018 22:43:26 GMT+0800">
-        <meta property="article:modified_time" content="Mon Aug 13 2018 22:49:48 GMT+0800">
+        <meta property="article:published_time" content="Tue Mar 26 2019 12:07:35 GMT+0800">
+        <meta property="article:modified_time" content="Wed Mar 27 2019 20:04:08 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/computgeo/poj1873.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day12/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/computgeo/poj1873.html/index.html",
-    "headline": "poj1873",
-    "datePublished": "Mon Aug 13 2018 22:43:26 GMT+0800",
-    "dateModified": "Mon Aug 13 2018 22:49:48 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day12/index.html/index.html",
+    "headline": "Day12",
+    "datePublished": "Tue Mar 26 2019 12:07:35 GMT+0800",
+    "dateModified": "Wed Mar 27 2019 20:04:08 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",acm,计算几何",
-    "description": "此题大意是有n棵树(n &amp;lt; 15)，每棵树都有坐标，可形成的木材长度，价值。求砍掉一些树，这些树的价值尽可能小，使得剩余的树可以用木材围成一个凸包。并求剩余木材的长度",
+    "keywords": ",OS",
+    "description": "今天引入了定时器这个功能，并且优化了定时器中断的算法",
 }
 </script>
 
@@ -342,6 +342,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想和问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想和问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#加快中断处理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">加快中断处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可能的优化？"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">可能的优化？</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用定时器"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用定时器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计量时间"><span class="post-toc-number">3.</span> <span class="post-toc-text">计量时间</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#超时功能"><span class="post-toc-number">4.</span> <span class="post-toc-text">超时功能</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设定多个定时器"><span class="post-toc-number">5.</span> <span class="post-toc-text">设定多个定时器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#加快中断处理（1）"><span class="post-toc-number">6.</span> <span class="post-toc-text">加快中断处理（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#加快中断处理（2）"><span class="post-toc-number">7.</span> <span class="post-toc-text">加快中断处理（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#加快中断处理（3）"><span class="post-toc-number">8.</span> <span class="post-toc-text">加快中断处理（3）</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -371,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                poj1873
+                Day12
             </p>
         </div>
 
@@ -390,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>8月 13, 2018</span>
+        <span>3月 26, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/acm/">acm</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/计算几何/">计算几何</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -431,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=poj1873&url=https://ccdv2.github.io/computgeo/poj1873.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day12&url=https://ccdv2.github.io/OS/day12/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -440,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=poj1873&url=https://ccdv2.github.io/computgeo/poj1873.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day12&url=https://ccdv2.github.io/OS/day12/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -449,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/computgeo/poj1873.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day12/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -458,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/computgeo/poj1873.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day12/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -483,184 +492,293 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>此题大意是有n棵树(n &lt; 15)，每棵树都有坐标，可形成的木材长度，价值。<br>求砍掉一些树，这些树的价值尽可能小，使得剩余的树可以用木材围成一个凸包。<br>并求剩余木材的长度<br><a id="more"></a><br>解法： 枚举所有状态，判断一下能否形成凸包，是否解更优即可。。<br>注意： 此题有一个剪枝，若当前的枚举状态，砍树价值已经大于得到的最优状态，continue即可。</p>
-<pre><code class="cpp">#include &lt;iostream&gt;
-#include &lt;cstdio&gt;
-#include &lt;cmath&gt;
-#include &lt;algorithm&gt;
-#include &lt;queue&gt;
-#include &lt;vector&gt;
-using namespace std;
-const int MAXN = 17;
-const double EPS = 1e-6;
-const int INF = 0x7fffffff;
-struct Point
-{
-    Point() {}
-    Point(double _x, double _y): x(_x), y(_y) {}
-    double getDis(Point rhs)
-    {
-        double xx = rhs.x - x;
-        double yy = rhs.y - y;
-        return sqrt(xx * xx + yy * yy);
-    }
-    void input()
-    {
-        scanf(&quot;%lf%lf&quot;, &amp;x, &amp;y);
-    }
+        <p>今天引入了定时器这个功能，并且优化了定时器中断的算法<br><a id="more"></a></p>
+<h1 id="一些感想和问题"><a href="#一些感想和问题" class="headerlink" title="一些感想和问题"></a>一些感想和问题</h1><h2 id="加快中断处理"><a href="#加快中断处理" class="headerlink" title="加快中断处理"></a>加快中断处理</h2><p>到这一步的时候，已经有了很多个定时器了，但是此时查询是否timeout的方式是for循环查看一遍所有的定时器，并且计时的方式是不断通过0.1s（类似）的中断，来–count。那么。。就从这两个方面来优化中断处理。</p>
+<ol>
+<li>把逐渐减少改为是否到达<br>显然，中断时不断–count的操作，会浪费掉很多内存读写的时间。所以修改了timeout的含义，把它理解为“要在什么时候timeout”。之后每次中断，只要查询是否已经到达该timeout时刻即可。</li>
+<li>对到达时间排序，依次查找<br>虽然解决了不断–的问题，但是for循环还是太慢了。。刚好不同定时器的到达时刻有先后顺序，我们以此来设定一个next变量，来记住下一个时刻。这样每次中断的时候，先判断一下是否到了next时刻，未到达就直接退出即可。</li>
+<li>继续上文<br>但是，对于到达的时刻，我们还是需要for循环来进行查找，这样可能会造成处理突然卡顿的情况。所以，可以把定时器按照到达时刻排序。每次中断的时候，从前往后查找是否已经timeout即可。毕竟在一个已经有序的数组里来判断还是更方便的。</li>
+</ol>
+<h2 id="可能的优化？"><a href="#可能的优化？" class="headerlink" title="可能的优化？"></a>可能的优化？</h2><ol>
+<li>过长的主函数<br>每有一个缓冲区内容，就需要添加一个else if。。这样下去岂不是会变得很长。。</li>
+<li>防止移位带来的时间浪费<br>应该可以用链表来代替有序的数组，对于不断释放定时器来说简直很方便。</li>
+</ol>
+<p>以上两点是我可以想到的优化，如果作者到这本书结束还没优化的话。。那可以试试手）</p>
+<p>今天份的内容</p>
+<h1 id="使用定时器"><a href="#使用定时器" class="headerlink" title="使用定时器"></a>使用定时器</h1><blockquote>
+<p>harib09a</p>
+</blockquote>
+<p>定时器是什么就不用介绍了。我们看一下是如何设定定时器的中断请求的</p>
+<pre><code class="c">#define PIT_CTRL 0x0043
+#define PIT_CNT0 0x0040
 
-    bool operator &lt;(Point &amp;rhs)
-    {
-        if(fabs(y - rhs.y) &lt;= EPS) return x &lt; rhs.x;
-        return y &lt; rhs.y;
-    }
-    double x, y;
-    double v, l;
-    int id;
+void init_pit(void)
+{
+    io_out8(PIT_CTRL, 0x34); // 指明中断周期需要变更（规定为0x34）
+    io_out8(PIT_CNT0, 0x9c); // 中断周期低4位
+    io_out8(PIT_CNT0, 0x2e); // 中断周期高4位
+}
+</code></pre>
+<p>所以。。中断周期就是0x2e9c = 11932，cpu主频是1.19318MHz，所以这个值就是10ms产生一次中断。<br>之后，主函数要调用这个函数，执行中断的初始化。</p>
+<p>接下来写中断处理函数</p>
+<pre><code class="c">void inthandler20(int *esp)
+{
+    io_out8(PIC0_OCW2, 0x60); // 把IRQ-00信号接收完了的信息通知给PIC
+    // 暂时什么也不做
+}
+</code></pre>
+<p>目前还什么都没有。。<br>汇编的中断服务程序：</p>
+<pre><code class="c">_asm_inthandler20:
+        PUSH    ES
+        PUSH    DS
+        PUSHAD
+        MOV        EAX,ESP
+        PUSH    EAX
+        MOV        AX,SS
+        MOV        DS,AX
+        MOV        ES,AX
+        CALL    _inthandler20
+        POP        EAX
+        POPAD
+        POP        DS
+        POP        ES
+        IRETD
+</code></pre>
+<p>和我们之前见过的一样。。除了CALL的不一样了。<br>注册这个中断服务程序到IDT中。</p>
+<pre><code class="c">set_gatedesc(idt + 0x20, (int)asm_inthandler20, 2 * 8, AR_INTGATE32);
+</code></pre>
+<p>这就是定时器的一些初始化工作了。。接下来要逐步完善一下。</p>
+<h1 id="计量时间"><a href="#计量时间" class="headerlink" title="计量时间"></a>计量时间</h1><blockquote>
+<p>harib09b</p>
+</blockquote>
+<p>先进行一个简单的功能。</p>
+<pre><code class="c">struct TIMERCTL
+{
+    unsigned int count;
 };
-Point operator -(Point lhs, Point rhs){return Point(rhs.x - lhs.x, rhs.y - lhs.y);}
-double operator ^(Point lhs, Point rhs){return lhs.x * rhs.y - lhs.y * rhs.x;}
-
-Point point[MAXN];
-Point src;
-int n;
-
-bool cmp(Point &amp;a, Point &amp;b)
+extern struct TIMERCTL timerctl;
+</code></pre>
+<p>这是一个。。定时器（控制）的结构体</p>
+<pre><code class="c">void init_pit(void)
 {
-    double temp = (a - src) ^ (b - src);
-    if(fabs(temp) &lt;= EPS) return a.getDis(src) &lt; b.getDis(src);
-    return temp &gt; 0;
+    io_out8(PIT_CTRL, 0x34);
+    io_out8(PIT_CNT0, 0x9c);
+    io_out8(PIT_CNT0, 0x2e);
+    timerctl.count = 0;
 }
 
-int stack[MAXN];
-void getConvex(vector&lt;Point&gt; &amp;a, vector&lt;Point&gt; &amp;out)
+void inthandler20(int *esp)
 {
-    out.clear();
-    sort(a.begin(), a.end(), cmp);
-
-    stack[0] = 0;
-    stack[1] = 1;
-    int top = 1;
-    for(int i = 2; i &lt; (int)a.size(); ++i)
-    {
-        while(top &gt;= 1 &amp;&amp; ((a[i] - a[stack[top - 1]]) ^ (a[stack[top]] - a[stack[top - 1]])) &gt;= 0)
-        {
-            --top;
-        }
-        stack[++top] = i;
-    }
-    for(int i = 0; i &lt;= top; ++i) out.push_back(a[stack[i]]);
+    io_out8(PIC0_OCW2, 0x60); // 把IRQ-00信号接收完了的信息通知给PIC
+    ++timerctl.count;
+}
+</code></pre>
+<p>每隔0.1s，就会++count<br>然后修改主函数</p>
+<pre><code class="c">for (;;) {
+    sprintf(s, &quot;%010d&quot;, timerctl.count);
+    boxfill8(buf_win, 160, COL8_C6C6C6, 40, 28, 119, 43);
+    putfonts8_asc(buf_win, 160, 40, 28, COL8_000000, s);
+    sheet_refresh(sht_win, 40, 28, 120, 44);
+}
+</code></pre>
+<p>这样就打印到我们之前那个窗口上了。</p>
+<h1 id="超时功能"><a href="#超时功能" class="headerlink" title="超时功能"></a>超时功能</h1><blockquote>
+<p>harib09c</p>
+</blockquote>
+<p>超时功能，就是到达一定时间之后，产生一个中断。其实把定时器产生中断的次数计个数就可以了。<br>先修改一下struct</p>
+<pre><code class="c">struct TIMERCTL
+{
+    unsigned int count;
+    unsigned int timeout;
+    struct FIFO8 *fifo;
+    unsigned char data;
+};
+</code></pre>
+<p>fifo是用来超时之后存放数据的地方。然后修改之前的函数</p>
+<pre><code class="c">void init_pit(void)
+{
+    io_out8(PIT_CTRL, 0x34);
+    io_out8(PIT_CNT0, 0x9c);
+    io_out8(PIT_CNT0, 0x2e);
+    timerctl.count = 0;
+    timerctl.timeout = 0;
 }
 
-vector&lt;Point&gt; selected;
-vector&lt;Point&gt; cut;
-vector&lt;Point&gt; ans;
-vector&lt;Point&gt; convex;
-double extraLength;
-
-void solve()
+void inthandler20(int *esp)
 {
-    int MAXBOUND = 1 &lt;&lt; n;
-    double maxL, curL, curV;
-    double bestV = INF;
-    bool fst;
-    for(int i = 0; i &lt; MAXBOUND; ++i)
+    io_out8(PIC0_OCW2, 0x60); // 把IRQ-00信号接收完了的信息通知给PIC
+    ++timerctl.count;
+    if(timerctl.timeout &gt; 0) // 如果已经设定了超时
     {
-        selected.clear();
-        cut.clear();
-        maxL = curL = curV = 0.0;
-        fst = true;
-        for(int j = 1; j &lt;= n; ++j)
+        timerctl.timeout--;
+        if(timerctl.timeout == 0)
         {
-            int bit = 1 &lt;&lt; (j - 1);
-            if(bit &amp; i)
-            {
-                selected.push_back(point[j]);
-                if(fst)
-                {
-                    fst = false;
-                    src = point[j];
-                }
-                else
-                {
-                    if(point[j] &lt; src) src = point[j];
-                }
-            }
-            else
-            {
-                cut.push_back(point[j]);
-                curV += point[j].v;
-                maxL += point[j].l;
-            }
-        }
-        if(selected.size() &gt;= 3)
-        {
-            if(curV &gt; bestV + EPS) continue;// 剪枝神了！！
-            getConvex(selected, convex);
-            for(int i = 0; i &lt; (int)convex.size(); ++i)
-            {
-                // printf(&quot;%d &quot;, convex[i].id);
-                int nxt = (i + 1) % convex.size();
-                curL += convex[i].getDis(convex[nxt]);
-            }
-            // putchar(&#39;\t&#39;);
-            // if(curL &lt;= maxL)printf(&quot;value: %.2lf\n&quot;, curV);
-            // else putchar(&#39;\n&#39;);
-        }
-        else if(selected.size() == 2)
-        {
-            curL = 2.0 * selected[0].getDis(selected[1]);
-        }
-        else if(selected.size() == 1)
-        {
-            curL = 0;
-        }
-
-        if(curL &lt;= maxL)
-        {
-            if(fabs(curV - bestV) &lt;= EPS)
-            {
-                if(cut.size() &lt; ans.size())
-                {
-                    ans = cut;
-                    extraLength = maxL - curL;
-                }
-            }
-            else if(curV &lt; bestV)
-            {
-                bestV = curV;
-                ans = cut;
-                extraLength = maxL - curL;
-            }
+            fifo8_put(timerctl.fifo, timerctl.data);
         }
     }
 }
 
-int main()
+void settimer(unsigned int timeout, struct FIFO8 *fifo, unsigned char data)
 {
-    // freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);
-    int tcase = 0;
-    while(scanf(&quot;%d&quot;, &amp;n) &amp;&amp; n != 0)
-    {
-        if(tcase) putchar(&#39;\n&#39;);
-        ++tcase;
+    int eflags = io_load_eflags();
+    io_cli();
+    timerctl.timeout = timeout;
+    timerctl.fifo = fifo;
+    timerctl.data = data;
+    io_store_eflags(eflags);
+}
+</code></pre>
+<p>之后，主函数里就又添加了一个中断分支。。设置缓冲区、设置定时器等等。</p>
+<h1 id="设定多个定时器"><a href="#设定多个定时器" class="headerlink" title="设定多个定时器"></a>设定多个定时器</h1><blockquote>
+<p>harib09d</p>
+</blockquote>
+<p>类似图层那种管理方法，定时器也是定时器+定时器管理</p>
+<pre><code class="c">#define MAX_TIMER 500
+struct TIMER
+{
+    unsigned int timeout, flags;
+    struct FIFO8 *fifo;
+    unsigned char data;
+};
 
-        for(int i = 1; i &lt;= n; ++i)
+struct TIMERCTL
+{
+    unsigned int count;
+    struct TIMER timer[MAX_TIMER];
+};
+</code></pre>
+<p>有种图层管理的感觉了，而且根据时刻来排序，也可以把各种函数都做成类似的感觉。。<br>但是呢，作者还是一步步来的，所以我们到最后一步再放代码吧。。<br>于是，就有了计时器管理的初始化、分配、回收。<br>然后就可以制作光标的闪烁过程。。过程略。</p>
+<h1 id="加快中断处理（1）"><a href="#加快中断处理（1）" class="headerlink" title="加快中断处理（1）"></a>加快中断处理（1）</h1><blockquote>
+<p>harib09e</p>
+</blockquote>
+<p>把时间段改为时刻，很好的优化想法。。过程略）</p>
+<h1 id="加快中断处理（2）"><a href="#加快中断处理（2）" class="headerlink" title="加快中断处理（2）"></a>加快中断处理（2）</h1><blockquote>
+<p>harib09f</p>
+</blockquote>
+<p>其实不算严格意义的排序，只是先去查看最近一个要超时的，有没有超时。但是这样在超时处理中，还是会占用很多时间</p>
+<h1 id="加快中断处理（3）"><a href="#加快中断处理（3）" class="headerlink" title="加快中断处理（3）"></a>加快中断处理（3）</h1><blockquote>
+<p>harib09g</p>
+</blockquote>
+<p>排序计时器，这样就很快啦。。<br>最终版本的数据结构：</p>
+<pre><code class="c">#define MAX_TIMER 500
+struct TIMER
+{
+    unsigned int timeout, flags;
+    struct FIFO8 *fifo;
+    unsigned char data;
+};
+
+struct TIMERCTL
+{
+    unsigned int count, next, using;
+    struct TIMER *timers[MAX_TIMER];
+    struct TIMER timers0[MAX_TIMER];
+};
+</code></pre>
+<p>和图层看起来就是很相似。。</p>
+<p>最终版本的中断服务程序：</p>
+<pre><code class="c">void inthandler20(int *esp)
+{
+    int i, j;
+    io_out8(PIC0_OCW2, 0x60); // 把IRQ-00信号接收结束的信息通知给PIC
+    timerctl.count++;
+    if(timerctl.next &gt; timerctl.count)
+    {
+        return;
+    }
+    for(i = 0; i &lt; timerctl.using; ++i)
+    {
+        // timer的定时器都处于动作中，所以不确认flags
+        if(timerctl.timers[i]-&gt;timeout &gt; timerctl.count)
         {
-            scanf(&quot;%lf%lf%lf%lf&quot;, &amp;point[i].x, &amp;point[i].y, &amp;point[i].v, &amp;point[i].l);
-            point[i].id = i;
+            break;
         }
-        solve();
-        printf(&quot;Forest %d\n&quot;, tcase);
-        printf(&quot;Cut these trees:&quot;);
-        for(int i = 0; i &lt; (int)ans.size(); ++i)
-        {
-            printf(&quot; %d&quot;, ans[i].id);
-        }
-        printf(&quot;\nExtra wood: %.2lf\n&quot;, extraLength);
+        // 超时
+        timerctl.timers[i]-&gt;flags = TIMER_FLAGS_ALLOC;
+        fifo8_put(timerctl.timers[i]-&gt;fifo, timerctl.timers[i]-&gt;data);
+    }
+    // 正好有i个定时器超时了，其余的进行移位
+    timerctl.using -= i;
+    for(j = 0; j &lt; timerctl.using; ++j)
+    {
+        timerctl.timers[j] = timerctl.timers[i + j];
+    }
+    if(timerctl.using &gt; 0)
+    {
+        timerctl.next = timerctl.timers[0]-&gt;timeout;
+    }
+    else
+    {
+        timerctl.next = 0xffffffff;
     }
 }
 </code></pre>
+<p>初始化程序：</p>
+<pre><code class="c">void init_pit(void)
+{
+    int i;
+    io_out8(PIT_CTRL, 0x34);
+    io_out8(PIT_CNT0, 0x9c);
+    io_out8(PIT_CNT0, 0x2e);
+    timerctl.count = 0;
+    timerctl.next = 0xffffffff; // 最初没有正在运行的定时器
+    timerctl.using = 0;
+    for(i = 0; i &lt; MAX_TIMER; ++i)
+    {
+        timerctl.timers0[i].flags = 0; // 未使用
+    }
+}
+</code></pre>
+<p>分配和释放：</p>
+<pre><code class="c">struct TIMER *timer_alloc(void)
+{
+    int i;
+    for(i = 0; i &lt; MAX_TIMER; ++i)
+    {
+        if(timerctl.timers0[i].flags == 0)
+        {
+            timerctl.timers0[i].flags = TIMER_FLAGS_ALLOC;
+            return &amp;timerctl.timers0[i];
+        }
+    }
+    return 0; // 没找到
+}
+
+void timer_free(struct TIMER *timer)
+{
+    timer-&gt;flags = 0; // 未使用
+}
+</code></pre>
+<p>设定定时器：</p>
+<pre><code class="c">void timer_settime(struct TIMER *timer, unsigned int timeout)
+{
+    int e, i, j;
+    timer-&gt;timeout = timeout + timerctl.count;
+    timer-&gt;flags = TIMER_FLAGS_USING;
+    e = io_load_eflags();
+    io_cli();
+    // 搜索注册位置
+    for(i = 0; i &lt; timerctl.using; ++i)
+    {
+        if(timerctl.timers[i]-&gt;timeout &gt;= timer-&gt;timeout)
+        {
+            break;
+        }
+    }
+    // i号之后全部后移一位
+    for(j = timerctl.using; j &gt; i; --j)
+    {
+        timerctl.timers[j] = timerctl.timers[j - 1];
+    }
+    timerctl.using++;
+    // 插入到空位上
+    timerctl.timers[i] = timer;
+    timerctl.next = timerctl.timers[0]-&gt;timeout;
+    io_store_eflags(e);
+    return;
+}
+</code></pre>
+<p>有了之前图层的学习。。这些代码看起来简单多了。。</p>
 
         
     
@@ -703,21 +821,13 @@ int main()
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/computgeo/poj2540.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/computgeo/poj1584.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day11/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
