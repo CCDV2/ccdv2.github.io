@@ -45,7 +45,7 @@
     
     <title>
         
-            hdu3007 | 
+            Day13 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="求一个半径最小的圆覆盖住所有点">
-    <meta name="keywords" content=",acm,计算几何">
+    <meta name="description" itemprop="description" content="今天的主要工作是精简代码、优化代码。">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/computgeo/hdu3007.html/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day13//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/computgeo/hdu3007.html/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day13//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="hdu3007 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day13 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="求一个半径最小的圆覆盖住所有点">
-    <meta property="og:article:tag" content="acm"> <meta property="og:article:tag" content="计算几何"> 
+    <meta property="og:description" content="今天的主要工作是精简代码、优化代码。">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Wed Aug 15 2018 20:04:12 GMT+0800">
-        <meta property="article:modified_time" content="Wed Aug 15 2018 20:08:48 GMT+0800">
+        <meta property="article:published_time" content="Thu Mar 28 2019 13:57:43 GMT+0800">
+        <meta property="article:modified_time" content="Thu Mar 28 2019 15:52:22 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/computgeo/hdu3007.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day13/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/computgeo/hdu3007.html/index.html",
-    "headline": "hdu3007",
-    "datePublished": "Wed Aug 15 2018 20:04:12 GMT+0800",
-    "dateModified": "Wed Aug 15 2018 20:08:48 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day13/index.html/index.html",
+    "headline": "Day13",
+    "datePublished": "Thu Mar 28 2019 13:57:43 GMT+0800",
+    "dateModified": "Thu Mar 28 2019 15:52:22 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",acm,计算几何",
-    "description": "求一个半径最小的圆覆盖住所有点",
+    "keywords": ",OS",
+    "description": "今天的主要工作是精简代码、优化代码。",
 }
 </script>
 
@@ -342,6 +342,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想与问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想与问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#合并缓冲区"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">合并缓冲区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#链表代替数组"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">链表代替数组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试性能"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">测试性能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#统一类型的重要性"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">统一类型的重要性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#没有用define或者const做到统一修改"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">没有用define或者const做到统一修改</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简化字符串显示"><span class="post-toc-number">2.</span> <span class="post-toc-text">简化字符串显示</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#重新调整FIFO缓冲区（1）"><span class="post-toc-number">3.</span> <span class="post-toc-text">重新调整FIFO缓冲区（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测试性能-1"><span class="post-toc-number">4.</span> <span class="post-toc-text">测试性能</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#重新调整FIFO缓冲区（2）"><span class="post-toc-number">5.</span> <span class="post-toc-text">重新调整FIFO缓冲区（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#加快中断处理（4）"><span class="post-toc-number">6.</span> <span class="post-toc-text">加快中断处理（4）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用“哨兵”简化程序"><span class="post-toc-number">7.</span> <span class="post-toc-text">使用“哨兵”简化程序</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -371,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                hdu3007
+                Day13
             </p>
         </div>
 
@@ -390,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>8月 15, 2018</span>
+        <span>3月 28, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/acm/">acm</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/计算几何/">计算几何</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -431,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=hdu3007&url=https://ccdv2.github.io/computgeo/hdu3007.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day13&url=https://ccdv2.github.io/OS/day13/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -440,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=hdu3007&url=https://ccdv2.github.io/computgeo/hdu3007.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day13&url=https://ccdv2.github.io/OS/day13/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -449,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/computgeo/hdu3007.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day13/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -458,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/computgeo/hdu3007.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day13/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -483,95 +492,153 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>求一个半径最小的圆覆盖住所有点<br><a id="more"></a><br>使用随机增量的方法，每次找到一个不在当前圆内的点，将圆调整扩大至该点在圆周上，期望复杂度O(n)。注意在调用getMinCover之前应先把point[]中的点打乱顺序。</p>
-<pre><code class="cpp">#include &lt;iostream&gt;
-#include &lt;cstdio&gt;
-#include &lt;cmath&gt;
-#include &lt;algorithm&gt;
-#include &lt;set&gt;
-#include &lt;vector&gt;
-using namespace std;
-const int MAXN = 505;
-const double EPS = 1e-6;
-double PI;
-struct Point
+        <p>今天的主要工作是精简代码、优化代码。<br><a id="more"></a></p>
+<h1 id="一些感想与问题"><a href="#一些感想与问题" class="headerlink" title="一些感想与问题"></a>一些感想与问题</h1><h2 id="合并缓冲区"><a href="#合并缓冲区" class="headerlink" title="合并缓冲区"></a>合并缓冲区</h2><p>果然。。昨天提到的判断多个timer太占地方，这里就开始优化了。</p>
+<ol>
+<li>timer共用一个缓冲区<br>当定时器超时的时候，定时器只会发送一个1bit的timeout信息。我们可以把它们压缩到一起，这样n个定时器只会占用logn位。</li>
+<li>所有中断共用一个缓冲区<br>我们把所有中断产生的向缓冲区存储的信息，分段放入缓冲区中，这个时候8位缓冲区就不那么够用了。改成32位。<br>0-255：定时器<br>256-511：键盘输入<br>512-767：鼠标输入<br>把不同区间分给不同的中断，检查是否有缓冲区信息的时候，检查对应区间就可以了。<br>虽然会增加稍许加减法之类的开销，但是比起逐个检查缓冲区来说，这样的开销还是值得的。</li>
+</ol>
+<h2 id="链表代替数组"><a href="#链表代替数组" class="headerlink" title="链表代替数组"></a>链表代替数组</h2><p>昨天提到的移位太麻烦了，果然，作者就用链表了。<br>在链表最后，作者为了防止太多的特判情况，加了一个哨兵timmer（该定时器虽然是在运行中，但是永远不会到达）。</p>
+<h2 id="测试性能"><a href="#测试性能" class="headerlink" title="测试性能"></a>测试性能</h2><p>因为我们有了定时器，就可以测试一段代码的执行效率了。<br>例如，测试昨天的中断效率是否有改进，就可以在3s的时候开始++count，10s的时候停止count。通过count的多少就可以反映出来程序的运行效率了（count反映了空闲时间）。<br>至于为什么要3s才开始计时，是因为之前可能会有各种东西的初始化。所以预留3s再计时，可以防止初始化带来的影响。</p>
+<h2 id="统一类型的重要性"><a href="#统一类型的重要性" class="headerlink" title="统一类型的重要性"></a>统一类型的重要性</h2><p>看到改FIFO的时候，把所以地方的char改成了int，这时候就明白了</p>
+<pre><code class="c">typedef unsigned int size_t;
+</code></pre>
+<p>的重要性。<br>所以为什么windows会把所有东西都typedef了一遍。。</p>
+<h2 id="没有用define或者const做到统一修改"><a href="#没有用define或者const做到统一修改" class="headerlink" title="没有用define或者const做到统一修改"></a>没有用define或者const做到统一修改</h2><p>观察到在设定偏移的时候，作者在初始化（比如键盘的初始化）的时候写了一遍256，然后在中断判断的时候是</p>
+<pre><code class="c">if(256 &lt;= i &amp;&amp; i &lt;= 511)
+</code></pre>
+<p>如果能把各种区间提前define好，这样以后修改会方便一些。</p>
+<p>今天的代码。。emmm大多是优化。。</p>
+<h1 id="简化字符串显示"><a href="#简化字符串显示" class="headerlink" title="简化字符串显示"></a>简化字符串显示</h1><blockquote>
+<p>harib10a</p>
+</blockquote>
+<p>对于打印字符串这个函数，需要背景色+字符串+刷新连着三个函数，所以我们把它们放一起用。</p>
+<pre><code class="c">void putfonts8_asc_sht(struct SHEET *sht, int x, int y, int c, int b, char *s, int l)
 {
-    Point() {}
-    Point(double _x, double _y): x(_x), y(_y) {}
-    double getDis(Point rhs)
-    {
-        double xx = rhs.x - x, yy = rhs.y - y;
-        return sqrt(xx * xx + yy * yy);
-    }
-
-    void input(){scanf(&quot;%lf%lf&quot;, &amp;x, &amp;y);}
-    double x, y;
+    boxfill8(sht-&gt;buf, sht-&gt;bxsize, b, x, y, x + l * 8 - 1, y + 15);
+    putfonts8_asc(sht-&gt;buf, sht-&gt;bxsize, x, y, c, s);
+    sheet_refresh(sht, x, y, x + l * 8, y + 16);
+}
+</code></pre>
+<h1 id="重新调整FIFO缓冲区（1）"><a href="#重新调整FIFO缓冲区（1）" class="headerlink" title="重新调整FIFO缓冲区（1）"></a>重新调整FIFO缓冲区（1）</h1><blockquote>
+<p>harib10b</p>
+</blockquote>
+<p>把timer对应上不同的标号，放到缓冲区中。这样就不需要好多个timerfifo了。</p>
+<h1 id="测试性能-1"><a href="#测试性能-1" class="headerlink" title="测试性能"></a>测试性能</h1><blockquote>
+<p>harib10c<br>harib10d<br>harib10e<br>harib10f</p>
+</blockquote>
+<p>测试性能的方法之前已经说了，于是把昨天不断优化的版本放到这里，确实会有一些略微的优化。</p>
+<h1 id="重新调整FIFO缓冲区（2）"><a href="#重新调整FIFO缓冲区（2）" class="headerlink" title="重新调整FIFO缓冲区（2）"></a>重新调整FIFO缓冲区（2）</h1><blockquote>
+<p>harib10g</p>
+</blockquote>
+<p>把char改成了int，于是fifo、各类中断、定义、主函数都需要修改一下。<br>当所有中断共用一个缓冲区后，系统的执行效率也得到了显著的提升（因为只有一个缓冲区，不会进行过多的查询）。</p>
+<h1 id="加快中断处理（4）"><a href="#加快中断处理（4）" class="headerlink" title="加快中断处理（4）"></a>加快中断处理（4）</h1><blockquote>
+<p>harib10h</p>
+</blockquote>
+<p>因为担心移位操作，所以用链表来代替数组好了。</p>
+<pre><code class="c">#define MAX_TIMER 500
+struct TIMER
+{
+    struct TIMER *next_timer;
+    unsigned int timeout, flags;
+    struct FIFO32 *fifo;
+    int data;
 };
-double operator ^(Point lhs, Point rhs){return lhs.x * rhs.y - lhs.y * rhs.x;}
-Point operator +(Point lhs, Point rhs){return Point(lhs.x + rhs.x, lhs.y + rhs.y);}
-Point operator -(Point lhs, Point rhs){return Point(lhs.x - rhs.x, lhs.y - rhs.y);}
-Point operator /(Point lhs, double rhs){return Point(lhs.x / rhs, lhs.y / rhs);}
-Point operator *(Point lhs, double rhs){return Point(lhs.x * rhs, lhs.y * rhs);}
 
-Point point[MAXN];
-int n;
-Point center;
-double radius;
-
-bool isPointInCircle(Point &amp;t)
+struct TIMERCTL
 {
-    return t.getDis(center) &lt;= radius + EPS;
-}
-
-void adjustCircleCenter(Point &amp;p0, Point &amp;p1, Point &amp;p2)
+    unsigned int count, next_time;
+    struct TIMER *t0; // 其实是链表的头指针
+    struct TIMER timers0[MAX_TIMER];
+};
+</code></pre>
+<p>因为这里还没有用到哨兵，所以先不放其它代码。。</p>
+<h1 id="使用“哨兵”简化程序"><a href="#使用“哨兵”简化程序" class="headerlink" title="使用“哨兵”简化程序"></a>使用“哨兵”简化程序</h1><blockquote>
+<p>harib10i</p>
+</blockquote>
+<p>用了哨兵程序，可以简化判断逻辑<br>有时候我们为了再简化逻辑，可能会把头指针变成一个头结点。但是这里不太适合用头结点，因为头结点的timeout会显得比较逻辑奇怪。</p>
+<pre><code class="c">void init_pit()
 {
-    double a1 = p1.x - p0.x, b1 = p1.y - p0.y, c1 = (a1 * a1 + b1 * b1) / 2.0;
-    double a2 = p2.x - p0.x, b2 = p2.y - p0.y, c2 = (a2 * a2 + b2 * b2) / 2.0;
-    double d = a1 * b2 - a2 * b1;
-    center.x = p0.x + (c1 * b2 - c2 * b1) / d;
-    center.y = p0.y + (a1 * c2 - a2 * c1) / d;
-}
-
-void getMinCircleCover()
-{
-    radius = 0.0;
-    center = point[0];
-    for(int i = 1; i &lt; n; ++i)
+    int i;
+    struct TIMER *t;
+    io_out8(PIT_CTRL, 0x34);
+    io_out8(PIT_CNT0, 0x9c);
+    io_out8(PIT_CNT0, 0x2e);
+    timerctl.count = 0;
+    for(i = 0; i &lt; MAX_TIMER; ++i)
     {
-        if(!isPointInCircle(point[i]))
+        timerctl.timers0[i].flags = 0; // 未使用
+    }
+    t = timer_alloc(); // 取得一个
+    t-&gt;timeout = 0xffffffff;
+    t-&gt;flags = TIMER_FLAGS_USING;
+    t-&gt;next_timer = 0; // 末尾
+    timerctl.t0 = t; // 因为现在只有哨兵，所以他就在最前面
+    timerctl.next_time = 0xffffffff; // 因为只有哨兵，所以下一个超时的时刻就是哨兵的时刻
+}
+</code></pre>
+<pre><code class="c">void timer_settime(struct TIMER *timer, unsigned int timeout)
+{
+    int e;
+    struct TIMER *t, *s;
+    timer-&gt;timeout = timeout + timerctl.count;
+    timer-&gt;flags = TIMER_FLAGS_USING;
+    e = io_load_eflags();
+    io_cli();
+    t = timerctl.t0;
+    if(timer-&gt;timeout &lt;= t-&gt;timeout)
+    {
+        // 插入最前面的情况
+        timerctl.t0 = timer;
+        timer-&gt;next_timer = t; // 下面是设定t
+        timerctl.next_time = timer-&gt;timeout;
+        io_store_eflags(e);
+        return;
+    }
+    // 搜寻插入位置
+    for(;;)
+    {
+        s = t;
+        t = t-&gt;next_timer;
+        if(timer-&gt;timeout &lt;= t-&gt;timeout)
         {
-            center = point[i];
-            radius = 0;
-            for(int j = 0; j &lt; i; ++j)
-            {
-                if(!isPointInCircle(point[j]))
-                {
-                    center = (point[i] + point[j]) / 2.0;
-                    radius = center.getDis(point[j]);
-                    for(int k = 0; k &lt; j; ++k)
-                    {
-                        if(!isPointInCircle(point[k]))
-                        {
-                            adjustCircleCenter(point[i], point[j], point[k]);
-                            radius = center.getDis(point[k]);
-                        }
-                    }
-                }
-            }
+            // 插入s和t之间的情况
+            s-&gt;next_timer = timer; // s下一个是timer
+            timer-&gt;next_timer = t; // timer的下一个是t
+            io_store_eflags(e);
+            return;
         }
     }
 }
-
-int main()
+</code></pre>
+<pre><code class="c">void inthandler20(int *esp)
 {
-    while(scanf(&quot;%d&quot;, &amp;n) &amp;&amp; n != 0)
+    struct TIMER *timer;
+    io_out8(PIC0_OCW2, 0x60); // 把IRQ-00接收信号结束的信息通知给PIC
+    timerctl.count++;
+    if(timerctl.next_time &gt; timerctl.count)
     {
-        for(int i = 0; i &lt; n; ++i) point[i].input();
-        getMinCircleCover();
-        printf(&quot;%.2lf %.2lf %.2lf\n&quot;, center.x, center.y, radius);
+        return;
     }
+    timer = timerctl.t0; // 首先把最前面的地址赋给timer
+    for(;;)
+    {
+        // 因为timer的定时器都处于运行状态，所以不确认flags
+        if(timer-&gt;timeout &gt; timerctl.count)
+        {
+            break;
+        }
+        // 超时
+        timer-&gt;flags = TIMER_FLAGS_ALLOC;
+        fifo32_put(timer-&gt;fifo, timer-&gt;data);
+        timer = timer-&gt;next; // 将下一定时器的地址代入timer
+    }
+    timerctl.t0 = timer;
+    timerctl.next_time = timer-&gt;timeout;
+    return;
 }
 </code></pre>
+<p>这样就算是一个比较好的优化效果了吧。。</p>
 
         
     
@@ -614,21 +681,13 @@ int main()
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/computgeo/poj2546.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/computgeo/zoj2107.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day12/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
