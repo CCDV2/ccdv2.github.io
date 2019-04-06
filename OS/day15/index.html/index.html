@@ -45,7 +45,7 @@
     
     <title>
         
-            最近邻算法 | 
+            Day15 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="最近邻算法是最朴素的一种想法，比较两张图片之间每个像素差异大小来确定分类。">
-    <meta name="keywords" content=",CV,分类算法">
+    <meta name="description" itemprop="description" content="今天是初级的多任务：从手动切换，到初步的自动切换。">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/CV/classification/nearestneighbor.html/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day15//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/CV/classification/nearestneighbor.html/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day15//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="最近邻算法 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day15 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="最近邻算法是最朴素的一种想法，比较两张图片之间每个像素差异大小来确定分类。">
-    <meta property="og:article:tag" content="CV"> <meta property="og:article:tag" content="分类算法"> 
+    <meta property="og:description" content="今天是初级的多任务：从手动切换，到初步的自动切换。">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Fri Dec 28 2018 23:51:36 GMT+0800">
-        <meta property="article:modified_time" content="Sat Dec 29 2018 00:05:54 GMT+0800">
+        <meta property="article:published_time" content="Sat Apr 06 2019 13:13:26 GMT+0800">
+        <meta property="article:modified_time" content="Sat Apr 06 2019 14:55:52 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/CV/classification/nearestneighbor.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day15/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/CV/classification/nearestneighbor.html/index.html",
-    "headline": "最近邻算法",
-    "datePublished": "Fri Dec 28 2018 23:51:36 GMT+0800",
-    "dateModified": "Sat Dec 29 2018 00:05:54 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day15/index.html/index.html",
+    "headline": "Day15",
+    "datePublished": "Sat Apr 06 2019 13:13:26 GMT+0800",
+    "dateModified": "Sat Apr 06 2019 14:55:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",CV,分类算法",
-    "description": "最近邻算法是最朴素的一种想法，比较两张图片之间每个像素差异大小来确定分类。",
+    "keywords": ",OS",
+    "description": "今天是初级的多任务：从手动切换，到初步的自动切换。",
 }
 </script>
 
@@ -342,6 +342,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是多任务"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是多任务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何切换多任务"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">如何切换多任务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#改进为自动切换的多任务"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">改进为自动切换的多任务</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#挑战任务切换"><span class="post-toc-number">2.</span> <span class="post-toc-text">挑战任务切换</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#任务切换进阶"><span class="post-toc-number">3.</span> <span class="post-toc-text">任务切换进阶</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#做个简单的多任务（1）"><span class="post-toc-number">4.</span> <span class="post-toc-text">做个简单的多任务（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#做个简单的多任务（2）"><span class="post-toc-number">5.</span> <span class="post-toc-text">做个简单的多任务（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#提高运行速度"><span class="post-toc-number">6.</span> <span class="post-toc-text">提高运行速度</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测试运行速度"><span class="post-toc-number">7.</span> <span class="post-toc-text">测试运行速度</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#多任务进阶"><span class="post-toc-number">8.</span> <span class="post-toc-text">多任务进阶</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -371,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                最近邻算法
+                Day15
             </p>
         </div>
 
@@ -390,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>12月 28, 2018</span>
+        <span>4月 06, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CV/">CV</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/分类算法/">分类算法</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -431,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=最近邻算法&url=https://ccdv2.github.io/CV/classification/nearestneighbor.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day15&url=https://ccdv2.github.io/OS/day15/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -440,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=最近邻算法&url=https://ccdv2.github.io/CV/classification/nearestneighbor.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day15&url=https://ccdv2.github.io/OS/day15/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -449,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/CV/classification/nearestneighbor.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day15/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -458,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/CV/classification/nearestneighbor.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day15/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -483,40 +492,224 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>最近邻算法是最朴素的一种想法，比较两张图片之间每个像素差异大小来确定分类。<br><a id="more"></a></p>
-<pre><code class="python">import numpy as np
-
-# 最近邻算法
-class NearsetNeigbor:
-    def __init__(self):
-        pass
-
-    # @param X   对应图片集
-    # @param y   分类标号
-    def train(self, X, y):
-        self.Xtr = X
-        self.ytr = y
-
-    # 用1范数的最近邻给出预测结果
-    # @param X   待预测图片集
-    # @return    最有可能的分类
-    def predict(self, X):
-        numTest = X.shape[0]
-
-        # 构建一个大小与待预测图片相同的全零矩阵，数值类型与标号的类型相同
-        Ypred = np.zeros(numTest, dtype = self.ytr.dtype)
-
-        for i in xrange(numTest):
-            # 逐行进行计算并求和
-            distances = np.sum(np.abs(self.Xtr - X[i,:]), axis = 1)
-
-            # 找出对于第几个测试集是最小的，给出标号
-            minIndex = np.argmin(distances)
-            Ypred[i] = self.ytr[minIndex]
-
-        return Ypred
-
+        <p>今天是初级的多任务：从手动切换，到初步的自动切换。<br><a id="more"></a></p>
+<h1 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h1><h2 id="什么是多任务"><a href="#什么是多任务" class="headerlink" title="什么是多任务"></a>什么是多任务</h2><p>这里的多任务，应该是多进程的意思吧。至于CPU如何分时间片给各个进程，应该很清楚了。但是值得注意的一点是，CPU要每隔多长时间切换一次进程：太长会让人感到延迟，太短会大大降低运行效率。</p>
+<h2 id="如何切换多任务"><a href="#如何切换多任务" class="headerlink" title="如何切换多任务"></a>如何切换多任务</h2><p>首先，我们要定义任务状态段TSS(task status segment):</p>
+<pre><code class="c">struct TSS32
+{
+    int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;
+    int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;
+    int es, cs, ss, ds, fs, gs;
+    int ldtr, iomap;
+};
 </code></pre>
+<p>第1行的各个成员，保存的是任务设置的相关信息，执行任务切换的时候一般不会被写入。<br>第2行是32位的寄存器。其中，EIP是extended instruction pointer，即扩展指令指针寄存器，用于记录下一条需要执行的指令位于内存中的哪个地址，当CPU从别的任务切换回来之后，需要用到这个寄存器。<br>啊。。另外说一句，看到IP就不由得想到了PC，于是百度了一下发现 PC = CS * 16 + IP<br>第3行为16位的寄存器。<br>第4行也是任务设置有关的。不过ldtr要设置为0,iomap要设置为0x40000000。像这样：</p>
+<pre><code class="c">tss_a.ldtr = 0;
+tss_a.iomap = 0x40000000;
+tss_b.ldtr = 0;
+tss_b.iomap = 0x40000000;
+</code></pre>
+<p>虽说EIP是JMP时候用的，但是如果CS(code segment)不变的话，就是JMP的near模式，用于一个任务内部的跳转。所以要用到JMP的far模式，同时把EIP和CS改写一下。例如：</p>
+<pre><code class="c">JMP DWORD 2 * 8:0x0000001b
+</code></pre>
+<p>意思就是CS设置为2 * 8, EIP设置为0x1b。<br>当使用JMP的far模式之后，如果该地址是TSS（已经在GDT中设置过了），则会理解为是任务切换，否则是JMP的far模式。<br>再说回设置GDT，像这样：</p>
+<pre><code class="c">set_segmdesc(gdt + 3, 103, (int) &amp;tss_a, AR_TSS32);
+set_segmdesc(gdt + 4, 103, (int) &amp;tss_b, AR_TSS32);
+</code></pre>
+<p>这样就设置好了对应的TSS。<br>当要进行任务切换的时候，我们需要往一个特定的寄存器TR（task register）里赋值，赋的值为对应GDT编号*8</p>
+<pre><code class="c">_load_tr:        ; void load_tr(int tr);
+        LTR        [ESP+4]            ; tr
+        RET
+</code></pre>
+<p>在TR更改之后，还需要进行farJMP</p>
+<pre><code class="c">_taskswitch4:    ; void taskswitch4(void);
+        JMP        4*8:0
+        RET
+</code></pre>
+<p>这个函数的RET是因为从切换到别的程序之后，还会切回来。</p>
+<p>这样，就是初步的“多任务”了。</p>
+<h2 id="改进为自动切换的多任务"><a href="#改进为自动切换的多任务" class="headerlink" title="改进为自动切换的多任务"></a>改进为自动切换的多任务</h2><p>对于手动切换多任务，对于程序员来说很不方便。因为既要自己设定时间片，还不能忘了写定时器。所以一般来说多任务都是操作系统自己管的。<br>今天是初步自动切换的多任务，只会在两个状态之间来回切换，估计明天会写进程管理程序之类的吧，这里猜一下。<br>至于如何进行自动切换的多任务，要设定一个定时器，对于来了一个超时中断的信号，我们判断一下是不是这个特定的定时器。如果是的话，在处理完各种其它的中断信号之后，切换任务。</p>
+<pre><code class="c">void inthandler20(int *esp)
+{
+    struct TIMER *timer;
+    char ts = 0;
+    io_out8(PIC0_OCW2, 0x60);    // 向PIC通知IRQ00处理完毕
+    timerctl.count++;
+    if(timerctl.next_time &gt; timerctl.count)
+    {
+        return;
+    }
+    timer = timerctl.t0; // 总是先把第一个代入timer
+    for(;;)
+    {
+        // timer的计时器全部在工作中，因此不用确认flags
+        if(timer-&gt;timeout &gt; timerctl.count)
+        {
+            break;
+        }
+        // 超时
+        timer-&gt;flags = TIMER_FLAGS_ALLOC;
+        if(timer != mt_timer)
+        {
+            fifo32_put(timer-&gt;fifo, timer-&gt;data);
+        }
+        else
+        {
+            ts = 1; // mt_timer超时
+        }
+        timer = timer-&gt;next_timer; // 将下一个计时器的地址赋给timer
+    }
+    timerctl.t0 = timer;
+    timerctl.next_time = timer-&gt;timeout;
+    if(ts != 0)
+    {
+        mt_taskswitch();
+    }
+    return;
+}
+</code></pre>
+<p>作者提到，为什么不一检测到mt_timer就switch呢？是因为任务切换的时候，中断处理可能还没完成（比如接下来的一些定时器超时），所以立即切换可能会出现一些错误。</p>
+<h1 id="挑战任务切换"><a href="#挑战任务切换" class="headerlink" title="挑战任务切换"></a>挑战任务切换</h1><blockquote>
+<p>harib12a</p>
+</blockquote>
+<p>在之前如何切换任务的基础上，我们还要设定一下任务b的TSS的各种状态：</p>
+<pre><code class="c">task_b_esp = memman_alloc_4k(memman, 64 * 1024) + 64 * 1024;
+tss_b.eip = (int)&amp;task_b_main;
+tss_b.eflags = 0x00000202; // IF = 1
+tss_b.eax = 0;
+tss_b.ecx = 0;
+tss_b.edx = 0;
+tss_b.ebx = 0;
+tss_b.esp = task_b_esp; // 函数的内存地址
+tss_b.ebp = 0;
+tss_b.esi = 0;
+tss_b.edi = 0;
+tss_b.es = 1 * 8;
+tss_b.cs = 2 * 8;
+tss_b.ss = 1 * 8;
+tss_b.ds = 1 * 8;
+tss_b.fs = 1 * 8;
+tss_b.gs = 1 * 8;
+</code></pre>
+<p>然后taskswitch到b之后，任务b目前的函数：</p>
+<pre><code class="c">void task_b_main(void)
+{
+    for(;;)
+    {
+        io_hlt();
+    }
+}
+</code></pre>
+<p>程序的作用是10s之后会锁死：什么都动不了</p>
+<h1 id="任务切换进阶"><a href="#任务切换进阶" class="headerlink" title="任务切换进阶"></a>任务切换进阶</h1><blockquote>
+<p>harib12b</p>
+</blockquote>
+<p>在taskb的main里加点东西</p>
+<pre><code class="c">void task_b_main(void)
+{
+    struct FIFO32 fifo;
+    struct TIMER *timer;
+    int i, fifobuf[128];
+    fifo32_init(&amp;fifo, 128, fifobuf);
+    timer = timer_alloc();
+    timer_init(timer, &amp;fifo, 1);
+    timer_settime(timer, 500);
+
+    for(;;)
+    {
+        io_cli();
+        if(fifo32_status(&amp;fifo) == 0)
+        {
+            io_stihlt();
+        }
+        else
+        {
+            i = fifo32_get(&amp;fifo);
+            io_sti();
+            if(i == 1) // 超时时间为5秒
+            {
+                taskswitch3(); //返回任务A
+            }
+        }
+    }
+}
+</code></pre>
+<p>taskswitch3是新增的函数，和之前的类似<br>过5秒锁死之后，又可以动了。。</p>
+<h1 id="做个简单的多任务（1）"><a href="#做个简单的多任务（1）" class="headerlink" title="做个简单的多任务（1）"></a>做个简单的多任务（1）</h1><blockquote>
+<p>harib12c</p>
+</blockquote>
+<p>我们在函数里指定要跳转到位置，像这样</p>
+<pre><code class="c">_farjmp:        ; void farjmp(int eip, int cs);
+        JMP        FAR    [ESP+4]                ; eip, cs
+        RET
+</code></pre>
+<p>这样我们可以直接指定cs，就进行对应的进程切换了。<br>然后，设定一个定时切换的定时器：</p>
+<pre><code class="c">timer_ts = timer_alloc();
+timer_init(timer_ts, &amp;fifo, 2);
+timer_settime(timer_ts, 2);
+...
+if(i == 2)
+{
+    farjmp(0, 4 * 8);
+    timer_settime(timer_ts, 2);
+}
+</code></pre>
+<p>task_b_main里也有类似的切换。这里就不写了。</p>
+<p>这其实就已经有多任务的雏形了。。</p>
+<h1 id="做个简单的多任务（2）"><a href="#做个简单的多任务（2）" class="headerlink" title="做个简单的多任务（2）"></a>做个简单的多任务（2）</h1><blockquote>
+<p>harib12d</p>
+</blockquote>
+<p>在task_b_main里继续计数。。那么就不写了。。<br>不过值得说的一点是，作者用了一个类似全局变量的宏定义，把地址传给了task_b_main。<br>到这步，就可以看到又在计时，又可以输入了。</p>
+<h1 id="提高运行速度"><a href="#提高运行速度" class="headerlink" title="提高运行速度"></a>提高运行速度</h1><blockquote>
+<p>harib12e</p>
+</blockquote>
+<p>还以为提高是真正的进程切换的提高呢）其实是让画面的刷新频率慢一些——因为人眼分辨不出来。这里也不放代码了。<br>作者为了传参，通过指针往栈地址里放了函数的第一个参数。像这样</p>
+<pre><code class="c">task_b_esp = memman_alloc_4k(memman, 64 * 1024) + 64 * 1024 - 8;
+
+*((int *) (task_b_esp + 4)) = (int) sht_back;
+</code></pre>
+<p>考虑一下这里的 - 8，其实是地址最后00和fc的区别。</p>
+<blockquote>
+<p>不让用return</p>
+</blockquote>
+<p>作者提到，类似task_b_main, HariMain，都不能return。这是因为这些函数并不是某段程序调用的，因此return的时候使用[ESP]作为返回地址的话，就会出问题（因为本来调用的时候没有用到ESP）</p>
+<h1 id="测试运行速度"><a href="#测试运行速度" class="headerlink" title="测试运行速度"></a>测试运行速度</h1><blockquote>
+<p>harib12f</p>
+</blockquote>
+<p>这一节测试了一下上一节改进画面之后的效率，进行了比如，去掉定时器、更改显示频率等等，可以比较接近原性能的50%</p>
+<h1 id="多任务进阶"><a href="#多任务进阶" class="headerlink" title="多任务进阶"></a>多任务进阶</h1><blockquote>
+<p>harib12g</p>
+</blockquote>
+<p>看到了自动管理的影子。<br>设定一个特殊的计时器，定时触发中断：</p>
+<pre><code class="c">struct TIMER *mt_timer;
+int mt_tr;
+
+void mt_init(void)
+{
+    mt_timer = timer_alloc();
+    // 这里没有必要用timer_init，因为不需要向缓冲区写入数据
+    timer_settime(mt_timer, 2);
+    mt_tr = 3 * 8;
+    return;
+}
+
+void mt_taskswitch(void)
+{
+    if(mt_tr == 3 * 8)
+    {
+        mt_tr = 4 * 8;
+    }
+    else
+    {
+        mt_tr = 3 * 8;
+    }
+    timer_settime(mt_timer, 2);
+    farjmp(0, mt_tr);
+    return;
+}
+</code></pre>
+<p>之后参考上面写的中断程序，一定记得在最后再进行任务切换。<br>最后，再把各个函数中切换部分删掉，真正意义的“多任务”就初见雏形了。</p>
+<p>那么，明天写任务管理程序。</p>
 
         
     
@@ -559,21 +752,13 @@ class NearsetNeigbor:
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/CV/classification/knn.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/CV/index.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day14/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
