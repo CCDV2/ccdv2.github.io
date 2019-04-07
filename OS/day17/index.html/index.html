@@ -45,7 +45,7 @@
     
     <title>
         
-            分类: openGL | 
+            Day17 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" itemprop="description" content="今天继续完善了一下多任务，之后是支持键盘的各种输入。">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-seaside-light.min.css?b71t6V/NeTk95fu056Paxw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -214,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/categories/CG/openGL/page/2/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day17//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -229,13 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/categories/CG/openGL/page/2/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day17//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: openGL | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day17 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="">
-    
+    <meta property="og:description" content="今天继续完善了一下多任务，之后是支持键盘的各种输入。">
+    <meta property="og:article:tag" content="OS"> 
 
+    
+        <meta property="article:published_time" content="Sun Apr 07 2019 14:25:36 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 07 2019 16:57:10 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -243,13 +249,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/categories/CG/openGL/page/2/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day17/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day17/index.html/index.html",
+    "headline": "Day17",
+    "datePublished": "Sun Apr 07 2019 14:25:36 GMT+0800",
+    "dateModified": "Sun Apr 07 2019 16:57:10 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "CCDV2",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/1590.png"
+        },
+        "description": "高海千歌 is the 最高！（大雾）"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "CCDV2&#39;s nest",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/1590.png"
+        }
+    },
+    "keywords": ",OS",
+    "description": "今天继续完善了一下多任务，之后是支持键盘的各种输入。",
+}
+</script>
 
 
     
@@ -283,483 +319,519 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想和问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想和问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#闲置任务"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">闲置任务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一个bug"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">一个bug</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#闲置任务-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">闲置任务</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建命令行窗口"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建命令行窗口</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#切换输入窗口"><span class="post-toc-number">4.</span> <span class="post-toc-text">切换输入窗口</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现字符输入"><span class="post-toc-number">5.</span> <span class="post-toc-text">实现字符输入</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#符号的输入"><span class="post-toc-number">6.</span> <span class="post-toc-text">符号的输入</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#大写字母与小写字母输入"><span class="post-toc-number">7.</span> <span class="post-toc-text">大写字母与小写字母输入</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对各种锁定键的支持"><span class="post-toc-number">8.</span> <span class="post-toc-text">对各种锁定键的支持</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/CG/starter/string.html/">字符图元</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            OpenGL中有两种字符图元，位图字体与轮廓字体。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/CG/starter/string.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>12月 23, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CG/">CG</a>, <a class="post_category-link" href="/categories/CG/openGL/">openGL</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-        
-            
-                
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/CG/starter/bitpixelmap.html/">位图与像素图</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            我们可以在指定地点生成位图、或者是像素图
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/CG/starter/bitpixelmap.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>12月 23, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CG/">CG</a>, <a class="post_category-link" href="/categories/CG/openGL/">openGL</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-        
-            
-                
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/CG/starter/vertexarray.html/">顶点数组</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            当需要画一个较复杂的图形时（处理多个图元），顶点数组可以避免多次函数调用的开销，使程序更快。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/CG/starter/vertexarray.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>12月 22, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CG/">CG</a>, <a class="post_category-link" href="/categories/CG/openGL/">openGL</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-        
-            
-                
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/CG/starter/polygon.html/">多边形</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            一些多边形的画法。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/CG/starter/polygon.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>12月 22, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CG/">CG</a>, <a class="post_category-link" href="/categories/CG/openGL/">openGL</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-        
-            
-                
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/CG/starter/lines.html/">点与线段</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            画点、线、折线段、闭合折线段
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/CG/starter/lines.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>12月 22, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CG/">CG</a>, <a class="post_category-link" href="/categories/CG/openGL/">openGL</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-        
-            
-                
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/CG/starter/helloworld.html/">画一个简单的线段</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            熟悉各种初始化函数的使用方法。。以及画一个线段。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/CG/starter/helloworld.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>12月 22, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CG/">CG</a>, <a class="post_category-link" href="/categories/CG/openGL/">openGL</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-        
-            
-                
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/CG/index.html/">计算机图形学学习笔记</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            学习CG的时候，顺便把书上的代码放上来吧。。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/CG/index.html/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/1590.png" width="44px" height="44px" alt="CCDV2's avatar">
-            </div>
-            <div>
-                <strong>CCDV2</strong>
-                <span>12月 22, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CG/">CG</a>, <a class="post_category-link" href="/categories/CG/openGL/">openGL</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/categories/CG/openGL/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/categories/CG/openGL/">1</a><span class="page-number current">2</span>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Day17
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/1590.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CCDV2</strong>
+        <span>4月 07, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day17&url=https://ccdv2.github.io/OS/day17/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day17&url=https://ccdv2.github.io/OS/day17/index.html/index.html&via=CCDV2" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day17/index.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day17/index.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>今天继续完善了一下多任务，之后是支持键盘的各种输入。<br><a id="more"></a></p>
+<h1 id="一些感想和问题"><a href="#一些感想和问题" class="headerlink" title="一些感想和问题"></a>一些感想和问题</h1><h2 id="闲置任务"><a href="#闲置任务" class="headerlink" title="闲置任务"></a>闲置任务</h2><p>闲置任务是为了保证所有前台的任务都休眠的时候，系统不至于无法切换到一个任务而出错。把它注册到最下层即可。(Windows下也有system idle process)</p>
+<pre><code class="c">void task_idle(void)
+{
+    for(;;)
+    {
+        io_hlt();
+    }
+}
+</code></pre>
+<h2 id="一个bug"><a href="#一个bug" class="headerlink" title="一个bug"></a>一个bug</h2><p>在控制台输入的时候，输入第一个字符，虽然已经释放了，但是就像是一直按着一样，蹦出来一串相同的字符。而且后序按什么键都不起效果。<br>经过检查，发现是中文输入法开了）虽然不知道中文输入法会和这个虚拟机、或者操作系统起什么冲突，但是还是挺奇怪的。。</p>
+<p>目前创建的是命令行的第一步：支持各种符号的输入</p>
+<h1 id="闲置任务-1"><a href="#闲置任务-1" class="headerlink" title="闲置任务"></a>闲置任务</h1><blockquote>
+<p>harib14a</p>
+</blockquote>
+<p>只需要在init的时候，把这个idle放进去就好了。</p>
+<h1 id="创建命令行窗口"><a href="#创建命令行窗口" class="headerlink" title="创建命令行窗口"></a>创建命令行窗口</h1><blockquote>
+<p>harib14b</p>
+</blockquote>
+<p>先画出来一个窗口，并且让它<del>目前还不可以</del>接收输入的字符吧<br>窗口创建：</p>
+<pre><code class="c">sht_cons = sheet_alloc(shtctl);
+buf_cons = (unsigned char *) memman_alloc_4k(memman, 256 * 165);
+sheet_setbuf(sht_cons, buf_cons, 256, 165, -1); // 无透明色
+make_window8(buf_cons, 256, 165, &quot;console&quot;, 0);
+make_textbox8(sht_cons, 8, 28, 240, 128, COL8_000000);
+task_cons = task_alloc();
+task_cons-&gt;tss.esp = memman_alloc_4k(memman, 64 * 1024) + 64 * 1024 - 8;
+task_cons-&gt;tss.eip = (int) &amp;console_task;
+task_cons-&gt;tss.es = 1 * 8;
+task_cons-&gt;tss.cs = 2 * 8;
+task_cons-&gt;tss.ss = 1 * 8;
+task_cons-&gt;tss.ds = 1 * 8;
+task_cons-&gt;tss.fs = 1 * 8;
+task_cons-&gt;tss.gs = 1 * 8;
+*((int *) (task_cons-&gt;tss.esp + 4)) = (int) sht_cons;
+task_run(task_cons, 2, 2); /* level=2, priority=2 */
+</code></pre>
+<p>调整层叠顺序</p>
+<pre><code class="c">sheet_slide(sht_back,  0,  0);
+sheet_slide(sht_cons, 32,  4);
+sheet_slide(sht_win,  64, 56);
+sheet_slide(sht_mouse, mx, my);
+sheet_updown(sht_back,  0);
+sheet_updown(sht_cons,  1);
+sheet_updown(sht_win,   2);
+sheet_updown(sht_mouse, 3);
+</code></pre>
+<p>控制台任务部分</p>
+<pre><code class="c">void console_task(struct SHEET *sheet)
+{
+    struct FIFO32 fifo;
+    struct TIMER *timer;
+    struct TASK *task = task_now();
+
+    int i, fifobuf[128], cursor_x = 8, cursor_c = COL8_000000;
+    fifo32_init(&amp;fifo, 128, fifobuf, task);
+
+    timer = timer_alloc();
+    timer_init(timer, &amp;fifo, 1);
+    timer_settime(timer, 50);
+
+    for (;;)
+    {
+        io_cli();
+        if(fifo32_status(&amp;fifo) == 0)
+        {
+            task_sleep(task);
+            io_sti();
+        }
+        else
+        {
+            i = fifo32_get(&amp;fifo);
+            io_sti();
+            if(i &lt;= 1) // 光标用定时器
+            {
+                if(i != 0)
+                {
+                    timer_init(timer, &amp;fifo, 0); // 下次置0
+                    cursor_c = COL8_FFFFFF;
+                }
+                else
+                {
+                    timer_init(timer, &amp;fifo, 1); // 下次置1
+                    cursor_c = COL8_000000;
+                }
+                timer_settime(timer, 50);
+                boxfill8(sheet-&gt;buf, sheet-&gt;bxsize, cursor_c, cursor_x, 28, cursor_x + 7, 43);
+                sheet_refresh(sheet, cursor_x, 28, cursor_x + 8, 44);
+            }
+        }
+    }
+}
+</code></pre>
+<p>因为console需要休眠自己，所以在最开始通过task_now获得了自己的地址。<br>目前的话还不能输入什么文字，因为还没切换到这个任务来。</p>
+<h1 id="切换输入窗口"><a href="#切换输入窗口" class="headerlink" title="切换输入窗口"></a>切换输入窗口</h1><blockquote>
+<p>harib14c</p>
+</blockquote>
+<p>绘制窗口就省略了，看一下tab是怎么切换的：</p>
+<pre><code class="c">if(i == 256 + 0x0f) // Tab
+{
+    if(key_to == 0)
+    {
+        key_to = 1;
+        make_wtitle8(buf_win,  sht_win-&gt;bxsize,  &quot;task_a&quot;,  0);
+        make_wtitle8(buf_cons, sht_cons-&gt;bxsize, &quot;console&quot;, 1);
+    }
+    else
+    {
+        key_to = 0;
+        make_wtitle8(buf_win,  sht_win-&gt;bxsize,  &quot;task_a&quot;,  1);
+        make_wtitle8(buf_cons, sht_cons-&gt;bxsize, &quot;console&quot;, 0);
+    }
+    sheet_refresh(sht_win,  0, 0, sht_win-&gt;bxsize,  21);
+    sheet_refresh(sht_cons, 0, 0, sht_cons-&gt;bxsize, 21);
+}
+</code></pre>
+<p>对应tab的话会绘制不同的窗口（对应的窗口会高亮，另一个则会变暗）</p>
+<h1 id="实现字符输入"><a href="#实现字符输入" class="headerlink" title="实现字符输入"></a>实现字符输入</h1><blockquote>
+<p>harib14d</p>
+</blockquote>
+<p>因为task基本上都会用到IO，所以把FIFO也放到task里了</p>
+<pre><code class="c">struct TASK
+{
+    int sel, flags; // sel代表GDT的编号
+    int level, priority;
+    struct FIFO32 fifo;
+    struct TSS32 tss;
+};
+</code></pre>
+<p>然后再Harimain和console里，都要进行对应的修改</p>
+<pre><code class="c">if(256 &lt;= i &amp;&amp; i &lt;= 511) // 键盘数据
+{
+    sprintf(s, &quot;%02X&quot;, i - 256);
+    putfonts8_asc_sht(sht_back, 0, 16, COL8_FFFFFF, COL8_008484, s, 2);
+    if(i &lt; 0x54 + 256 &amp;&amp; keytable[i - 256] != 0) // 一般字符
+    {
+        if(key_to == 0) // 发送到任务A
+        {
+            if(cursor_x &lt; 128)
+            {
+                // 显示一个字符之后将光标后移一位
+                s[0] = keytable[i - 256];
+                s[1] = 0;
+                putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_FFFFFF, s, 1);
+                cursor_x += 8;
+            }
+        }
+        else // 发送给命令行窗口
+        {
+            fifo32_put(&amp;task_cons-&gt;fifo, keytable[i - 256] + 256);
+        }
+    }
+    if(i == 256 + 0x0e) // 退格键
+    {
+        if(key_to == 0) // 发送给任务A
+        {
+            if(cursor_x &gt; 8)
+            {
+                // 用空白擦除光标后将光标前移一位
+                putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_FFFFFF, &quot; &quot;, 1);
+                cursor_x -= 8;
+            }
+        }
+        else // 发送给命令行窗口
+        {
+            fifo32_put(&amp;task_cons-&gt;fifo, 8 + 256);
+        }
+    }
+    if(i == 256 + 0x0f) // Tab键
+    {
+        if(key_to == 0)
+        {
+            key_to = 1;
+            make_wtitle8(buf_win,  sht_win-&gt;bxsize,  &quot;task_a&quot;,  0);
+            make_wtitle8(buf_cons, sht_cons-&gt;bxsize, &quot;console&quot;, 1);
+        }
+        else
+        {
+            key_to = 0;
+            make_wtitle8(buf_win,  sht_win-&gt;bxsize,  &quot;task_a&quot;,  1);
+            make_wtitle8(buf_cons, sht_cons-&gt;bxsize, &quot;console&quot;, 0);
+        }
+        sheet_refresh(sht_win,  0, 0, sht_win-&gt;bxsize,  21);
+        sheet_refresh(sht_cons, 0, 0, sht_cons-&gt;bxsize, 21);
+    }
+    // 重新显示光标
+    boxfill8(sht_win-&gt;buf, sht_win-&gt;bxsize, cursor_c, cursor_x, 28, cursor_x + 7, 43);
+    sheet_refresh(sht_win, cursor_x, 28, cursor_x + 8, 44);
+}
+</code></pre>
+<p>根据key_to不同，往console或者是taskA的FIFO发字符<br>console的键盘处理部分的话，因为和之前的HariMain挺相似的，所以就不再写了。</p>
+<h1 id="符号的输入"><a href="#符号的输入" class="headerlink" title="符号的输入"></a>符号的输入</h1><blockquote>
+<p>harib14e</p>
+</blockquote>
+<p>输入符号的话，就要处理shift键。所以需要两张表，一张对应没按shift，一张对应按了shift。不过因为作者是日式键盘，所以有些地方好像对应不太上。之后再修改好了。<br>shift的状态对应不同的输出</p>
+<pre><code class="c">if(key_shift == 0)
+{
+    s[0] = keytable0[i - 256];
+}
+else
+{
+    s[0] = keytable1[i - 256];
+}
+</code></pre>
+<p>进入和退出状态：</p>
+<pre><code class="c">if(i == 256 + 0x2a) // 左shift ON
+{
+    key_shift |= 1;
+}
+if(i == 256 + 0x36) // 右shift ON
+{
+    key_shift |= 2;
+}
+if(i == 256 + 0xaa) // 左shift OFF
+{
+    key_shift &amp;= ~1;
+}
+if(i == 256 + 0xb6) // 右shift OFF
+{
+    key_shift &amp;= ~2;
+}
+</code></pre>
+<p>这就处理好了shift，接下来就可以进行大小写了</p>
+<h1 id="大写字母与小写字母输入"><a href="#大写字母与小写字母输入" class="headerlink" title="大写字母与小写字母输入"></a>大写字母与小写字母输入</h1><blockquote>
+<p>harib14f</p>
+</blockquote>
+<p>切换大小写，既可以通过按shift，也可以通过capslock。锁定键状态储存在了binfo-&gt;leds中<br>binfo-&gt;leds的第4位：ScrollLock状态<br>binfo-&gt;leds的第5位：NumLock状态<br>binfo-&gt;leds的第6位：CapsLock状态<br>然后判断是否转变为小写</p>
+<pre><code class="c">if(&#39;A&#39; &lt;= s[0] &amp;&amp; s[0] &lt;= &#39;Z&#39;) // 当输入字符为英文字母时
+{
+    if (((key_leds &amp; 4) == 0 &amp;&amp; key_shift == 0) ||
+            ((key_leds &amp; 4) != 0 &amp;&amp; key_shift != 0))
+    {
+        s[0] += 0x20; // 将大写字母转换为小写字母
+    }
+}
+</code></pre>
+<p>接下来是锁定键</p>
+<h1 id="对各种锁定键的支持"><a href="#对各种锁定键的支持" class="headerlink" title="对各种锁定键的支持"></a>对各种锁定键的支持</h1><blockquote>
+<p>harib14g</p>
+</blockquote>
+<p>按键编码其实很熟悉，但是因为一般的锁定键上面都有灯，要让等亮灭的话，需要进行额外的操作。<br>简而言之，等待状态寄存器变为0之后，要先向0x0060发送0xed（说明要设置LED）。再等待状态寄存器变为0之后，发送1字节的数据。如果返回为0xfa，说明成功发送；如果返回0xfe，需要重新发送。<br>于是程序这么写：<br>等待部分：</p>
+<pre><code class="c">if(fifo32_status(&amp;keycmd) &gt; 0 &amp;&amp; keycmd_wait &lt; 0)
+{
+    // 如果存在向键盘控制器发送的数据，则发送它
+    keycmd_wait = fifo32_get(&amp;keycmd);
+    wait_KBC_sendready();
+    io_out8(PORT_KEYDAT, keycmd_wait);
+}
+</code></pre>
+<p>keycmd是一个缓冲区，用于顺序发送数据。<br>更改部分：</p>
+<pre><code class="c">if(i == 256 + 0x3a) // CapsLock
+{
+    key_leds ^= 4;
+    fifo32_put(&amp;keycmd, KEYCMD_LED);
+    fifo32_put(&amp;keycmd, key_leds);
+}
+if(i == 256 + 0x45) // NumLock
+{
+    key_leds ^= 2;
+    fifo32_put(&amp;keycmd, KEYCMD_LED);
+    fifo32_put(&amp;keycmd, key_leds);
+}
+if(i == 256 + 0x46) // ScrollLock
+{
+    key_leds ^= 1;
+    fifo32_put(&amp;keycmd, KEYCMD_LED);
+    fifo32_put(&amp;keycmd, key_leds);
+}
+if(i == 256 + 0xfa) // 键盘成功接收到数据
+{
+    keycmd_wait = -1;
+}
+if(i == 256 + 0xfe) // 键盘没有成功接收到数据
+{
+    wait_KBC_sendready();
+    io_out8(PORT_KEYDAT, keycmd_wait);
+}
+</code></pre>
+<p>这样各种输入就支持了。。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzY3Ni8xNDIwNw==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/OS/day16/index.html/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1078,6 +1150,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1090,6 +1166,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
