@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+        <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Day16 | 
+        
+        CCDV2&#39;s nest
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/1590.png">
+    <link rel="icon" href="/img/1590.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="今天继续多任务：自动管理、休眠、优先级。基本上实现了一个操作系统任务管理该有的功能。虽然今天代码量有点多，不过慢慢来看吧。">
+    <meta name="keywords" content=",OS">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-seaside-light.min.css?b71t6V/NeTk95fu056Paxw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg3.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="CCDV2&#39;s nest">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day16//">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/1590.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day16//">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Day16 | CCDV2&#39;s nest">
+    <meta property="og:image" content="/img/1590.png">
+    <meta property="og:description" content="今天继续多任务：自动管理、休眠、优先级。基本上实现了一个操作系统任务管理该有的功能。虽然今天代码量有点多，不过慢慢来看吧。">
+    <meta property="og:article:tag" content="OS"> 
+
+    
+        <meta property="article:published_time" content="Sun Apr 07 2019 10:44:26 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 07 2019 14:06:12 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day16/index.html/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day16/index.html/index.html",
+    "headline": "Day16",
+    "datePublished": "Sun Apr 07 2019 10:44:26 GMT+0800",
+    "dateModified": "Sun Apr 07 2019 14:06:12 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "CCDV2",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/1590.png"
+        },
+        "description": "高海千歌 is the 最高！（大雾）"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "CCDV2&#39;s nest",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/1590.png"
+        }
+    },
+    "keywords": ",OS",
+    "description": "今天继续多任务：自动管理、休眠、优先级。基本上实现了一个操作系统任务管理该有的功能。虽然今天代码量有点多，不过慢慢来看吧。",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一个进程管理都应该有什么"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一个进程管理都应该有什么</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#任务休眠"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">任务休眠</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设定任务优先级"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">设定任务优先级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自动改变任务的优先级-休眠"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">自动改变任务的优先级/休眠</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#任务管理自动化"><span class="post-toc-number">2.</span> <span class="post-toc-text">任务管理自动化</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#让任务休眠"><span class="post-toc-number">3.</span> <span class="post-toc-text">让任务休眠</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增加窗口数量"><span class="post-toc-number">4.</span> <span class="post-toc-text">增加窗口数量</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设定任务优先级（1）"><span class="post-toc-number">5.</span> <span class="post-toc-text">设定任务优先级（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设定任务优先级（2）"><span class="post-toc-number">6.</span> <span class="post-toc-text">设定任务优先级（2）</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Day16
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/1590.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CCDV2</strong>
+        <span>4月 07, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day16&url=https://ccdv2.github.io/OS/day16/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day16&url=https://ccdv2.github.io/OS/day16/index.html/index.html&via=CCDV2" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day16/index.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day16/index.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>今天继续多任务：自动管理、休眠、优先级。基本上实现了一个操作系统任务管理该有的功能。虽然今天代码量有点多，不过慢慢来看吧。<br><a id="more"></a></p>
+<h1 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h1><p>因为代码有几个版本变化，所以这里就不总结了。</p>
+<h2 id="一个进程管理都应该有什么"><a href="#一个进程管理都应该有什么" class="headerlink" title="一个进程管理都应该有什么"></a>一个进程管理都应该有什么</h2><ul>
+<li>定义好的结构体，用于存储各种管理信息。</li>
+<li>定时切换功能，这个要操作系统自动切换，不需要程序员手动切换。</li>
+<li>休眠功能，或者说把等待IO的进程扔到等待队列里</li>
+<li>优先级，不同进程分到的时间片大小不一样</li>
+</ul>
+<p>前两点是昨天+今天开头做的，后两点则是为了更好的用户体验做的。</p>
+<h2 id="任务休眠"><a href="#任务休眠" class="headerlink" title="任务休眠"></a>任务休眠</h2><p>当一个任务在等待IO的时候，可以先把它从正在运行的任务中删除，等到对应的IO中断来了，再唤醒（run）它</p>
+<h2 id="设定任务优先级"><a href="#设定任务优先级" class="headerlink" title="设定任务优先级"></a>设定任务优先级</h2><p>作者采用了这样的结构<br><img src="data:image/png;base64,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xkciZy73EEHF3CIMWEcICAQWc34P871VaNzLmmVOqb9HKHEv9r4xEpHHjyLrYtiY92zOIltxnd0fCDoReb4oskREREQuQJElIiIicgGKLBEREZELUGSJiIiIXIAiS0REROQCFFkiIiIiF6DIEhEREbkARZaIiIjIBSiyRERERC5AkSUiIiJyAYosERERkQtQZImIiIhcgCJLRERE5AIUWSIiIiIXoMgSERERuQBFloiIiMgFKLJERERELkCRJSIiInIBiiwRERGRC1BkiYiIiFyAIktERETkAhRZIiIiIhegyBIRERG5AEWWiIiIyAUoskREREQuQJElIiIicgGKLBEREZELUGSJiIiIXIAiS0REROQCFFkiIiIiF6DIEhEREbkARZaIiIjIBSiyRERERC5AkSUiIiJyAYosERERkQtQZImIiIhcgCJLRERE5AIepcj6/PPPX3zwwQcv3n333Rc//vGPNU17IPv1r3/94qOPPnr1yhQRkZJHJbI+++yzlxv7t771LU3T7shee+21l4JLRET+xaMRWR9++GFzc9c07X7srbfeevWKFRGRRyGyOMFqbeh5XKFp2u2Nx/Wvv/76N16XPMoXEZFHIrLYzMtN/L333nvxxRdfvCoVkYfkr3/969fEFt+LiMgjEVl83iMbOO+gReS+4E1P+Trl9FlE5LnzKERWNm6Md80icn+Uv5Ti61RERJElIiehyBIR+TrPTmTRfvUzXdTj82D8Xa6nwpax8GiWz9eM5otHRMyRSVUUWSIiX+dZiiz8vPHGGy+TwsjyGRNExq0gPvqdfabl7bfffvlbXNTfYhnbitjKLxz0PgeH8Mp98TfKhHWV9cBaExF57jxbkbXiJ0ljBoIIf0eNv5xdfniYvw3WI7Hl1+lXjZMpbOUkj3r004OYiQHBdy+sjKtF7kEtPm99ilmupRLGtXdst0KRJSLydZ6tyFo5BeK0i7ozEEMtQVMbogURxclYq7xlPVYFYA3tRsIp5G+TjUQG8e29J7ShLfORmLCIzAi8GNdmfREr92wLrAP65NSO8fAVH1zHynvAfc7pXozYyjrEwM+lWKbOSDAjnt5///2XbRCstMdox8+Ib76WY8+clCeyWa/pM8Zc5hq0xkFb+txzLwP+4++IHxGRp8KzFVlJqiNLcjqLJL0z2Otr1I65yeevMgeBxEwiLh9j4oc5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" alt="priority"><br>将任务分为分到不同的层（LEVEL）中，上层会屏蔽下面的所有层（所以只在当层进行切换）。只有当层任务处理完，进入休眠之后，才会运行下层的任务。</p>
+<h2 id="自动改变任务的优先级-休眠"><a href="#自动改变任务的优先级-休眠" class="headerlink" title="自动改变任务的优先级/休眠"></a>自动改变任务的优先级/休眠</h2><p>到目前为止，优先级都是开始设定好的，但是估计当以后比如可以使用API之后，对于IO之类的任务，应该可以自动让其休眠/唤醒吧。<br>不知道以后会不会有改动。</p>
+<p>来看代码吧，因为觉得每一步都很有用，所以每次修改也都记录了下来，而不是直接放最终版本。</p>
+<h1 id="任务管理自动化"><a href="#任务管理自动化" class="headerlink" title="任务管理自动化"></a>任务管理自动化</h1><blockquote>
+<p>harib13a</p>
+</blockquote>
+<p>其实做任务管理的时候，想到之前的图层管理、定时器管理，这样写也不会觉得新奇了。<br>首先是结构体定义：</p>
+<pre><code class="c">#define MAX_TASKS 1000    // 最大任务数量
+#define TASK_GDT0 3        // 定义从GDT的几号开始分配给TSS
+struct TSS32
+{
+    int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;
+    int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;
+    int es, cs, ss, ds, fs, gs;
+    int ldtr, iomap;
+};
+struct TASK
+{
+    int sel, flags; // sel用来存放GDT的编号
+    struct TSS32 tss;
+};
+struct TASKCTL
+{
+    int running; // 正在运行的任务数量
+    int now; // 这个变量用来记录当前正在运行的是哪个任务
+    struct TASK *tasks[MAX_TASKS];
+    struct TASK tasks0[MAX_TASKS];
+};
+</code></pre>
+<p>初始化：</p>
+<pre><code class="c">struct TASKCTL *taskctl;
+struct TIMER *task_timer;
+
+struct TASK *task_init(struct MEMMAN *memman)
+{
+    int i;
+    struct TASK *task;
+    struct SEGMENT_DESCRIPTOR *gdt = (struct SEGMENT_DESCRIPTOR *)ADR_GDT;
+    taskctl = (struct TASKCTL *)memman_alloc_4k(memman, sizeof(struct TASKCTL));
+    for(i = 0; i &lt; MAX_TASKS; ++i)
+    {
+        taskctl-&gt;tasks0[i].flags = 0;
+        taskctl-&gt;tasks0[i].sel = (TASK_GDT0 + i) * 8;
+        set_segmdesc(gdt + TASK_GDT0 + i, 103, (int)&amp;taskctl-&gt;tasks0[i].tss, AR_TSS32);
+    }
+    task = task_alloc();
+    task-&gt;flags = 2; // 活动中标志
+    taskctl-&gt;running = 1;
+    taskctl-&gt;now = 0;
+    taskctl-&gt;tasks[0] = task;
+    load_tr(task-&gt;sel);
+    task_timer = timer_alloc();
+    timer_settime(task_timer, 2);
+    return task;
+}
+</code></pre>
+<p>这里的初始化返回的地址，可以理解为当前运行的这个程序（调用初始化的程序）也被当作一个任务来管理了。<br>分配一个任务</p>
+<pre><code class="c">struct TASK *task_alloc(void)
+{
+    int i;
+    struct TASK *task;
+    for(i = 0; i &lt; MAX_TASKS; ++i)
+    {
+        if(taskctl-&gt;tasks0[i].flags == 0)
+        {
+            task = &amp;taskctl-&gt;tasks0[i];
+            task-&gt;flags = 1; // 使用中的标志
+            task-&gt;tss.eflags = 0x00000202; // IF = 1
+            task-&gt;tss.eax = 0; // 这里先置为0
+            task-&gt;tss.ecx = 0;
+            task-&gt;tss.edx = 0;
+            task-&gt;tss.ebx = 0;
+            task-&gt;tss.ebp = 0;
+            task-&gt;tss.esi = 0;
+            task-&gt;tss.edi = 0;
+            task-&gt;tss.es = 0;
+            task-&gt;tss.ds = 0;
+            task-&gt;tss.fs = 0;
+            task-&gt;tss.gs = 0;
+            task-&gt;tss.ldtr = 0;
+            task-&gt;tss.iomap = 0x40000000;
+            return task;
+        }
+    }
+    return 0; // 全部正在使用
+}
+</code></pre>
+<p>使得任务处于活动状态</p>
+<pre><code class="c">void task_run(struct TASK *task)
+{
+    task-&gt;flags = 2; // 活动中标志
+    taskctl-&gt;tasks[taskctl-&gt;running] = task;
+    taskctl-&gt;running++;
+    return;
+}
+</code></pre>
+<p>自动切换</p>
+<pre><code class="c">void task_switch(void)
+{
+    timer_settime(task_timer, 2);
+    if(taskctl-&gt;running &gt;= 2)
+    {
+        taskctl-&gt;now++;
+        if(taskctl-&gt;now == taskctl-&gt;running)
+        {
+            taskctl-&gt;now = 0;
+        }
+        farjmp(0, taskctl-&gt;tasks[taskctl-&gt;now]-&gt;sel);
+    }
+    return;
+}
+</code></pre>
+<p>目前是一个轮换的切换</p>
+<p>定义完成这些东西之后，就可以改写当初的主函数了</p>
+<pre><code class="c">struct TASK *task_b;
+...
+task_init(memman);
+task_b = task_alloc();
+task_b-&gt;tss.esp = memman_alloc_4k(memman, 64 * 1024) + 64 * 1024 - 8;
+task_b-&gt;tss.eip = (int) &amp;task_b_main;
+task_b-&gt;tss.es = 1 * 8;
+task_b-&gt;tss.cs = 2 * 8;
+task_b-&gt;tss.ss = 1 * 8;
+task_b-&gt;tss.ds = 1 * 8;
+task_b-&gt;tss.fs = 1 * 8;
+task_b-&gt;tss.gs = 1 * 8;
+*((int *) (task_b-&gt;tss.esp + 4)) = (int) sht_back;
+task_run(task_b);
+</code></pre>
+<p>简单来说，初始化管理程序、分配一个任务并设置各种参数，放到运行队列里。</p>
+<h1 id="让任务休眠"><a href="#让任务休眠" class="headerlink" title="让任务休眠"></a>让任务休眠</h1><blockquote>
+<p>harib13b</p>
+</blockquote>
+<p>一个任务在等待IO的时候，就sleep它，当IO来了之后再run它<br>sleep：</p>
+<pre><code class="c">void task_sleep(struct TASK *task)
+{
+    int i;
+    char ts = 0;
+    if(task-&gt;flags == 2) // 如果指定的任务处于唤醒状态
+    {
+        if(task == taskctl-&gt;tasks[taskctl-&gt;now])
+        {
+            ts = 1; // 让自己休眠的话，稍后需要进行任务切换
+        }
+        // 寻找task所在的位置
+        for(i = 0; i &lt; taskctl-&gt;running; ++i)
+        {
+            if(taskctl-&gt;tasks[i] == task)
+            {
+                // 在这里
+                break;
+            }
+        }
+        taskctl-&gt;running--;
+        if(i &lt; taskctl-&gt;now)
+        {
+            taskctl-&gt;now--; // 需要移动成员，要相应地处理
+        }
+        // 移动成员
+        for(; i &lt; taskctl-&gt;running; ++i)
+        {
+            taskctl-&gt;tasks[i] = taskctl-&gt;tasks[i + 1];
+        }
+        task-&gt;flags = 1; // 不工作的状态
+        if(ts != 0)
+        {
+            // 任务切换
+            if(taskctl-&gt;now &gt;= taskctl-&gt;running)
+            {
+                //如果now的值出现异常，则进行修正
+                taskctl-&gt;now = 0;
+            }
+            farjmp(0, taskctl-&gt;tasks[taskctl-&gt;now]-&gt;sel);
+        }
+    }
+    return;
+}
+</code></pre>
+<p>之后，要相应修改FIFO</p>
+<pre><code class="c">struct FIFO32
+{
+    int *buf;
+    int p, q, size, free, flags;
+    struct TASK *task;
+};
+</code></pre>
+<p>设置了当IO来的时候，需要唤醒的任务<br>改写init</p>
+<pre><code class="c">void fifo32_init(struct FIFO32 *fifo, int size, int *buf, struct TASK *task)
+// FIFO缓冲区初始化
+{
+    fifo-&gt;size = size;
+    fifo-&gt;buf = buf;
+    fifo-&gt;free = size; // 剩余空间
+    fifo-&gt;flags = 0;
+    fifo-&gt;p = 0; // 写入位置
+    fifo-&gt;q = 0; // 读取位置
+    fifo-&gt;task = task; // 有数据写入时需要唤醒的任务
+    return;
+}
+</code></pre>
+<p>改写put</p>
+<pre><code class="c">int fifo32_put(struct FIFO32 *fifo, int data)
+// 向FIFO写入数据并累积起来
+{
+    if(fifo-&gt;free == 0)
+    {
+        // 没有剩余空间则溢出
+        fifo-&gt;flags |= FLAGS_OVERRUN;
+        return -1;
+    }
+    fifo-&gt;buf[fifo-&gt;p] = data;
+    fifo-&gt;p++;
+    if(fifo-&gt;p == fifo-&gt;size)
+    {
+        fifo-&gt;p = 0;
+    }
+    fifo-&gt;free--;
+    if(fifo-&gt;task != 0) // 指针非空
+    {
+        if(fifo-&gt;task-&gt;flags != 2) // 如果任务处于休眠状态
+        {
+            task_run(fifo-&gt;task); // 将任务唤醒
+        }
+    }
+    return 0;
+}
+</code></pre>
+<p>改写一下主函数</p>
+<pre><code class="c">fifo32_init(&amp;fifo, 128, fifobuf, 0);
+...
+task_a = task_init(memman);
+fifo.task = task_a;
+...
+if(fifo32_status(&amp;fifo) == 0)
+{
+    task_sleep(task_a);
+    io_sti();
+}
+</code></pre>
+<p>这样休眠功能也做好了。如果实际运行一下，当鼠标键盘不操作的时候，计数会变更快。</p>
+<h1 id="增加窗口数量"><a href="#增加窗口数量" class="headerlink" title="增加窗口数量"></a>增加窗口数量</h1><blockquote>
+<p>harib13c</p>
+</blockquote>
+<p>额外添加了2个计数窗口的副本，这样也为之后设置优先级做铺垫。<br>虽然书上放了很长的代码，但是其实改动部分也只有相关窗口的初始化以及设定，所以就不放代码了。</p>
+<h1 id="设定任务优先级（1）"><a href="#设定任务优先级（1）" class="headerlink" title="设定任务优先级（1）"></a>设定任务优先级（1）</h1><blockquote>
+<p>harib13d</p>
+</blockquote>
+<p>在每个任务里都调整自己任务的时间间隔<br>改动一下TASK，增加priority</p>
+<pre><code class="c">struct TASK
+{
+    int sel, flags; // sel代表GDT编号
+    int priority;
+    struct TSS32 tss;
+};
+</code></pre>
+<p>相应改动init</p>
+<pre><code class="c">struct TASK *task_init(struct MEMMAN *memman)
+{
+    int i;
+    struct TASK *task;
+    struct SEGMENT_DESCRIPTOR *gdt = (struct SEGMENT_DESCRIPTOR *) ADR_GDT;
+    taskctl = (struct TASKCTL *) memman_alloc_4k(memman, sizeof (struct TASKCTL));
+    for(i = 0; i &lt; MAX_TASKS; ++i)
+    {
+        taskctl-&gt;tasks0[i].flags = 0;
+        taskctl-&gt;tasks0[i].sel = (TASK_GDT0 + i) * 8;
+        set_segmdesc(gdt + TASK_GDT0 + i, 103, (int) &amp;taskctl-&gt;tasks0[i].tss, AR_TSS32);
+    }
+    task = task_alloc();
+    task-&gt;flags = 2; // 活动中标志
+    task-&gt;priority = 2; // 0.02秒
+    taskctl-&gt;running = 1;
+    taskctl-&gt;now = 0;
+    taskctl-&gt;tasks[0] = task;
+    load_tr(task-&gt;sel);
+    task_timer = timer_alloc();
+    timer_settime(task_timer, task-&gt;priority);
+    return task;
+}
+</code></pre>
+<p>其实就是默认把优先级设置为2<br>改动run</p>
+<pre><code>void task_run(struct TASK *task, int priority)
+{
+    if(priority &gt; 0) // 在任务从休眠中唤醒的时候会被使用
+    {
+        task-&gt;priority = priority;
+    }
+    if(task-&gt;flags != 2)
+    {
+        task-&gt;flags = 2; // 活动中标志
+        taskctl-&gt;tasks[taskctl-&gt;running] = task;
+        taskctl-&gt;running++;
+    }
+    return;
+}
+</code></pre><p>switch：</p>
+<pre><code class="c">void task_switch(void)
+{
+    struct TASK *task;
+    taskctl-&gt;now++;
+    if(taskctl-&gt;now == taskctl-&gt;running)
+    {
+        taskctl-&gt;now = 0;
+    }
+    task = taskctl-&gt;tasks[taskctl-&gt;now];
+    timer_settime(task_timer, task-&gt;priority);
+    if(taskctl-&gt;running &gt;= 2) // 当只有1个任务的时候，就不要切换
+    {
+        farjmp(0, task-&gt;sel);
+    }
+    return;
+}
+</code></pre>
+<p>每次定时器超时时间与优先级对应。</p>
+<p>改写从fifo唤醒的函数，注意不要改变优先级</p>
+<pre><code class="c">int fifo32_put(struct FIFO32 *fifo, int data)
+// 向FIFO写入数据并累积起来
+{
+    ...
+    fifo-&gt;free--;
+    if(fifo-&gt;task != 0)
+    {
+        if(fifo-&gt;task-&gt;flags != 2) // 如果任务处于休眠状态
+        {
+            task_run(fifo-&gt;task, 0); // 将其唤醒，0代表不改变优先级
+        }
+    }
+    return 0;
+}
+</code></pre>
+<p>然后在主函数设定三个窗口的优先级。已经可以正确设定了<br>实际运行的话，运行的时间比例大致与设定的优先级比例相同</p>
+<h1 id="设定任务优先级（2）"><a href="#设定任务优先级（2）" class="headerlink" title="设定任务优先级（2）"></a>设定任务优先级（2）</h1><blockquote>
+<p>harib13e</p>
+</blockquote>
+<p>尽管可以把需要的任务设定很高的优先级，但有时候造成卡顿的话，还是会很不高兴，所以可以考虑再分成不同级别。</p>
+<pre><code class="c">#define MAX_TASKS 1000    // 最大任务数量
+#define TASK_GDT0 3        // 定义从GDT的几号开始分配给TSS
+#define MAX_TASKS_LV    100
+#define MAX_TASKLEVELS    10
+struct TSS32
+{
+    int backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3;
+    int eip, eflags, eax, ecx, edx, ebx, esp, ebp, esi, edi;
+    int es, cs, ss, ds, fs, gs;
+    int ldtr, iomap;
+};
+struct TASK
+{
+    int sel, flags; // sel用来存放GDT的编号
+    int level, priority;
+    struct TSS32 tss;
+};
+struct TASKLEVEL
+{
+    int running; // 正在运行的任务数量
+    int now; // 这个变量用来记录当前正在运行的是哪个任务
+    struct TASK *tasks[MAX_TASKS_LV];
+};
+struct TASKCTL
+{
+    int now_lv; // 现在活动中的LEVEL
+    char lv_change; // 在下次任务切换时是否需要改变LEVEL
+    struct TASKLEVEL level[MAX_TASKLEVELS];
+    struct TASK tasks0[MAX_TASKS];
+};
+</code></pre>
+<p>这样的话，最终的taskctl和tasktimer只会有一个（用来管理多个LEVEL），作者于是定义成了全局变量<br>接下来是一些用来管理tasklevel的方法<br>返回当前执行的是哪个任务：</p>
+<pre><code>struct TASK *task_now(void)
+{
+    struct TASKLEVEL *tl = &amp;taskctl-&gt;level[taskctl-&gt;now_lv];
+    return tl-&gt;tasks[tl-&gt;now];
+}
+</code></pre><p>增加一个任务</p>
+<pre><code>void task_add(struct TASK *task)
+{
+    struct TASKLEVEL *tl = &amp;taskctl-&gt;level[task-&gt;level];
+    tl-&gt;tasks[tl-&gt;running] = task;
+    tl-&gt;running++;
+    task-&gt;flags = 2; // 活动中
+    return;
+}
+</code></pre><p>删除一个任务</p>
+<pre><code class="c">void task_remove(struct TASK *task)
+{
+    int i;
+    struct TASKLEVEL *tl = &amp;taskctl-&gt;level[task-&gt;level];
+    // 寻找task所在的位置
+    for (i = 0; i &lt; tl-&gt;running; ++i)
+    {
+        if(tl-&gt;tasks[i] == task)
+        {
+            // 在这里
+            break;
+        }
+    }
+    tl-&gt;running--;
+    if(i &lt; tl-&gt;now)
+    {
+        tl-&gt;now--; // 需要移动成员，要相应的处理
+    }
+    if(tl-&gt;now &gt;= tl-&gt;running)
+    {
+        // now值出现异常，进行修正
+        tl-&gt;now = 0;
+    }
+    task-&gt;flags = 1; // 休眠中
+    // 移动
+    for(; i &lt; tl-&gt;running; ++i)
+    {
+        tl-&gt;tasks[i] = tl-&gt;tasks[i + 1];
+    }
+    return;
+}
+</code></pre>
+<p>决定接下来应该切换到哪个level</p>
+<pre><code class="c">void task_switchsub(void)
+{
+    int i;
+    // 从最上层的LEVEL开始
+    for(i = 0; i &lt; MAX_TASKLEVELS; ++i)
+    {
+        if(taskctl-&gt;level[i].running &gt; 0)
+        {
+            break; // 找到了
+        }
+    }
+    taskctl-&gt;now_lv = i;
+    taskctl-&gt;lv_change = 0;
+    return;
+}
+</code></pre>
+<p>然后要调整之前的函数</p>
+<pre><code class="c">struct TASK *task_init(struct MEMMAN *memman)
+{
+    int i;
+    struct TASK *task;
+    struct SEGMENT_DESCRIPTOR *gdt = (struct SEGMENT_DESCRIPTOR *) ADR_GDT;
+    taskctl = (struct TASKCTL *) memman_alloc_4k(memman, sizeof (struct TASKCTL));
+    for(i = 0; i &lt; MAX_TASKS; ++i)
+    {
+        taskctl-&gt;tasks0[i].flags = 0;
+        taskctl-&gt;tasks0[i].sel = (TASK_GDT0 + i) * 8;
+        set_segmdesc(gdt + TASK_GDT0 + i, 103, (int) &amp;taskctl-&gt;tasks0[i].tss, AR_TSS32);
+    }
+    for(i = 0; i &lt; MAX_TASKLEVELS; ++i)
+    {
+        taskctl-&gt;level[i].running = 0;
+        taskctl-&gt;level[i].now = 0;
+    }
+    task = task_alloc();
+    task-&gt;flags = 2;    // 活动中标志
+    task-&gt;priority = 2; // 0.02秒
+    task-&gt;level = 0;    // 最高LEVEL
+    task_add(task);
+    task_switchsub();    // LEVEL设置
+    load_tr(task-&gt;sel);
+    task_timer = timer_alloc();
+    timer_settime(task_timer, task-&gt;priority);
+    return task;
+}
+</code></pre>
+<p>开始的任务设置为0（最高）</p>
+<p>修改run：</p>
+<pre><code class="c">void task_run(struct TASK *task, int level, int priority)
+{
+    if(level &lt; 0)
+    {
+        level = task-&gt;level; // 不改变LEVEL
+    }
+    if(priority &gt; 0)
+    {
+        task-&gt;priority = priority;
+    }
+    if(task-&gt;flags == 2 &amp;&amp; task-&gt;level != level) // 改变活动中的LEVEL（先删除后增加）
+    {
+        task_remove(task); // 这里执行之后flag的值会变为1，于是下面的if语句块也会被执行
+    }
+    if(task-&gt;flags != 2)
+    {
+        // 从休眠状态唤醒的情形
+        task-&gt;level = level;
+        task_add(task);
+    }
+
+    taskctl-&gt;lv_change = 1; // 下次任务切换时检查LEVEL（有可能跑到更高级的LEVEL了）
+    return;
+}
+</code></pre>
+<p>因为有了remove，所以更改一下sleep</p>
+<pre><code class="c">void task_sleep(struct TASK *task)
+{
+    struct TASK *now_task;
+    if(task-&gt;flags == 2)
+    {
+        // 如果处于活动状态
+        now_task = task_now();
+        task_remove(task); // 执行此语句的话flag将变为1（休眠状态）
+        if(task == now_task)
+        {
+            // 如果让自己休眠，则需要进行任务切换
+            task_switchsub();
+            now_task = task_now(); // 在设定后获取当前任务的值
+            farjmp(0, now_task-&gt;sel);
+        }
+    }
+    return;
+}
+</code></pre>
+<p>更改switch：当存在lv_change的时候要重新检查</p>
+<pre><code class="c">void task_switch(void)
+{
+    struct TASKLEVEL *tl = &amp;taskctl-&gt;level[taskctl-&gt;now_lv];
+    struct TASK *new_task, *now_task = tl-&gt;tasks[tl-&gt;now];
+    tl-&gt;now++;
+    if(tl-&gt;now == tl-&gt;running)
+    {
+        tl-&gt;now = 0;
+    }
+    if(taskctl-&gt;lv_change != 0)
+    {
+        task_switchsub();
+        tl = &amp;taskctl-&gt;level[taskctl-&gt;now_lv];
+    }
+    new_task = tl-&gt;tasks[tl-&gt;now];
+    timer_settime(task_timer, new_task-&gt;priority);
+    if(new_task != now_task)
+    {
+        farjmp(0, new_task-&gt;sel);
+    }
+    return;
+}
+</code></pre>
+<p>最后是修改更改fifo了，要添加LV的修改</p>
+<pre><code class="c">int fifo32_put(struct FIFO32 *fifo, int data)
+// 向FIFO写入数据并累积起来
+{
+    ...
+    fifo-&gt;free--;
+    if(fifo-&gt;task != 0)
+    {
+        if(fifo-&gt;task-&gt;flags != 2) // 如果任务处于休眠状态
+        {
+            task_run(fifo-&gt;task, -1, 0); // 将任务唤醒
+        }
+    }
+    return 0;
+}
+</code></pre>
+<p>在主函数里，就可以设定任务的等级与优先级了。</p>
+<p>总算把这么长的多任务写得差不多了。。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzY3Ni8xNDIwNw==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/OS/day15/index.html/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/1590.png" alt="CCDV2's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        ccdv21999@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: ccdv21999@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/CG/">CG<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/categories/CG/openGL/">openGL<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/">CV<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/分类算法/">分类算法<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/神经网络/">神经网络<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/神经网络/分类算法/">分类算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/OS/">OS<span class="sidebar_archives-count">18</span></a></li><li><a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">29</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/IO/">IO<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/">dfs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/剪枝/">剪枝<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/博弈论/">博弈论<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/字符串/">字符串<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数据结构/">数据结构<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">17</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>CCDV2's nest
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?d+XW6aNuIPgOn1iA7NnB4g==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
