@@ -45,7 +45,7 @@
     
     <title>
         
-            poj2826 | 
+            Day18 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",acm,计算几何">
+    <meta name="description" itemprop="description" content="今天继续完善命令行窗口。">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/computgeo/poj2826.html/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day18//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/computgeo/poj2826.html/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day18//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="poj2826 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day18 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="">
-    <meta property="og:article:tag" content="acm"> <meta property="og:article:tag" content="计算几何"> 
+    <meta property="og:description" content="今天继续完善命令行窗口。">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Mon Jul 09 2018 21:42:24 GMT+0800">
-        <meta property="article:modified_time" content="Mon Jul 09 2018 23:40:39 GMT+0800">
+        <meta property="article:published_time" content="Tue Apr 09 2019 14:11:36 GMT+0800">
+        <meta property="article:modified_time" content="Wed Apr 10 2019 15:41:27 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/computgeo/poj2826.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day18/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/computgeo/poj2826.html/index.html",
-    "headline": "poj2826",
-    "datePublished": "Mon Jul 09 2018 21:42:24 GMT+0800",
-    "dateModified": "Mon Jul 09 2018 23:40:39 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day18/index.html/index.html",
+    "headline": "Day18",
+    "datePublished": "Tue Apr 09 2019 14:11:36 GMT+0800",
+    "dateModified": "Wed Apr 10 2019 15:41:27 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",acm,计算几何",
-    "description": "",
+    "keywords": ",OS",
+    "description": "今天继续完善命令行窗口。",
 }
 </script>
 
@@ -342,6 +342,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想以及优化"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想以及优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可改进的光标闪烁"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">可改进的光标闪烁</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#回车与窗口滚动"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">回车与窗口滚动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件存储方式"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件存储方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对于命令的改进比较方法"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">对于命令的改进比较方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#控制光标闪烁（1）"><span class="post-toc-number">2.</span> <span class="post-toc-text">控制光标闪烁（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#控制光标闪烁（2）"><span class="post-toc-number">3.</span> <span class="post-toc-text">控制光标闪烁（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对回车键的支持"><span class="post-toc-number">4.</span> <span class="post-toc-text">对回车键的支持</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对窗口滚动的支持"><span class="post-toc-number">5.</span> <span class="post-toc-text">对窗口滚动的支持</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mem命令"><span class="post-toc-number">6.</span> <span class="post-toc-text">mem命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#cls命令"><span class="post-toc-number">7.</span> <span class="post-toc-text">cls命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#dir命令"><span class="post-toc-number">8.</span> <span class="post-toc-text">dir命令</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -371,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                poj2826
+                Day18
             </p>
         </div>
 
@@ -390,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>7月 09, 2018</span>
+        <span>4月 09, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/acm/">acm</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/计算几何/">计算几何</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -431,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=poj2826&url=https://ccdv2.github.io/computgeo/poj2826.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day18&url=https://ccdv2.github.io/OS/day18/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -440,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=poj2826&url=https://ccdv2.github.io/computgeo/poj2826.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day18&url=https://ccdv2.github.io/OS/day18/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -449,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/computgeo/poj2826.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day18/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -458,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/computgeo/poj2826.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day18/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -483,165 +492,374 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>要判断线段相交，然后就各种情况分类讨论<br><del>虽然过了，但是discuss里某组样例没过</del><br><del>而且还是g++WA, c++A</del>  </p>
-<pre><code class="cpp">#include &lt;iostream&gt;
-#include &lt;cstdio&gt;
-#include &lt;cmath&gt;
-using namespace std;
-const double EPS = 1e-6;
-
-struct Point
+        <p>今天继续完善命令行窗口。<br><a id="more"></a></p>
+<h1 id="一些感想以及优化"><a href="#一些感想以及优化" class="headerlink" title="一些感想以及优化"></a>一些感想以及优化</h1><h2 id="可改进的光标闪烁"><a href="#可改进的光标闪烁" class="headerlink" title="可改进的光标闪烁"></a>可改进的光标闪烁</h2><p>因为目前只有两个窗口，所以可以通过按tab来判断当前是哪个窗口在执行，从而每个任务都要判断是否该显示光标。但是这样其实不太好，因为每个任务里还要和别的任务产生一些关联（这个应该是不必要的）。个人感觉比较好的方法是当这个任务被唤醒的时候，显示光标，休眠的时候则停止光标的计时。不过目前看起来2个窗口的时候，这么写也没问题（而且貌似这两个都是在前台活动的窗口）。那就先按照这样写吧。估计以后窗口多了，作者又要自己改了。</p>
+<h2 id="回车与窗口滚动"><a href="#回车与窗口滚动" class="headerlink" title="回车与窗口滚动"></a>回车与窗口滚动</h2><p>本质上都是对像素进行的操作。所以待会直接看代码应该就足够了</p>
+<h2 id="文件存储方式"><a href="#文件存储方式" class="headerlink" title="文件存储方式"></a>文件存储方式</h2><p>当写到dir命令的时候，就不得不知道文件在磁盘里是怎么存储的：</p>
+<pre><code class="c">struct FILEINFO
 {
-    Point() {}
-    Point(double _x, double _y): x(_x), y(_y) {}
-
-    void input()
-    {
-        scanf(&quot;%lf%lf&quot;, &amp;x, &amp;y);
-    }
-
-    double getDis(Point &amp;rhs)
-    {
-        double xx = x - rhs.x;
-        xx *= xx;
-        double yy = y - rhs.y;
-        yy *= yy;
-        return sqrt(xx + yy);
-    }
-
-
-
-    double x, y;
+    unsigned char name[8], ext[3], type;
+    char reserve[10];
+    unsigned short time, date, clustno;
+    unsigned int size;
 };
-
-Point operator -(Point lhs, Point rhs)
+</code></pre>
+<p>name: 8字节文件名，全大写。不足时用空格补足（超过没说该怎么办）<br>若第一个字节为0xe5，则代表文件被删除<br>若第一个字节为0x00，则代表不包含任何文件名信息<br>ext：3字节扩展名，全大写。不足用空格补足<br>type：文件的属性信息</p>
+<ul>
+<li>0x00 一般文件</li>
+<li>0x01 只读</li>
+<li>0x02 隐藏</li>
+<li>0x04 系统</li>
+<li>0x08 非文件信息</li>
+<li>0x10 目录</li>
+<li>0x20 一般文件</li>
+</ul>
+<p>文件多种方式可以或起来（上面都是可以位或的）<br>reserve: 10字节保留。Windows定义的<br>time: WORD整数，存放文件时间<br>date: WORD整数，存放文件日期<br>clustno:（簇号） WORD整数，文件的内容从磁盘上的哪个扇区开始存放。<br>size: DWORD整数，存放文件大小</p>
+<h2 id="对于命令的改进比较方法"><a href="#对于命令的改进比较方法" class="headerlink" title="对于命令的改进比较方法"></a>对于命令的改进比较方法</h2><p>本节目前只加了三个命令：mem、cls、dir。但是可想而知命令多了以后，光if比较就会判断上很长时间。这个点以后也可以优化，改成哈希+函数指针什么的应该会比较好。</p>
+<p>因为今天还是初步的命令行，各种功能还不太完善。所以想到了两个目前看起来需要优化的点。看看以后会是怎么样。</p>
+<h1 id="控制光标闪烁（1）"><a href="#控制光标闪烁（1）" class="headerlink" title="控制光标闪烁（1）"></a>控制光标闪烁（1）</h1><blockquote>
+<p>harib15a</p>
+</blockquote>
+<p>作者通过tab键的切换，来判断当前窗口是否应该闪烁光标。先从HariMain窗口的光标开始。<br>对于tab键，额外添加一个状态来记录是否应该显示当前光标</p>
+<pre><code class="c">if(i == 256 + 0x0f) // Tab
 {
-    Point ret = Point(lhs.x - rhs.x, lhs.y - rhs.y);
-    return ret;
-}
-
-double operator ^(Point lhs, Point rhs)
-{
-    double ret = lhs.x * rhs.y - lhs.y * rhs.x;
-    return ret;
-}
-
-bool isCross(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)
-{
-    if(min(a.x, b.x) &lt;= max(c.x, d.x) &amp;&amp;
-        min(a.y, b.y) &lt;= max(c.y, d.y) &amp;&amp;
-        min(c.x, d.x) &lt;= max(a.x, b.x) &amp;&amp;
-        min(c.y, d.y) &lt;= max(a.y, b.y))
+    if(key_to == 0)
     {
-        double u, v, w, z;
-        u = (c - a) ^ (b - a);
-        v = (d - a) ^ (b - a);
-        w = (a - c) ^ (d - c);
-        z = (b - c) ^ (d - c);
-        if(u * v &lt;= EPS &amp;&amp; w * z &lt;= EPS &amp;&amp; fabs((a - b) ^ (c - d)) &gt; EPS) return true;
+        key_to = 1;
+        make_wtitle8(buf_win,  sht_win-&gt;bxsize,  &quot;task_a&quot;,  0);
+        make_wtitle8(buf_cons, sht_cons-&gt;bxsize, &quot;console&quot;, 1);
+        cursor_c = -1; // 不显示光标
+        boxfill8(sht_win-&gt;buf, sht_win-&gt;bxsize, COL8_FFFFFF, cursor_x, 28, cursor_x + 7, 43);
     }
-    return false;
-}
-
-Point getIntersect(Point &amp;a, Point &amp;b, Point &amp;c, Point &amp;d)
-{
-    double D = (a - b) ^ (c - d);
-    double a1 = b.y - a.y, a2 = d.y - c.y;
-    double b1 = a.x - b.x, b2 = c.x - d.x;
-    double c1 = a ^ (b - a), c2 = c ^ (d - c);
-    Point ret = Point((b2 * c1 - b1 * c2) / D, (a1 * c2 - a2 * c1) / D);
-    return ret;
-}
-
-Point a, b, c, d;
-int n;
-
-Point getMaxY(Point &amp;a, Point &amp;b, Point &amp;o)
-{
-    Point ret = a;
-    if(b.y &gt; o.y) ret = b;
-    return ret;
-}
-
-double solve()
-{
-    if(isCross(a, b, c, d) &amp;&amp; a.y != b.y &amp;&amp; c.y != d.y)
+    else
     {
-
-        Point o = getIntersect(a, b, c, d);
-        Point p = getMaxY(a, b, o);
-        Point q = getMaxY(c, d, o);
-        Point r, s;
-        Point oo = o;
-        ++oo.y;
-        double s1 = (oo - o) ^ (p - o), s2 = (oo - o) ^ (q - o);
-        if(fabs(p.y - q.y) &lt;= EPS)
-        {
-            r = p;
-            s = q;
-            goto getSum;
+        key_to = 0;
+        make_wtitle8(buf_win,  sht_win-&gt;bxsize,  &quot;task_a&quot;,  1);
+        make_wtitle8(buf_cons, sht_cons-&gt;bxsize, &quot;console&quot;, 0);
+        cursor_c = COL8_000000; // 显示光标
+    }
+    sheet_refresh(sht_win,  0, 0, sht_win-&gt;bxsize,  21);
+    sheet_refresh(sht_cons, 0, 0, sht_cons-&gt;bxsize, 21);
+}
+</code></pre>
+<p>如果状态切换了，需要重新显示光标</p>
+<pre><code class="c">if(cursor_c &gt;= 0)
+{
+    boxfill8(sht_win-&gt;buf, sht_win-&gt;bxsize, cursor_c, cursor_x, 28, cursor_x + 7, 43);
+}
+</code></pre>
+<p>定时器部分，如果cursor当前是-1的话，就不要绘图</p>
+<pre><code class="c">if (i &lt;= 1) { /* カーソル用タイマ */
+    if (i != 0) {
+        timer_init(timer, &amp;fifo, 0); /* 次は0を */
+        if (cursor_c &gt;= 0) {
+            cursor_c = COL8_000000;
         }
-        if(fabs(p.x - q.x) &lt;= EPS) return 0.0;
-
-        if(fabs(p.x - o.x) &lt;= EPS || fabs(q.x - o.x) &lt;= EPS) goto getRS;
-
-        if(s1 * s2 &gt; 0)
-        {
-            double s3;
-            Point temp1 = p - o, temp2 = q - o, temp3 = p - q;
-            double k1 = fabs(temp1.y / temp1.x), k2 = fabs(temp2.y / temp2.x);
-            double k3 = fabs(temp3.y / temp3.x);
-            if(p.y &gt; q.y)
-            {
-                s3 = (oo - o) ^ (p - q);
-            }
-            else
-            {
-                s3 = (oo - o) ^ (q - p);
-            }
-            if(s3 * s1 &gt; 0 &amp;&amp; k3 &gt; k1 &amp;&amp; k3 &gt; k2) return 0.0;
-            // printf(&quot;k3:%lf k2:%lf k1:%lf\n&quot;, k3, k2, k1);
+    } else {
+        timer_init(timer, &amp;fifo, 1); /* 次は1を */
+        if (cursor_c &gt;= 0) {
+            cursor_c = COL8_FFFFFF;
         }
-    getRS:
-        if(p.y &gt; q.y)
+    }
+    timer_settime(timer, 50);
+    if (cursor_c &gt;= 0) {
+        boxfill8(sht_win-&gt;buf, sht_win-&gt;bxsize, cursor_c, cursor_x, 28, cursor_x + 7, 43);
+        sheet_refresh(sht_win, cursor_x, 28, cursor_x + 8, 44);
+    }
+}
+</code></pre>
+<p>这个是作者写的光标定时器部分，但是这么多cursorc &gt;= 0不太爽，所以改一下顺序，其实也差不多</p>
+<pre><code class="c">if(i &lt;= 1) // 光标用定时器
+{
+    timer_init(timer, &amp;fifo, 0); // 随便置0
+    timer_settime(timer, 50);
+    if(cursor_c &gt;= 0)
+    {
+        if(i != 0)
         {
-            s = q;
-            double part1 = s.y - o.y, part2 = p.y - s.y;
-            r.x = o.x + (p.x - o.x) * part1 / (part1 + part2);
-            r.y = o.y + (p.y - o.y) * part1 / (part1 + part2);
+            // 0 已经被置过了
+            cursor_c = COL8_000000;
         }
         else
         {
-            r = p;
-            double part1 = r.y - o.y, part2 = q.y - r.y;
-            s.x = o.x + (q.x - o.x) * part1 / (part1 + part2);
-            s.y = o.y + (q.y - o.y) * part1 / (part1 + part2);
+            timer_init(timer, &amp;fifo, 1); // 下次置1（覆盖了）
+            cursor_c = COL8_FFFFFF;
         }
-
-    getSum:
-        // printf(&quot;r: %lf %lf\ns: %lf %lf\no:%lf %lf\n&quot;, r.x, r.y, s.x, s.y, o.x, o.y);
-        double ret = (r - o) ^ (s - o);
-        ret = fabs(ret) / 2.0;
-        return ret;
-    }
-    else return 0.0;
-}
-
-int main()
-{
-    // freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);
-    scanf(&quot;%d&quot;, &amp;n);
-    for(int i = 1; i &lt;= n; ++i)
-    {
-        a.input();
-        b.input();
-        c.input();
-        d.input();
-        printf(&quot;%.2f\n&quot;, solve());
+        boxfill8(sht_win-&gt;buf, sht_win-&gt;bxsize, cursor_c, cursor_x, 28, cursor_x + 7, 43);
+        sheet_refresh(sht_win, cursor_x, 28, cursor_x + 8, 44);
     }
 }
-
 </code></pre>
+<p>语句之间的顺序和之前会不太一样。。但是估计也没什么太大改变吧。。<br>修改完HariMain的光标，然后是console的</p>
+<h1 id="控制光标闪烁（2）"><a href="#控制光标闪烁（2）" class="headerlink" title="控制光标闪烁（2）"></a>控制光标闪烁（2）</h1><blockquote>
+<p>harib15b</p>
+</blockquote>
+<p>为了让console知道自己该不该闪烁，通过Harimain向其FIFO里传递信息。。。</p>
+<pre><code class="c">if(i == 256 + 0x0f) // Tab
+{
+    if(key_to == 0)
+    {
+        key_to = 1;
+        make_wtitle8(buf_win,  sht_win-&gt;bxsize,  &quot;task_a&quot;,  0);
+        make_wtitle8(buf_cons, sht_cons-&gt;bxsize, &quot;console&quot;, 1);
+        cursor_c = -1; // 不显示光标
+        boxfill8(sht_win-&gt;buf, sht_win-&gt;bxsize, COL8_FFFFFF, cursor_x, 28, cursor_x + 7, 43);
+        fifo32_put(&amp;task_cons-&gt;fifo, 2); // 命令行窗口光标ON
+    }
+    else
+    {
+        key_to = 0;
+        make_wtitle8(buf_win,  sht_win-&gt;bxsize,  &quot;task_a&quot;,  1);
+        make_wtitle8(buf_cons, sht_cons-&gt;bxsize, &quot;console&quot;, 0);
+        cursor_c = COL8_000000; // 显示光标
+        fifo32_put(&amp;task_cons-&gt;fifo, 3); // 命令行窗口光标OFF
+    }
+    sheet_refresh(sht_win,  0, 0, sht_win-&gt;bxsize,  21);
+    sheet_refresh(sht_cons, 0, 0, sht_cons-&gt;bxsize, 21);
+}
+</code></pre>
+<p>主函数加了两行，然后是console</p>
+<pre><code class="c">if(i &lt;= 1) // 光标用定时器
+{
+    if(i != 0)
+    {
+        timer_init(timer, &amp;task-&gt;fifo, 0); // 下次置为0
+        if(cursor_c &gt;= 0)
+        {
+            cursor_c = COL8_FFFFFF;
+        }
+    }
+    else
+    {
+        timer_init(timer, &amp;task-&gt;fifo, 1); // 下次置为1
+        if(cursor_c &gt;= 0)
+        {
+            cursor_c = COL8_000000;
+        }
+    }
+    timer_settime(timer, 50);
+}
+if(i == 2) // 光标ON
+{
+    cursor_c = COL8_FFFFFF;
+}
+if(i == 3) // 光标OFF
+{
+    boxfill8(sheet-&gt;buf, sheet-&gt;bxsize, COL8_000000, cursor_x, 28, cursor_x + 7, 43);
+    cursor_c = -1;
+}
+</code></pre>
+<p>为了稳定性（省事），这里就不魔改代码逻辑了。</p>
+<p>光标的问题到这里就解决好了。</p>
+<h1 id="对回车键的支持"><a href="#对回车键的支持" class="headerlink" title="对回车键的支持"></a>对回车键的支持</h1><blockquote>
+<p>harib15c</p>
+</blockquote>
+<p>回车键的响应方式，就是画一个换行，然后改变当前光标的坐标。<br>首先，当接收到’\n’时(ASCII值为10，键盘输入为0x1c)，主程序向控制台FIFO发送一个数据</p>
+<pre><code class="c">if(i == 256 + 0x1c) // 回车键
+{
+    if(key_to != 0) // 发送至命令行窗口
+    {
+        fifo32_put(&amp;task_cons-&gt;fifo, 10 + 256);
+    }
+}
+</code></pre>
+<p>控制台接收到数据之后，进行重绘操作</p>
+<pre><code>if(i == 10 + 256) // 回车键
+{
+    if(cursor_y &lt; 28 + 112)
+    {
+        // 用空格将光标擦除
+        putfonts8_asc_sht(sheet, cursor_x, cursor_y, COL8_FFFFFF, COL8_000000, &quot; &quot;, 1);
+        cursor_y += 16;
+        // 显示提示符
+        putfonts8_asc_sht(sheet, 8, cursor_y, COL8_FFFFFF, COL8_000000, &quot;&gt;&quot;, 1);
+        cursor_x = 16;
+    }
+}
+</code></pre><h1 id="对窗口滚动的支持"><a href="#对窗口滚动的支持" class="headerlink" title="对窗口滚动的支持"></a>对窗口滚动的支持</h1><blockquote>
+<p>harib15d</p>
+</blockquote>
+<p>元素上移+最下面一行涂黑</p>
+<pre><code class="c">if(i == 10 + 256)
+{
+    // Enter
+    // 用空格将光标擦除
+    putfonts8_asc_sht(sheet, cursor_x, cursor_y, COL8_FFFFFF, COL8_000000, &quot; &quot;, 1);
+    if(cursor_y &lt; 28 + 112)
+    {
+        cursor_y += 16; // 换行
+    }
+    else
+    {
+        // 滚动
+        for(y = 28; y &lt; 28 + 112; ++y)
+        {
+            for(x = 8; x &lt; 8 + 240; ++x)
+            {
+                sheet-&gt;buf[x + y * sheet-&gt;bxsize] = sheet-&gt;buf[x + (y + 16) * sheet-&gt;bxsize];
+            }
+        }
+        for(y = 28 + 112; y &lt; 28 + 128; ++y)
+        {
+            for(x = 8; x &lt; 8 + 240; ++x)
+            {
+                sheet-&gt;buf[x + y * sheet-&gt;bxsize] = COL8_000000;
+            }
+        }
+        sheet_refresh(sheet, 8, 28, 8 + 240, 28 + 128);
+    }
+    // 显示提示符
+    putfonts8_asc_sht(sheet, 8, cursor_y, COL8_FFFFFF, COL8_000000, &quot;&gt;&quot;, 1);
+    cursor_x = 16;
+}
+</code></pre>
+<p>没什么好说的）</p>
+<h1 id="mem命令"><a href="#mem命令" class="headerlink" title="mem命令"></a>mem命令</h1><blockquote>
+<p>harib15e</p>
+</blockquote>
+<p>之前只是涉及了图像的改变，所以现在要把字符也记录下来，方便我们进行指令判断。<br>对于一般字符，把它记录到缓冲区里：</p>
+<pre><code class="c">// 一般字符
+if(cursor_x &lt; 240)
+{
+    // 显示一个字符之后将光标后移一位
+    s[0] = i - 256;
+    s[1] = 0;
+    cmdline[cursor_x / 8 - 2] = i - 256;
+    putfonts8_asc_sht(sheet, cursor_x, cursor_y, COL8_FFFFFF, COL8_000000, s, 1);
+    cursor_x += 8;
+}
+</code></pre>
+<p>cmdline是缓冲区，用于记录当行的字符。<br>记录完成之后，当遇到换行的时候，就要进行指令的判断</p>
+<pre><code class="c">if(i == 10 + 256)
+{
+    // Enter
+    // 用空格将光标擦除
+    putfonts8_asc_sht(sheet, cursor_x, cursor_y, COL8_FFFFFF, COL8_000000, &quot; &quot;, 1);
+    cmdline[cursor_x / 8 - 2] = 0;
+    cursor_y = cons_newline(cursor_y, sheet);
+    // 执行命令
+    if(cmdline[0] == &#39;m&#39; &amp;&amp; cmdline[1] == &#39;e&#39; &amp;&amp; cmdline[2] == &#39;m&#39; &amp;&amp; cmdline[3] == 0)
+    {
+        // mem命令
+        sprintf(s, &quot;total   %dMB&quot;, memtotal / (1024 * 1024));
+        putfonts8_asc_sht(sheet, 8, cursor_y, COL8_FFFFFF, COL8_000000, s, 30);
+        cursor_y = cons_newline(cursor_y, sheet);
+        sprintf(s, &quot;free %dKB&quot;, memman_total(memman) / 1024);
+        putfonts8_asc_sht(sheet, 8, cursor_y, COL8_FFFFFF, COL8_000000, s, 30);
+        cursor_y = cons_newline(cursor_y, sheet);
+        cursor_y = cons_newline(cursor_y, sheet);
+    }
+    else if(cmdline[0] != 0)
+    {
+        // 不是命令，也不是空行
+        putfonts8_asc_sht(sheet, 8, cursor_y, COL8_FFFFFF, COL8_000000, &quot;Bad command.&quot;, 12);
+        cursor_y = cons_newline(cursor_y, sheet);
+        cursor_y = cons_newline(cursor_y, sheet);
+    }
+    // 显示提示符
+    putfonts8_asc_sht(sheet, 8, cursor_y, COL8_FFFFFF, COL8_000000, &quot;&gt;&quot;, 1);
+    cursor_x = 16;
+}
+</code></pre>
+<p>但是，memtotal也需要从主函数传进来。这样的话就只能再在主函数里修改栈了。</p>
+<pre><code class="c">task_cons-&gt;tss.esp = memman_alloc_4k(memman, 64 * 1024) + 64 * 1024 - 12;
+*((int *) (task_cons-&gt;tss.esp + 4)) = (int) sht_cons;
+*((int *) (task_cons-&gt;tss.esp + 8)) = memtotal;
+</code></pre>
+<p>之前是-8,现在是-12了。<br>为了方便理解，新换行（包括滚动）也写成了一个函数，就是把之前的复制到这里来。</p>
+<pre><code>int cons_newline(int cursor_y, struct SHEET *sheet)
+{
+    int x, y;
+    if(cursor_y &lt; 28 + 112)
+    {
+        cursor_y += 16; // 换行
+    }
+    else
+    {
+        // 滚动
+        for(y = 28; y &lt; 28 + 112; ++y)
+        {
+            for(x = 8; x &lt; 8 + 240; ++x)
+            {
+                sheet-&gt;buf[x + y * sheet-&gt;bxsize] = sheet-&gt;buf[x + (y + 16) * sheet-&gt;bxsize];
+            }
+        }
+        for(y = 28 + 112; y &lt; 28 + 128; ++y)
+        {
+            for(x = 8; x &lt; 8 + 240; ++x)
+            {
+                sheet-&gt;buf[x + y * sheet-&gt;bxsize] = COL8_000000;
+            }
+        }
+        sheet_refresh(sheet, 8, 28, 8 + 240, 28 + 128);
+    }
+    return cursor_y;
+}
+</code></pre><p>接着搞下一条指令</p>
+<h1 id="cls命令"><a href="#cls命令" class="headerlink" title="cls命令"></a>cls命令</h1><blockquote>
+<p>harib15f</p>
+</blockquote>
+<p>把之前的比较改成strcmp来比较。</p>
+<pre><code class="c">if(strcmp(cmdline, &quot;cls&quot;) == 0)
+{
+    // cls命令
+    for(y = 28; y &lt; 28 + 128; ++y)
+    {
+        for(x = 8; x &lt; 8 + 240; ++x)
+        {
+            sheet-&gt;buf[x + y * sheet-&gt;bxsize] = COL8_000000;
+        }
+    }
+    sheet_refresh(sheet, 8, 28, 8 + 240, 28 + 128);
+    cursor_y = 28;
+}
+</code></pre>
+<p>也没什么问题。。</p>
+<h1 id="dir命令"><a href="#dir命令" class="headerlink" title="dir命令"></a>dir命令</h1><blockquote>
+<p>harib15g</p>
+</blockquote>
+<p>在了解dir命令之前，先要知道文件是怎么存放的。。（参考最上面）<br>然后因为我们一开始也把10个柱面加载到了内存中（0x00102600开始），<br>然后，定义这个结构体</p>
+<pre><code class="c">struct FILEINFO
+{
+    unsigned char name[8], ext[3], type;
+    char reserve[10];
+    unsigned short time, date, clustno;
+    unsigned int size;
+};
+</code></pre>
+<p>确定指针位置</p>
+<pre><code class="c">#define ADR_DISKIMG        0x00100000
+</code></pre>
+<pre><code class="c">if(strcmp(cmdline, &quot;dir&quot;) == 0)
+{
+    // dir命令
+    for (x = 0; x &lt; 224; x++)
+    {
+        if(finfo[x].name[0] == 0x00)
+        {
+            break;
+        }
+        if(finfo[x].name[0] != 0xe5)
+        {
+            if((finfo[x].type &amp; 0x18) == 0)
+            {
+                sprintf(s, &quot;filename.ext   %7d&quot;, finfo[x].size); // 先写个默认的
+                for(y = 0; y &lt; 8; ++y)
+                {
+                    s[y] = finfo[x].name[y];
+                }
+                s[9] = finfo[x].ext[0];
+                s[10] = finfo[x].ext[1];
+                s[11] = finfo[x].ext[2];
+                putfonts8_asc_sht(sheet, 8, cursor_y, COL8_FFFFFF, COL8_000000, s, 30);
+                cursor_y = cons_newline(cursor_y, sheet);
+            }
+        }
+    }
+    cursor_y = cons_newline(cursor_y, sheet);
+}
+</code></pre>
+<p>这样就做好了3个命令。今天比起前三天的多任务来说还是简单好多了）</p>
 
         
     
@@ -684,21 +902,13 @@ int main()
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/computgeo/cf1017E.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/computgeo/index.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day17/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
