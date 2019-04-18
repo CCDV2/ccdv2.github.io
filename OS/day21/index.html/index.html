@@ -45,7 +45,7 @@
     
     <title>
         
-            数据结构 | 
+            Day21 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="作为一名不会数据结构的选手。。当然不会有什么数据结构的板子了。。">
-    <meta name="keywords" content=",acm,数据结构">
+    <meta name="description" itemprop="description" content="今天补完了昨天的中断，以及开始了对操作系统的保护。">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/datastructure//">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day21//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/datastructure//">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day21//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="数据结构 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day21 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="作为一名不会数据结构的选手。。当然不会有什么数据结构的板子了。。">
-    <meta property="og:article:tag" content="acm"> <meta property="og:article:tag" content="数据结构"> 
+    <meta property="og:description" content="今天补完了昨天的中断，以及开始了对操作系统的保护。">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Wed Sep 12 2018 17:41:20 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 18:35:40 GMT+0800">
+        <meta property="article:published_time" content="Wed Apr 17 2019 22:57:59 GMT+0800">
+        <meta property="article:modified_time" content="Thu Apr 18 2019 22:05:36 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/datastructure/index.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day21/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/datastructure/index.html/index.html",
-    "headline": "数据结构",
-    "datePublished": "Wed Sep 12 2018 17:41:20 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 18:35:40 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day21/index.html/index.html",
+    "headline": "Day21",
+    "datePublished": "Wed Apr 17 2019 22:57:59 GMT+0800",
+    "dateModified": "Thu Apr 18 2019 22:05:36 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",acm,数据结构",
-    "description": "作为一名不会数据结构的选手。。当然不会有什么数据结构的板子了。。",
+    "keywords": ",OS",
+    "description": "今天补完了昨天的中断，以及开始了对操作系统的保护。",
 }
 </script>
 
@@ -342,6 +342,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#API（续）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">API（续）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#执行C语言应用程序"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">执行C语言应用程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#保护操作系统"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">保护操作系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#处理异常"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">处理异常</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#攻克难题——字符串显示API"><span class="post-toc-number">2.</span> <span class="post-toc-text">攻克难题——字符串显示API</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用C语言编写应用程序"><span class="post-toc-number">3.</span> <span class="post-toc-text">用C语言编写应用程序</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#保护操作系统（1）"><span class="post-toc-number">4.</span> <span class="post-toc-text">保护操作系统（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#保护操作系统（2）"><span class="post-toc-number">5.</span> <span class="post-toc-text">保护操作系统（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对异常的支持"><span class="post-toc-number">6.</span> <span class="post-toc-text">对异常的支持</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#保护操作系统（3）"><span class="post-toc-number">7.</span> <span class="post-toc-text">保护操作系统（3）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#保护操作系统（4）"><span class="post-toc-number">8.</span> <span class="post-toc-text">保护操作系统（4）</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -371,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                数据结构
+                Day21
             </p>
         </div>
 
@@ -390,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>9月 12, 2018</span>
+        <span>4月 17, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/acm/">acm</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/数据结构/">数据结构</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -431,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=数据结构&url=https://ccdv2.github.io/datastructure/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day21&url=https://ccdv2.github.io/OS/day21/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -440,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=数据结构&url=https://ccdv2.github.io/datastructure/index.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day21&url=https://ccdv2.github.io/OS/day21/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -449,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/datastructure/index.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day21/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -458,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/datastructure/index.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day21/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -483,10 +492,442 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>作为一名不会数据结构的选手。。当然不会有什么数据结构的板子了。。<br><a id="more"></a><br>想到什么就写什么好了</p>
+        <p>今天补完了昨天的中断，以及开始了对操作系统的保护。<br><a id="more"></a></p>
+<h1 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h1><h2 id="API（续）"><a href="#API（续）" class="headerlink" title="API（续）"></a>API（续）</h2><p>昨天貌似有个程序并不能正确打印字符串。原因是打印单个字符的时候，可以通过[CS:ECX]来指定代码段，但是显示字符串的时候不能这样，于是就会误认为是DS（数据段）的地址，达不到预期的结果。<br>所以作者采用的方法是调用中断时，预先在某个商量好的位置指定代码段的基址，这样就能保证找到想要的了（一种类似全局变量的写法）。</p>
+<p>然后补全一下应用程序调用API，昨天主要讲的是从汇编往下调用，现在补一下C语言调用相应的汇编。</p>
+<pre><code class="c">_api_putchar:    ; void api_putchar(int c);
+        MOV        EDX,1
+        MOV        AL,[ESP+4]        ; c
+        INT        0x40
+        RET
+</code></pre>
+<h2 id="执行C语言应用程序"><a href="#执行C语言应用程序" class="headerlink" title="执行C语言应用程序"></a>执行C语言应用程序</h2><p>这应该是要定位入口的意思</p>
+<pre><code class="c">[BITS 32]
+    CALL 0x1b
+    RETF
+</code></pre>
+<p>0x1b是生成的可执行文件中HariMain的地址，RETF则是在程序执行完毕后返回命令行。<br>但其实到了后面，应用程序的结束是产生一个中断，这样来返回操作系统。</p>
+<h2 id="保护操作系统"><a href="#保护操作系统" class="headerlink" title="保护操作系统"></a>保护操作系统</h2><p>保护操作系统有以下的一些方式</p>
 <ol>
-<li>ext/rope<br> <a href="/datastructure/ext_rope.html/">详细写一下</a></li>
+<li>设置应用程序专用的内存空间<br>把一块专属于应用程序的内存分给它。可以把这块内存注册到GDT中。</li>
+<li>禁止应用程序修改某些寄存器<br>把操作系统的栈、寄存器保存起来，应用程序使用应用程序需要用的。</li>
+<li>硬件实现<br>x86提供了一些异常处理的方法，甚至包括保存恢复各种栈和寄存器，可以说很方便了。</li>
 </ol>
+<h2 id="处理异常"><a href="#处理异常" class="headerlink" title="处理异常"></a>处理异常</h2><p>既然有了保护机制，当出现异常情况的时候就需要处理。硬件层面上，已经有了相应的中断机制，因此只要在0x0d上注册一个中断服务程序即可。<br>我们需要把访问段的权限+0x60，这样变为应用程序可用的段。<br>与此同时，操作系统调用应用程序的时候，需要RETF，应用程序返回操作系统的时候，通过API来返回</p>
+<h1 id="攻克难题——字符串显示API"><a href="#攻克难题——字符串显示API" class="headerlink" title="攻克难题——字符串显示API"></a>攻克难题——字符串显示API</h1><blockquote>
+<p>harib18a</p>
+</blockquote>
+<p>既然是没有指定正确的段，那么要做的就是把正确的段存到某个地方，供API使用。</p>
+<pre><code class="c">if(finfo != 0)
+{
+    // 找到文件的情况
+    p = (char *)memman_alloc_4k(memman, finfo-&gt;size);
+    *((int *)0xfe8) = (int)p;
+    file_loadfile(finfo-&gt;clustno, finfo-&gt;size, p, fat, (char *)(ADR_DISKIMG + 0x003e00));
+    set_segmdesc(gdt + 1003, finfo-&gt;size - 1, (int)p, AR_CODE32_ER);
+    farcall(0, 1003 * 8);
+    memman_free_4k(memman, (int)p, finfo-&gt;size);
+    cons_newline(cons);
+    return 1;
+}
+</code></pre>
+<p>在0xfe8这个地方存入了我们需要的基址<br>之后，调整我们的API</p>
+<pre><code class="c">void hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int eax)
+{
+    int cs_base = *((int *)0xfe8);
+    struct CONSOLE *cons = (struct CONSOLE *) *((int *) 0x0fec);
+    switch(edx)
+    {
+    case 1:
+        cons_putchar(cons, eax &amp; 0xff, 1);
+        break;
+    case 2:
+        cons_putstr0(cons, (char *)ebx + cs_base);
+        break;
+    case 3:
+        cons_putstr1(cons, (char *)ebx + cs_base, ecx);
+        break;
+    default:
+        break;
+    }
+    return;
+}
+</code></pre>
+<p>加上这个地址之后，就能正确显示字符串了。</p>
+<h1 id="用C语言编写应用程序"><a href="#用C语言编写应用程序" class="headerlink" title="用C语言编写应用程序"></a>用C语言编写应用程序</h1><blockquote>
+<p>harib18b</p>
+</blockquote>
+<p>就按目前的版本写好了。<br>首先是一个简单的应用程序</p>
+<pre><code class="c">void api_putchar(int c);
+
+void HariMain(void)
+{
+    api_putchar(&#39;A&#39;);
+    return;
+}
+</code></pre>
+<p>但是光这样写还不够，我们需要指定函数的入口地址（根据猜测的话，这个代码并不是在文件开始的位置存放的），简单来说就是把开始的6个字节进行替换（替换成之前说的汇编指令）。<br>为了省事起见，在我们执行应用程序的时候帮它改一下。</p>
+<pre><code class="c">if(finfo-&gt;size &gt;= 8 &amp;&amp; strncmp(p + 4, &quot;Hari&quot;, 4) == 0)
+{
+    p[0] = 0xe8;
+    p[1] = 0x16;
+    p[2] = 0x00;
+    p[3] = 0x00;
+    p[4] = 0x00;
+    p[5] = 0xcb;
+}
+</code></pre>
+<p>这样就能正确打开应用程序了。</p>
+<h1 id="保护操作系统（1）"><a href="#保护操作系统（1）" class="headerlink" title="保护操作系统（1）"></a>保护操作系统（1）</h1><blockquote>
+<p>harib18c</p>
+</blockquote>
+<p>目前的操作系统还没有添加任何保护功能，所以像这样的代码</p>
+<pre><code class="c">void HariMain(void)
+{
+    *((char *)0x00102600) = 0;
+    return;
+}
+</code></pre>
+<p>就可以搞崩操作系统。。</p>
+<h1 id="保护操作系统（2）"><a href="#保护操作系统（2）" class="headerlink" title="保护操作系统（2）"></a>保护操作系统（2）</h1><blockquote>
+<p>harib18d</p>
+</blockquote>
+<p>首先，分配一些空间给应用程序</p>
+<pre><code class="c">q = (char *)memman_alloc_4k(memman, 64 * 1024);
+set_segmdesc(gdt + 1004, 64 * 1024 - 1, (int)q, AR_DATA32_RW);
+start_app(0, 1003 * 8, 64 * 1024, 1004 * 8);
+memman_free_4k(memman, (int)q, 64 * 1024);
+</code></pre>
+<p>然后是软件实现的启动到用户态。(因为最后搞成硬件实现了，这段就相当于是补充了)</p>
+<pre><code class="c">_start_app:        ; void start_app(int eip, int cs, int esp, int ds);
+        PUSHAD        ; 将32位寄存器的值全部保存起来
+        MOV        EAX,[ESP+36]    ; 应用程序用EIP
+        MOV        ECX,[ESP+40]    ; 应用程序用CS
+        MOV        EDX,[ESP+44]    ; 应用程序用ESP
+        MOV        EBX,[ESP+48]    ; 应用程序DS/SS
+        MOV        [0xfe4],ESP        ; 操作系统用ESP
+        CLI            ; 在切换过程中禁止中断请求
+        MOV        ES,BX
+        MOV        SS,BX
+        MOV        DS,BX
+        MOV        FS,BX
+        MOV        GS,BX
+        MOV        ESP,EDX
+        STI            ; 切换完成后恢复中断请求
+        PUSH    ECX                ; 用于far-CALL的PUSH（cs）
+        PUSH    EAX                ; 用于far-CALL的PUSH（eip）
+        CALL    FAR [ESP]        ; 调用应用程序
+
+;    应用程序结束后返回此处
+
+        MOV        EAX,1*8            ; 操作系统用DS/SS
+        CLI            ; 再次进行切换，禁止中断请求
+        MOV        ES,AX
+        MOV        SS,AX
+        MOV        DS,AX
+        MOV        FS,AX
+        MOV        GS,AX
+        MOV        ESP,[0xfe4]
+        STI            ; 切换完成后恢复中断请求
+        POPAD    ; 恢复之前保存的寄存器值
+        RET
+</code></pre>
+<p>简而言之，我们一开始保存了操作系统的各种寄存器状态，转到应用程序所在的内存；当运行完毕之后，再恢复操作系统的各种寄存器状态，调转到操作系统。<br>之后还要修改API，因为API是应用程序调用的，需要切换到操作系统状态</p>
+<pre><code class="c">_asm_hrb_api:
+        ; 为方便起见从开头就禁止中断请求
+        PUSH    DS
+        PUSH    ES
+        PUSHAD        ; 用于保存的PUSH
+        MOV        EAX,1*8
+        MOV        DS,AX            ; 先仅将DS设定为操作系统用
+        MOV        ECX,[0xfe4]        ; 操作系统的ESP
+        ADD        ECX,-40
+        MOV        [ECX+32],ESP    ; 保存应用程序的ESP
+        MOV        [ECX+36],SS        ; 保存应用程序的SS
+
+; 将PUSHAD后的值复制到系统栈
+        MOV        EDX,[ESP   ]
+        MOV        EBX,[ESP+ 4]
+        MOV        [ECX   ],EDX    ; 复制传递给hrb_api
+        MOV        [ECX+ 4],EBX    ; 复制传递给hrb_api
+        MOV        EDX,[ESP+ 8]
+        MOV        EBX,[ESP+12]
+        MOV        [ECX+ 8],EDX    ; 复制传递给hrb_api
+        MOV        [ECX+12],EBX    ; 复制传递给hrb_api
+        MOV        EDX,[ESP+16]
+        MOV        EBX,[ESP+20]
+        MOV        [ECX+16],EDX    ; 复制传递给hrb_api
+        MOV        [ECX+20],EBX    ; 复制传递给hrb_api
+        MOV        EDX,[ESP+24]
+        MOV        EBX,[ESP+28]
+        MOV        [ECX+24],EDX    ; 复制传递给hrb_api
+        MOV        [ECX+28],EBX    ; 复制传递给hrb_api
+
+        MOV        ES,AX            ; 将剩余的段寄存器也设为操作系统用
+        MOV        SS,AX
+        MOV        ESP,ECX
+        STI            ; 恢复中断请求
+
+        CALL    _hrb_api
+
+        MOV        ECX,[ESP+32]    ; 取出应用程序的ESP
+        MOV        EAX,[ESP+36]    ; 取出应用程序的SS
+        CLI
+        MOV        SS,AX
+        MOV        ESP,ECX
+        POPAD
+        POP        ES
+        POP        DS
+        IRETD        ; 这个命令会自动执行STI
+</code></pre>
+<p>确实有点看不懂。。大概的意思就是存储好应用程序的寄存器值之后，切换到操作系统状态。<br>接下来是中断的部分，如果应用程序产生了中断请求，同样也需要切换到内核态。</p>
+<pre><code class="c">_asm_inthandler20:
+        PUSH    ES
+        PUSH    DS
+        PUSHAD
+        MOV        AX,SS
+        CMP        AX,1*8
+        JNE        .from_app
+;    当操作系统活动时产生的中断情况和之前差不多
+        MOV        EAX,ESP
+        PUSH    SS                ; 保存中断时的SS
+        PUSH    EAX                ; 保存中断时的ESP
+        MOV        AX,SS
+        MOV        DS,AX
+        MOV        ES,AX
+        CALL    _inthandler20
+        ADD        ESP,8
+        POPAD
+        POP        DS
+        POP        ES
+        IRETD
+.from_app:
+;    当应用程序活动时发生中断
+        MOV        EAX,1*8
+        MOV        DS,AX            ; 先仅将DS设定为操作系统用
+        MOV        ECX,[0xfe4]        ; 操作系统的ESP
+        ADD        ECX,-8
+        MOV        [ECX+4],SS        ; 保存中断时的SS
+        MOV        [ECX  ],ESP        ; 保存中断时的ESP
+        MOV        SS,AX
+        MOV        ES,AX
+        MOV        ESP,ECX
+        CALL    _inthandler20
+        POP        ECX
+        POP        EAX
+        MOV        SS,AX            ; 将SS设回应用程序用
+        MOV        ESP,ECX            ; 将ESP设回应用程序用
+        POPAD
+        POP        DS
+        POP        ES
+        IRETD
+</code></pre>
+<p>其实差不多，都是一个寄存器的切换。<br>虽然这些代码很快就被废弃掉了，但是给我们提供了一个软件实现保护的视角）</p>
+<h1 id="对异常的支持"><a href="#对异常的支持" class="headerlink" title="对异常的支持"></a>对异常的支持</h1><blockquote>
+<p>harib18e</p>
+</blockquote>
+<p>硬件层面上，0x0d是异常中断</p>
+<pre><code class="c">_asm_inthandler0d:
+        STI
+        PUSH    ES
+        PUSH    DS
+        PUSHAD
+        MOV        AX,SS
+        CMP        AX,1*8
+        JNE        .from_app
+;    当操作系统活动时产生中断的情况和之前差不多
+        MOV        EAX,ESP
+        PUSH    SS                ; 保存中断时的ES
+        PUSH    EAX                ; 保存中断时的ESP
+        MOV        AX,SS
+        MOV        DS,AX
+        MOV        ES,AX
+        CALL    _inthandler0d
+        ADD        ESP,8
+        POPAD
+        POP        DS
+        POP        ES
+        ADD        ESP,4            ; 在INT 0x0d中需要这句
+        IRETD
+.from_app:
+;    当应用程序活动时产生中断
+        CLI
+        MOV        EAX,1*8
+        MOV        DS,AX            ; 先仅将DS设定为操作系统用
+        MOV        ECX,[0xfe4]        ; 操作系统的ESP
+        ADD        ECX,-8
+        MOV        [ECX+4],SS        ; 保存产生中断时的SS
+        MOV        [ECX  ],ESP        ; 保存产生中断时的ESP
+        MOV        SS,AX
+        MOV        ES,AX
+        MOV        ESP,ECX
+        STI
+        CALL    _inthandler0d
+        CLI
+        CMP        EAX,0
+        JNE        .kill
+        POP        ECX
+        POP        EAX
+        MOV        SS,AX            ; 将SS恢复为应用程序用
+        MOV        ESP,ECX            ; 将ESP恢复为应用程序用
+        POPAD
+        POP        DS
+        POP        ES
+        ADD        ESP,4            ; INT 0x0d需要这句
+        IRETD
+.kill:
+;    将应用程序强制结束
+        MOV        EAX,1*8            ; 操作系统用的DS/SS
+        MOV        ES,AX
+        MOV        SS,AX
+        MOV        DS,AX
+        MOV        FS,AX
+        MOV        GS,AX
+        MOV        ESP,[0xfe4]        ; 强制返回start_app时的ESP
+        STI            ; 切换完成后恢复中断请求
+        POPAD    ; 恢复事先保存的寄存器值
+        RET
+</code></pre>
+<p>这个中断可以做到杀掉进程，之后强制返回到cmd_app</p>
+<pre><code class="c">int inthandler0d(int *esp)
+{
+    struct CONSOLE *cons = (struct CONSOLE *)*((int *)0x0fec);
+    cons_putstr0(cons, &quot;\nINT 0D :\n General Protected Exception.\n&quot;);
+    return 1; // 强制结束程序
+}
+</code></pre>
+<p>然后注册到IDT里</p>
+<pre><code class="c">set_gatedesc(idt + 0x0d, (int) asm_inthandler0d, 2 * 8, AR_INTGATE32);
+</code></pre>
+<p>方便我们之后继续保护操作系统</p>
+<h1 id="保护操作系统（3）"><a href="#保护操作系统（3）" class="headerlink" title="保护操作系统（3）"></a>保护操作系统（3）</h1><blockquote>
+<p>harib18f</p>
+</blockquote>
+<p>这次的目的是禁止汇编层面上随便指定段号</p>
+<h1 id="保护操作系统（4）"><a href="#保护操作系统（4）" class="headerlink" title="保护操作系统（4）"></a>保护操作系统（4）</h1><blockquote>
+<p>harib18g</p>
+</blockquote>
+<p>在硬件层面上，如果把访问权限加上0x60，就代表这个段为应用程序用。如果段内的代码想要存入操作系统的段地址，就会产生异常。</p>
+<pre><code class="c">struct TASK *task = task_now();
+
+set_segmdesc(gdt + 1003, finfo-&gt;size - 1, (int)p, AR_CODE32_ER + 0x60);
+set_segmdesc(gdt + 1004, 64 * 1024 - 1, (int)q, AR_DATA32_RW + 0x60);
+start_app(0, 1003 * 8, 64 * 1024, 1004 * 8, &amp;(task-&gt;tss.esp0));
+</code></pre>
+<p>但是这样的话，x86规定既不能操作系统CALL应用程序，也不能far-JMP到应用程序，可做的就只有RETF了。</p>
+<pre><code class="c">_start_app:        ; void start_app(int eip, int cs, int esp, int ds, int *tss_esp0);
+        PUSHAD        ; 将32位寄存器的值全部保存下来
+        MOV        EAX,[ESP+36]    ; 应用程序用EIP
+        MOV        ECX,[ESP+40]    ; 应用程序用CS
+        MOV        EDX,[ESP+44]    ; 应用程序用ESP
+        MOV        EBX,[ESP+48]    ; 应用程序用DS/SS
+        MOV        EBP,[ESP+52]    ; tss.esp0的地址
+        MOV        [EBP  ],ESP        ; 保存操作系统用ESP
+        MOV        [EBP+4],SS        ; 保存操作系统用SS
+        MOV        ES,BX
+        MOV        DS,BX
+        MOV        FS,BX
+        MOV        GS,BX
+;    下面调整栈，以免用RETF跳转到应用程序
+        OR        ECX,3            ; 将应用程序用段号和3进行或运算（据作者说是为了调用RETF而用的小技巧）
+        OR        EBX,3            ; 将应用程序用段号和3进行或运算
+        PUSH    EBX                ; 应用程序的SS
+        PUSH    EDX                ; 应用程序的ESP
+        PUSH    ECX                ; 应用程序的CS
+        PUSH    EAX                ; 应用程序的EIP
+        RETF
+;    应用程序结束后不会回到这里
+</code></pre>
+<p>之后也要修改API</p>
+<pre><code class="c">_asm_hrb_api:
+        STI
+        PUSH    DS
+        PUSH    ES
+        PUSHAD        ; 用于保存的PSUH
+        PUSHAD        ; 用于向hrb_api传值的PUSH
+        MOV        AX,SS
+        MOV        DS,AX        ; 将操作系统用段地址存入DS和ES
+        MOV        ES,AX
+        CALL    _hrb_api
+        CMP        EAX,0        ; 当EAX不为0时程序结束
+        JNE        end_app
+        ADD        ESP,32
+        POPAD
+        POP        ES
+        POP        DS
+        IRETD
+end_app:
+;    EAX为tss.esp0的地址
+        MOV        ESP,[EAX]
+        POPAD
+        RET                    ; 返回cmd_app
+</code></pre>
+<p>硬件帮我们实现了各种栈操作，因此就比较简短了</p>
+<p>做一个用于结束的API</p>
+<pre><code class="c">int* hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int eax)
+{
+    int cs_base = *((int *)0xfe8);
+    struct CONSOLE *cons = (struct CONSOLE *) *((int *) 0x0fec);
+    struct TASK *task = task_now();
+    switch(edx)
+    {
+    case 1:
+        cons_putchar(cons, eax &amp; 0xff, 1);
+        break;
+    case 2:
+        cons_putstr0(cons, (char *)ebx + cs_base);
+        break;
+    case 3:
+        cons_putstr1(cons, (char *)ebx + cs_base, ecx);
+        break;
+    case 4:
+        return &amp;(task-&gt;tss.esp0);
+        break;
+    default:
+        break;
+    }
+    return 0;
+}
+</code></pre>
+<p>然后修改0x0d的中断服务程序</p>
+<pre><code class="c">int *inthandler0d(int *esp)
+{
+    struct CONSOLE *cons = (struct CONSOLE *) *((int *) 0x0fec);
+    struct TASK *task = task_now();
+    cons_putstr0(cons, &quot;\nINT 0D :\n General Protected Exception.\n&quot;);
+    return &amp;(task-&gt;tss.esp0);    // 让程序强制结束
+}
+</code></pre>
+<p>之后是把各种中断处理改回之前的版本，因为CPU帮我们切换了栈</p>
+<pre><code class="c">_asm_inthandler0d:
+        STI
+        PUSH    ES
+        PUSH    DS
+        PUSHAD
+        MOV        EAX,ESP
+        PUSH    EAX
+        MOV        AX,SS
+        MOV        DS,AX
+        MOV        ES,AX
+        CALL    _inthandler0d
+        CMP        EAX,0        ; 只有这里不同
+        JNE        end_app        ; 只有这里不同
+        POP        EAX
+        POPAD
+        POP        DS
+        POP        ES
+        ADD        ESP,4            ; 在INT 0x0d中需要这句
+        IRETD
+</code></pre>
+<p>最后，仅将API中断开放给用户使用</p>
+<pre><code class="c">set_gatedesc(idt + 0x40, (int) asm_hrb_api,      2 * 8, AR_INTGATE32 + 0x60);
+</code></pre>
+<p>当各种应用程序结束的时候，调用</p>
+<pre><code class="c">MOV EDX, 4
+INT 0x40
+</code></pre>
+<p>即可。</p>
+<p>今天的汇编比较多。。看着比较麻烦）。。</p>
 
         
     
@@ -529,21 +970,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/datastructure/ext_rope.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/others/randomGenerator.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day20/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
