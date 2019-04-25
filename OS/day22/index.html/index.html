@@ -241,7 +241,7 @@
 
     
         <meta property="article:published_time" content="Sat Apr 20 2019 10:26:34 GMT+0800">
-        <meta property="article:modified_time" content="Sat Apr 20 2019 12:35:43 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 21 2019 20:02:40 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +264,7 @@
     "mainEntityOfPage": "https://ccdv2.github.io/OS/day22/index.html/index.html",
     "headline": "Day22",
     "datePublished": "Sat Apr 20 2019 10:26:34 GMT+0800",
-    "dateModified": "Sat Apr 20 2019 12:35:43 GMT+0800",
+    "dateModified": "Sun Apr 21 2019 20:02:40 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -807,7 +807,7 @@ void HariMain(void)
 <p>harib19g</p>
 </blockquote>
 <p>添加一些有关窗口的API<br>显示字符：<br>EDX = 6<br>EBX = 窗口句柄<br>ESI = 显示位置的x坐标<br>EDI = 显示位置的y坐标<br>EAX = 色号<br>ECX = 字符串长度<br>EBP = 字符串<br>描绘方块：<br>EDX = 7<br>EBX = 窗口句柄<br>ESI = x0<br>EDI = y0<br>EAX = x1<br>ECX = y1<br>EBP = 色号<br>修改API</p>
-<pre><code>int* hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int eax)
+<pre><code class="c">int* hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int eax)
 {
     int ds_base = *((int *) 0xfe8);
     struct TASK *task = task_now();
@@ -854,7 +854,8 @@ void HariMain(void)
     }
     return 0;
 }
-</code></pre><p>汇编api：</p>
+</code></pre>
+<p>汇编api：</p>
 <pre><code class="c">_api_putstrwin:    ; void api_putstrwin(int win, int x, int y, int col, int len, char *str);
         PUSH    EDI
         PUSH    ESI
@@ -1052,7 +1053,7 @@ _api_boxfilwin:    ; void api_boxfilwin(int win, int x0, int y0, int x1, int y1,
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
@@ -1070,7 +1071,7 @@ _api_boxfilwin:    ; void api_boxfilwin(int win, int x0, int y0, int x1, int y1,
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/CG/">CG<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/categories/CG/openGL/">openGL<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/">CV<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/分类算法/">分类算法<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/神经网络/">神经网络<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/神经网络/分类算法/">分类算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/OS/">OS<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">29</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/IO/">IO<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/">dfs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/剪枝/">剪枝<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/博弈论/">博弈论<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/字符串/">字符串<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数据结构/">数据结构<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">17</span></a>
+                <a class="sidebar_archives-link" href="/categories/CG/">CG<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/categories/CG/openGL/">openGL<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/">CV<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/分类算法/">分类算法<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/神经网络/">神经网络<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/神经网络/分类算法/">分类算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/OS/">OS<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">29</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/IO/">IO<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/">dfs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/剪枝/">剪枝<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/博弈论/">博弈论<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/字符串/">字符串<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数据结构/">数据结构<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">17</span></a>
             </ul>
         </li>
         

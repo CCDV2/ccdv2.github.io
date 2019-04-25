@@ -45,7 +45,7 @@
     
     <title>
         
-            poj1228 | 
+            Day24 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",acm,计算几何">
+    <meta name="description" itemprop="description" content="今天是完善多窗口的一些操作：窗口切换、移动、输入、关闭。此外添加了定时器API">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/computgeo/poj1228.html/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day24//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/computgeo/poj1228.html/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day24//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="poj1228 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day24 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="">
-    <meta property="og:article:tag" content="acm"> <meta property="og:article:tag" content="计算几何"> 
+    <meta property="og:description" content="今天是完善多窗口的一些操作：窗口切换、移动、输入、关闭。此外添加了定时器API">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Sun Jul 15 2018 16:18:24 GMT+0800">
-        <meta property="article:modified_time" content="Sun Jul 15 2018 16:19:26 GMT+0800">
+        <meta property="article:published_time" content="Thu Apr 25 2019 20:21:14 GMT+0800">
+        <meta property="article:modified_time" content="Thu Apr 25 2019 22:36:49 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/computgeo/poj1228.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day24/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/computgeo/poj1228.html/index.html",
-    "headline": "poj1228",
-    "datePublished": "Sun Jul 15 2018 16:18:24 GMT+0800",
-    "dateModified": "Sun Jul 15 2018 16:19:26 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day24/index.html/index.html",
+    "headline": "Day24",
+    "datePublished": "Thu Apr 25 2019 20:21:14 GMT+0800",
+    "dateModified": "Thu Apr 25 2019 22:36:49 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",acm,计算几何",
-    "description": "",
+    "keywords": ",OS",
+    "description": "今天是完善多窗口的一些操作：窗口切换、移动、输入、关闭。此外添加了定时器API",
 }
 </script>
 
@@ -342,6 +342,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#操纵窗口的方法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">操纵窗口的方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定时器API"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">定时器API</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#窗口切换（1）"><span class="post-toc-number">2.</span> <span class="post-toc-text">窗口切换（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#窗口切换（2）"><span class="post-toc-number">3.</span> <span class="post-toc-text">窗口切换（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#移动窗口"><span class="post-toc-number">4.</span> <span class="post-toc-text">移动窗口</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用鼠标关闭窗口"><span class="post-toc-number">5.</span> <span class="post-toc-text">用鼠标关闭窗口</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#将输入切换到应用程序窗口"><span class="post-toc-number">6.</span> <span class="post-toc-text">将输入切换到应用程序窗口</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用鼠标切换输入窗口"><span class="post-toc-number">7.</span> <span class="post-toc-text">用鼠标切换输入窗口</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定时器API-1"><span class="post-toc-number">8.</span> <span class="post-toc-text">定时器API</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#取消定时器"><span class="post-toc-number">9.</span> <span class="post-toc-text">取消定时器</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -371,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                poj1228
+                Day24
             </p>
         </div>
 
@@ -390,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>7月 15, 2018</span>
+        <span>4月 25, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/acm/">acm</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/计算几何/">计算几何</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -431,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=poj1228&url=https://ccdv2.github.io/computgeo/poj1228.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day24&url=https://ccdv2.github.io/OS/day24/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -440,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=poj1228&url=https://ccdv2.github.io/computgeo/poj1228.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day24&url=https://ccdv2.github.io/OS/day24/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -449,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/computgeo/poj1228.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day24/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -458,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/computgeo/poj1228.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day24/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -483,117 +492,411 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>稳定凸包<br>即每条边上至少有3个点即可。。  </p>
-<pre><code class="cpp">#include &lt;iostream&gt;
-#include &lt;cstdio&gt;
-#include &lt;cmath&gt;
-#include &lt;algorithm&gt;
-#include &lt;queue&gt;
-using namespace std;
-const int MAXN = 1e3 + 5;
-const double EPS = 1e-6;
-const int INF = 0x7fffffff;
-struct Point
+        <p>今天是完善多窗口的一些操作：窗口切换、移动、输入、关闭。此外添加了定时器API<br><a id="more"></a></p>
+<h1 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h1><h2 id="操纵窗口的方法"><a href="#操纵窗口的方法" class="headerlink" title="操纵窗口的方法"></a>操纵窗口的方法</h2><ol>
+<li>图层切换<br>只是回忆一下方法：用许久以前的sheet_updown()函数，来改变顺序。</li>
+<li>窗口移动/关闭窗口<br>当鼠标点击时，按照图层从上到下的顺序，判断所在的图层。如果在该图层的标题栏/关闭按钮位置，则需要进行相应操作。<br>对于移动操作，在左键点击/释放的时候，进入/退出移动状态。</li>
+<li>窗口输入<br>很久以前是实现了控制台输入，但是那个时候只有主函数和控制台，所以tab一下就知道FIFO该发给谁了。<br>现在做出了一定的改动，通过tab来从顶部窗口-&gt;底部窗口-&gt;最顶部窗口这样的一个循环。同时改成了记录应该发给哪个窗口（这样写起来也会更舒服吧。。）<br>因为改成了记录窗口地址，当用鼠标切换窗口的时候，也可以直接方便地指定地址了。</li>
+</ol>
+<h2 id="定时器API"><a href="#定时器API" class="headerlink" title="定时器API"></a>定时器API</h2><p>这里说定时器API需要注意的地方。<br>当一个应用程序申请了定时器，但被强制终止的时候，定时器超时所发送的信息就不知去向了，于是会产生问题。<br>总的来说，应用程序申请的定时器，和内存一样，也是应用程序申请的资源。所以在应用程序结束的时候，检查一下是否有申请的定时器，有的话要取消掉。</p>
+<h1 id="窗口切换（1）"><a href="#窗口切换（1）" class="headerlink" title="窗口切换（1）"></a>窗口切换（1）</h1><blockquote>
+<p>harib21a</p>
+</blockquote>
+<p>遵循循序渐进的原则（雾），一开始只是实现一个较为简单的窗口切换：按下F11的时候，把最底下的窗口置顶。</p>
+<pre><code class="c">if(i == 256 + 0x57 &amp;&amp; shtctl-&gt;top &gt; 2) // F11
 {
-    Point() {}
-    Point(double _x, double _y): x(_x), y(_y) {}
-
-    double getDis(Point rhs)
-    {
-        double xx = rhs.x - x;
-        double yy = rhs.y - y;
-        return sqrt(xx * xx + yy * yy);
-    }
-
-    void input()
-    {
-        scanf(&quot;%lf%lf&quot;, &amp;x, &amp;y);
-    }
-    double x, y;
-};
-
-Point operator -(Point lhs, Point rhs)
-{
-    Point ret = Point(rhs.x - lhs.x, rhs.y - lhs.y);
-    return ret;
+    sheet_updown(shtctl-&gt;sheets[1], shtctl-&gt;top - 1);
 }
-
-double operator ^(Point lhs, Point rhs)
+</code></pre>
+<p>sheets[1]是sheets[0](背景图层)之上的那个图层，直接把它放到鼠标下面。</p>
+<h1 id="窗口切换（2）"><a href="#窗口切换（2）" class="headerlink" title="窗口切换（2）"></a>窗口切换（2）</h1><blockquote>
+<p>harib21b</p>
+</blockquote>
+<p>这次实现了鼠标点击某个可见图层的时候，将其置顶。简单来说就是判断一下鼠标点击坐标是否在当前这个图层。</p>
+<pre><code class="c">if((mdec.btn &amp; 0x01) != 0)
 {
-    double ret = lhs.x * rhs.y - lhs.y * rhs.x;
-    return ret;
-}
-
-Point point[MAXN];
-Point src;
-int n;
-
-bool cmp(Point &amp;a, Point &amp;b)
-{
-    double temp = (a - src) ^ (b - src);
-    if(fabs(temp) &lt;= EPS) return src.getDis(a) &lt; src.getDis(b);
-    return temp &gt; -EPS;
-}
-bool cmp2(Point &amp;a, Point &amp;b)
-{
-    return src.getDis(a) &gt; src.getDis(b);
-}
-
-bool convex()
-{
-    sort(point, point + n, cmp);
-    int j = n - 1;
-    while(j &gt; 0 &amp;&amp; fabs((point[j] - src) ^ (point[j - 1] - src)) &lt; EPS)
+    // 按下左键
+    // 按照从上到下的顺序寻找鼠标所指向的图层
+    for(j = shtctl-&gt;top - 1; j &gt; 0; --j)
     {
-        --j;
-    }
-    if(j &gt; 0) sort(point + j, point + n, cmp2);
-    else return false;
-
-    int now = 0, nxt;
-    for(int i = 1; i &lt; n; ++i)
-    {
-        nxt = (i + 1) % n;
-        double temp = (point[i] - point[now]) ^ (point[nxt] - point[now]);
-        if(fabs(temp) &lt; EPS)
+        sht = shtctl-&gt;sheets[j];
+        x = mx - sht-&gt;vx0;
+        y = my - sht-&gt;vy0;
+        if(0 &lt;= x &amp;&amp; x &lt; sht-&gt;bxsize &amp;&amp; 0 &lt;= y &amp;&amp; y &lt; sht-&gt;bysize)
         {
-            //nothing to do
+            if(sht-&gt;buf[y * sht-&gt;bxsize + x] != sht-&gt;col_inv)
+            {
+                sheet_updown(sht, shtctl-&gt;top - 1);
+                break;
+            }
+        }
+    }
+}
+</code></pre>
+<p>还附加了要确定该区域不是透明区域，没什么问题。</p>
+<h1 id="移动窗口"><a href="#移动窗口" class="headerlink" title="移动窗口"></a>移动窗口</h1><blockquote>
+<p>harib21c</p>
+</blockquote>
+<p>移动窗口的话，在之前鼠标点击置顶窗口的基础上，如果仍然按住左键不放并且鼠标有位移，此时第二次就会进入移动的状态，进行移动。</p>
+<pre><code class="c">if((mdec.btn &amp; 0x01) != 0)
+{
+    // 按下左键
+    if(mmx &lt; 0)
+    {
+        // 如果处于通常模式
+        // 按照从上到下的顺序寻找鼠标所指向的图层
+        for(j = shtctl-&gt;top - 1; j &gt; 0; --j)
+        {
+            sht = shtctl-&gt;sheets[j];
+            x = mx - sht-&gt;vx0;
+            y = my - sht-&gt;vy0;
+            if(0 &lt;= x &amp;&amp; x &lt; sht-&gt;bxsize &amp;&amp; 0 &lt;= y &amp;&amp; y &lt; sht-&gt;bysize)
+            {
+                if(sht-&gt;buf[y * sht-&gt;bxsize + x] != sht-&gt;col_inv)
+                {
+                    sheet_updown(sht, shtctl-&gt;top - 1);
+                    if(3 &lt;= x &amp;&amp; x &lt; sht-&gt;bxsize - 3 &amp;&amp; 3 &lt;= y &amp;&amp; y &lt; 21)
+                    {
+                        mmx = mx;    // 进入窗口移动模式
+                        mmy = my;
+                    }
+                    break;
+                }
+            }
+        }
+    }
+    else
+    {
+        // 如果处于窗口移动模式
+        x = mx - mmx;    // 计算鼠标的移动距离
+        y = my - mmy;
+        sheet_slide(sht, sht-&gt;vx0 + x, sht-&gt;vy0 + y);
+        mmx = mx;    // 更新为移动后的坐标
+        mmy = my;
+    }
+}
+else
+{
+    // 没有按下左键
+    mmx = -1;    // 返回通常模式
+}
+</code></pre>
+<p>mmx,mmy记录的是鼠标之前点击后，移动到的位置。</p>
+<h1 id="用鼠标关闭窗口"><a href="#用鼠标关闭窗口" class="headerlink" title="用鼠标关闭窗口"></a>用鼠标关闭窗口</h1><blockquote>
+<p>harib21d</p>
+</blockquote>
+<p>也是查找是否在关闭图标的位置了。</p>
+<pre><code class="c">if(sht-&gt;bxsize - 21 &lt;= x &amp;&amp; x &lt; sht-&gt;bxsize - 5 &amp;&amp; 5 &lt;= y &amp;&amp; y &lt; 19)
+{
+    // 点击“×”按钮
+    if(sht-&gt;task != 0) // 该窗口是否为应用程序窗口？
+    {
+        cons = (struct CONSOLE *)*((int *)0x0fec);
+        cons_putstr0(cons, &quot;\nBreak(mouse) :\n&quot;);
+        io_cli();    // 强制结束处理中禁止切换任务
+        task_cons-&gt;tss.eax = (int)&amp;(task_cons-&gt;tss.esp0);
+        task_cons-&gt;tss.eip = (int)asm_end_app;
+        io_sti();
+    }
+}
+</code></pre>
+<h1 id="将输入切换到应用程序窗口"><a href="#将输入切换到应用程序窗口" class="headerlink" title="将输入切换到应用程序窗口"></a>将输入切换到应用程序窗口</h1><blockquote>
+<p>harib21e</p>
+</blockquote>
+<p>也填了许久之前的一个坑。现在可以把FIFO的信息发给当前正在运行的任务了。<br>在struct SHEET里的flag，用于判断这个窗口是否是应用程序创建的（0x10），以及判断这个窗口是否需要光标（0x20）。这些都是按位记录的。<br>开始申请一个key_win变量，用于记录当前需要输入的任务。<br>同时sht_win记录的是当前图层，如果刚好是该任务与该图层，则会把FIFO的信息发进去。</p>
+<pre><code class="c">struct SHEET *sht = 0, *key_win;
+key_win = sht_win;
+</code></pre>
+<p>当窗口被关闭的时候，当前窗口转到下一个顶层窗口</p>
+<pre><code class="c">if(key_win-&gt;flags == 0) // 输入窗口被关闭
+{
+    key_win = shtctl-&gt;sheets[shtctl-&gt;top - 1];
+    cursor_c = keywin_on(key_win, sht_win, cursor_c);
+}
+</code></pre>
+<p>然后是对于FIFO的处理。</p>
+<pre><code class="c">if(s[0] != 0) // 一般字符
+{
+    if(key_win == sht_win) // 发送至任务A
+    {
+        if(cursor_x &lt; 128)
+        {
+            // 显示一个字符后并将光标后移一位
+            s[1] = 0;
+            putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_FFFFFF, s, 1);
+            cursor_x += 8;
+        }
+    }
+    else // 发送至命令行窗口
+    {
+        fifo32_put(&amp;key_win-&gt;task-&gt;fifo, s[0] + 256);
+    }
+}
+if(i == 256 + 0x0e) // 退格键
+{
+    if(key_win == sht_win) // 发送至任务A
+    {
+        if(cursor_x &gt; 8)
+        {
+            // 用空格擦除光标后前移一位
+            putfonts8_asc_sht(sht_win, cursor_x, 28, COL8_000000, COL8_FFFFFF, &quot; &quot;, 1);
+            cursor_x -= 8;
+        }
+    }
+    else // 发送至命令行窗口
+    {
+        fifo32_put(&amp;key_win-&gt;task-&gt;fifo, 8 + 256);
+    }
+}
+if(i == 256 + 0x1c) // 回车键
+{
+    if(key_win != sht_win) // 发送至命令行窗口
+    {
+        fifo32_put(&amp;key_win-&gt;task-&gt;fifo, 10 + 256);
+    }
+}
+if(i == 256 + 0x0f) // Tab键
+{
+    cursor_c = keywin_off(key_win, sht_win, cursor_c, cursor_x);
+    j = key_win-&gt;height - 1;
+    if(j == 0)
+    {
+        j = shtctl-&gt;top - 1;
+    }
+    key_win = shtctl-&gt;sheets[j];
+    cursor_c = keywin_on(key_win, sht_win, cursor_c);
+}
+</code></pre>
+<p>简单总结一下，如果keywin == shtwin，就会发到相应窗口，否则发送至命令行窗口</p>
+<p>Tab键中，有两个新增函数，用途是添加/删除当前窗口的光标</p>
+<pre><code class="c">int keywin_off(struct SHEET *key_win, struct SHEET *sht_win, int cur_c, int cur_x)
+{
+    change_wtitle8(key_win, 0);
+    if(key_win == sht_win)
+    {
+        cur_c = -1; // 删除光标
+        boxfill8(sht_win-&gt;buf, sht_win-&gt;bxsize, COL8_FFFFFF, cur_x, 28, cur_x + 7, 43);
+    }
+    else
+    {
+        if((key_win-&gt;flags &amp; 0x20) != 0)
+        {
+            fifo32_put(&amp;key_win-&gt;task-&gt;fifo, 3); // 命令行窗口光标OFF
+        }
+    }
+    return cur_c;
+}
+
+int keywin_on(struct SHEET *key_win, struct SHEET *sht_win, int cur_c)
+{
+    change_wtitle8(key_win, 1);
+    if(key_win == sht_win)
+    {
+        cur_c = COL8_000000; // 显示光标
+    }
+    else
+    {
+        if((key_win-&gt;flags &amp; 0x20) != 0)
+        {
+            fifo32_put(&amp;key_win-&gt;task-&gt;fifo, 2); // 命令行窗口光标ON
+        }
+    }
+    return cur_c;
+}
+</code></pre>
+<p>其中chagne_wtitle的作用为将指定窗口的标题栏区域颜色显示为活动/非活动状态。</p>
+<p>在这一小节开头提到了，0x10用来标记应用程序，0x01是之前正在使用的标记<br>于是可以修改关闭应用程序的设定了</p>
+<pre><code class="c">if((sht-&gt;flags &amp; 0x11) == 0x11 &amp;&amp; sht-&gt;task == task)
+{
+    // 找到应用程序残留的窗口
+    sheet_free(sht); // 关闭
+}
+</code></pre>
+<p>此外，在hrb_api中，case 5（申请图层）中也增加了 flags |= 0x10的操作，标记是应用程序申请的图层。</p>
+<h1 id="用鼠标切换输入窗口"><a href="#用鼠标切换输入窗口" class="headerlink" title="用鼠标切换输入窗口"></a>用鼠标切换输入窗口</h1><blockquote>
+<p>harib21f</p>
+</blockquote>
+<p>这次并不用改太多，在找到图层之后，顺便把键盘输入也赋值就好了。</p>
+<pre><code class="c">if(sht != key_win)
+{
+    cursor_c = keywin_off(key_win, sht_win, cursor_c, cursor_x);
+    key_win = sht;
+    cursor_c = keywin_on(key_win, sht_win, cursor_c);
+}
+</code></pre>
+<h1 id="定时器API-1"><a href="#定时器API-1" class="headerlink" title="定时器API"></a>定时器API</h1><blockquote>
+<p>harib21g</p>
+</blockquote>
+<p>添加应用程序用的定时器API</p>
+<ul>
+<li>获取定时器（alloc）<br>EDX=16<br>EAX=定时器句柄（由操作系统返回）</li>
+<li>设置定时器的发送数据（init）<br>EDX=17<br>EBX=定时器句柄<br>EAX=数据</li>
+<li>定时器时间设定（set）<br>EDX=18<br>EBX=定时器句柄<br>EAX=时间</li>
+<li>释放定时器（free）<br>EDX=19<br>EBX=定时器句柄</li>
+</ul>
+<pre><code class="c">case 16:
+    reg[7] = (int)timer_alloc();
+    break;
+case 17:
+    timer_init((struct TIMER *)ebx, &amp;task-&gt;fifo, eax + 256);
+    break;
+case 18:
+    timer_settime((struct TIMER *)ebx, eax);
+    break;
+case 19:
+    timer_free((struct TIMER *)ebx);
+    break;
+</code></pre>
+<p>汇编调用：</p>
+<pre><code class="c">_api_alloctimer:    ; int api_alloctimer(void);
+        MOV        EDX,16
+        INT        0x40
+        RET
+
+_api_inittimer:        ; void api_inittimer(int timer, int data);
+        PUSH    EBX
+        MOV        EDX,17
+        MOV        EBX,[ESP+ 8]        ; timer
+        MOV        EAX,[ESP+12]        ; data
+        INT        0x40
+        POP        EBX
+        RET
+
+_api_settimer:        ; void api_settimer(int timer, int time);
+        PUSH    EBX
+        MOV        EDX,18
+        MOV        EBX,[ESP+ 8]        ; timer
+        MOV        EAX,[ESP+12]        ; time
+        INT        0x40
+        POP        EBX
+        RET
+
+_api_freetimer:        ; void api_freetimer(int timer);
+        PUSH    EBX
+        MOV        EDX,19
+        MOV        EBX,[ESP+ 8]        ; timer
+        INT        0x40
+        POP        EBX
+        RET
+</code></pre>
+<p>测试程序：</p>
+<pre><code class="c">void HariMain(void)
+{
+    char *buf, s[12];
+    int win, timer, sec = 0, min = 0, hou = 0;
+    api_initmalloc();
+    buf = api_malloc(150 * 50);
+    win = api_openwin(buf, 150, 50, -1, &quot;noodle&quot;);
+    timer = api_alloctimer();
+    api_inittimer(timer, 128);
+    for(;;)
+    {
+        sprintf(s, &quot;%5d:%02d:%02d&quot;, hou, min, sec);
+        api_boxfilwin(win, 28, 27, 115, 41, 7 /* 白色 */);
+        api_putstrwin(win, 28, 27, 0 /* 黑色 */, 11, s);
+        api_settimer(timer, 100);    /* 1秒 */
+        if(api_getkey(1) != 128)
+        {
+            break;
+        }
+        sec++;
+        if(sec == 60)
+        {
+            sec = 0;
+            min++;
+            if(min == 60)
+            {
+                min = 0;
+                hou++;
+            }
+        }
+    }
+    api_end();
+}
+</code></pre>
+<p>FIFO的128为定时器专用的数据，不会与其它产生冲突。</p>
+<h1 id="取消定时器"><a href="#取消定时器" class="headerlink" title="取消定时器"></a>取消定时器</h1><blockquote>
+<p>harib21h</p>
+</blockquote>
+<p>在应用程序结束的时候，需要释放掉申请的定时器。</p>
+<pre><code class="c">int timer_cancel(struct TIMER *timer)
+{
+    int e;
+    struct TIMER *t;
+    e = io_load_eflags();
+    io_cli(); // 在设置过程中禁止改变定时器状态
+    if(timer-&gt;flags == TIMER_FLAGS_USING) // 是否需要取消？
+    {
+        if(timer == timerctl.t0)
+        {
+            // 第一个定时器的取消处理
+            t = timer-&gt;next;
+            timerctl.t0 = t;
+            timerctl.next = t-&gt;timeout;
         }
         else
         {
-            if(i - now &lt;= 1) return false;
-            else now = i;
-        }
-    }
-    return true;
-}
-
-int main()
-{
-    // freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);
-    int T;
-    scanf(&quot;%d&quot;, &amp;T);
-    while(T--)
-    {
-        src = Point(INF, INF);
-        scanf(&quot;%d&quot;, &amp;n);
-        for(int i = 0; i &lt; n; ++i)
-        {
-            point[i].input();
-            if(point[i].x &lt; src.x || (fabs(point[i].x - src.x) &lt; EPS &amp;&amp; point[i].y &lt; src.y))
+            // 非第一个定时器的取消处理
+            // 找到timer前一个定时器
+            t = timerctl.t0;
+            for(;;)
             {
-                src = point[i];
+                if(t-&gt;next == timer)
+                {
+                    break;
+                }
+                t = t-&gt;next;
             }
+            t-&gt;next = timer-&gt;next; // 简单说就是链表的删除节点。
         }
-        if(n &lt; 6)
+        timer-&gt;flags = TIMER_FLAGS_ALLOC;
+        io_store_eflags(e);
+        return 1;    // 取消处理成功
+    }
+    io_store_eflags(e);
+    return 0; // 不需要取消处理
+}
+</code></pre>
+<pre><code class="c">void timer_cancelall(struct FIFO32 *fifo)
+{
+    int e, i;
+    struct TIMER *t;
+    e = io_load_eflags();
+    io_cli(); // 在设置过程中禁止改变定时器状态
+    for(i = 0; i &lt; MAX_TIMER; ++i)
+    {
+        t = &amp;timerctl.timers0[i];
+        if(t-&gt;flags != 0 &amp;&amp; t-&gt;flags2 != 0 &amp;&amp; t-&gt;fifo == fifo)
         {
-            puts(&quot;NO&quot;);
-            continue;
+            timer_cancel(t);
+            timer_free(t);
         }
-        if(convex()) puts(&quot;YES&quot;);
-        else puts(&quot;NO&quot;);
+    }
+    io_store_eflags(e);
+    return;
+}
+</code></pre>
+<p>cancelall用于在应用程序关闭之后检查一遍所有的定时器。<br>flags2为记录该API是否为应用程序申请的。若是的话需要在case 16里将flags2置1</p>
+<pre><code class="c">struct TIMER
+{
+    struct TIMER *next;
+    unsigned int timeout;
+    char flags, flags2;
+    struct FIFO32 *fifo;
+    int data;
+};
+</code></pre>
+<p>然后修改cmd_app中强制关闭的部分</p>
+<pre><code class="c">for(i = 0; i &lt; MAX_SHEETS; ++i)
+{
+    sht = &amp;(shtctl-&gt;sheets0[i]);
+    if((sht-&gt;flags &amp; 0x11) == 0x11 &amp;&amp; sht-&gt;task == task)
+    {
+        // 找到应用程序残留的窗口
+        sheet_free(sht); // 关闭
     }
 }
+timer_cancelall(&amp;task-&gt;fifo);
 </code></pre>
 
         
@@ -637,21 +940,13 @@ int main()
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/computgeo/poj1151.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/computgeo/poj1819.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day23/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
