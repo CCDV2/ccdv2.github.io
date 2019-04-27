@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+        <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Day25 | 
+        
+        CCDV2&#39;s nest
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/1590.png">
+    <link rel="icon" href="/img/1590.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",OS">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-seaside-light.min.css?b71t6V/NeTk95fu056Paxw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg3.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="CCDV2&#39;s nest">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day25//">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/1590.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day25//">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Day25 | CCDV2&#39;s nest">
+    <meta property="og:image" content="/img/1590.png">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="OS"> 
+
+    
+        <meta property="article:published_time" content="Fri Apr 26 2019 21:50:14 GMT+0800">
+        <meta property="article:modified_time" content="Sat Apr 27 2019 12:24:53 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day25/index.html/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day25/index.html/index.html",
+    "headline": "Day25",
+    "datePublished": "Fri Apr 26 2019 21:50:14 GMT+0800",
+    "dateModified": "Sat Apr 27 2019 12:24:53 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "CCDV2",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/1590.png"
+        },
+        "description": "高海千歌 is the 最高！（大雾）"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "CCDV2&#39;s nest",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/1590.png"
+        }
+    },
+    "keywords": ",OS",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#蜂鸣器发声"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">蜂鸣器发声</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#增加更多的颜色"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">增加更多的颜色</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#增加命令行窗口"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">增加命令行窗口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删掉task-a"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">删掉task_a</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#蜂鸣器发声-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">蜂鸣器发声</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增加更多的颜色（1）"><span class="post-toc-number">3.</span> <span class="post-toc-text">增加更多的颜色（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增加更多的颜色（2）"><span class="post-toc-number">4.</span> <span class="post-toc-text">增加更多的颜色（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#窗口初始位置"><span class="post-toc-number">5.</span> <span class="post-toc-text">窗口初始位置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增加命令行窗口（1）"><span class="post-toc-number">6.</span> <span class="post-toc-text">增加命令行窗口（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增加命令行窗口（2）"><span class="post-toc-number">7.</span> <span class="post-toc-text">增加命令行窗口（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增加命令行窗口（3）"><span class="post-toc-number">8.</span> <span class="post-toc-text">增加命令行窗口（3）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#增加命令行窗口（4）"><span class="post-toc-number">9.</span> <span class="post-toc-text">增加命令行窗口（4）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#变得更像真正的操作系统（1）"><span class="post-toc-number">10.</span> <span class="post-toc-text">变得更像真正的操作系统（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#变得更像真正的操作系统（2）"><span class="post-toc-number">11.</span> <span class="post-toc-text">变得更像真正的操作系统（2）</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Day25
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/1590.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CCDV2</strong>
+        <span>4月 26, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day25&url=https://ccdv2.github.io/OS/day25/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day25&url=https://ccdv2.github.io/OS/day25/index.html/index.html&via=CCDV2" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day25/index.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day25/index.html/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>今天做的是添加多种颜色、多个命令行（其实是填坑）。</p>
+<h1 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h1><h2 id="蜂鸣器发声"><a href="#蜂鸣器发声" class="headerlink" title="蜂鸣器发声"></a>蜂鸣器发声</h2><p>在windows.h就有类似的函数，不过之前的电脑好像不支持，就没有再研究过这个了。这次在QEMU模拟器环境下貌似也不起作用。那就看看代码好了。</p>
+<h2 id="增加更多的颜色"><a href="#增加更多的颜色" class="headerlink" title="增加更多的颜色"></a>增加更多的颜色</h2><p>并没有用到VESA的全彩色模式，作者在这里只是用了一些技巧。如果要支持全彩色的话，应该是要自己实现吧。</p>
+<ol>
+<li>扩展成6 * 6 * 6个颜色<br>并不是6位，而是6个。。考虑到本来这个显卡也支持不了太多颜色吧。。按照6进制来分别记录RGB的色阶。</li>
+<li>增加更多的颜色<br>适用于分辨率比较高的情况。把相邻的像素用两种颜色交替排列，看起来就像之间的中间色一样。</li>
+</ol>
+<h2 id="增加命令行窗口"><a href="#增加命令行窗口" class="headerlink" title="增加命令行窗口"></a>增加命令行窗口</h2><p>以前的有些设计只能适用于一个命令行窗口，所以现在又要逐渐填坑了。</p>
+<ol>
+<li>各自窗口的初始化<br>这个就不用说了，算是多个窗口的必须步骤吧）也不算是之前的坑</li>
+<li>增加任务指定的命令行<br>之前是在内存的0x0fec位置指定的控制台地址，遇到多个命令行的时候就会被覆盖了。于是在TASK结构体里增加了命令行的指针，表明是由哪个命令行打开的。</li>
+<li>给不同的应用程序分配不同的段<br>之前的数据段貌似是分配了一个大段，分给不同的应用程序。但是这样造成的问题是一个新应用程序进来的时候，会把之前的覆盖掉。因此需要修改之前的分配方式，给应用程序预留1000个数据段，分配给不同的应用程序。</li>
+<li>关闭不同命令行打开的应用程序<br>因为TASK已经绑定了命令行，在关闭窗口的时候，判断是哪个命令行打开的，把关闭消息发给对应的命令行</li>
+</ol>
+<h2 id="删掉task-a"><a href="#删掉task-a" class="headerlink" title="删掉task_a"></a>删掉task_a</h2><p>task_a这个窗口是在开始的时候进行测试用的。现在看起来已经没什么用了，就把它删掉好了。但是会导致FIFO初始化的时候出问题（被删掉之后没有进行初始化就有可能向FIFO传数据了），解决方案是把命令行对FIFO的初始化代码放到HariMain里。</p>
+<h1 id="蜂鸣器发声-1"><a href="#蜂鸣器发声-1" class="headerlink" title="蜂鸣器发声"></a>蜂鸣器发声</h1><blockquote>
+<p>harib22a</p>
+</blockquote>
+<p>蜂鸣器是由PIT来控制的。控制方法：</p>
+<ul>
+<li>音高操作<br>AL=0xb6; OUT(0x43, AL);<br>AL=设定值的低8位bit; OUT(0x42, AL);<br>AL=设定值的高8位bit; OUT(0x42, AL);<br>设定值为0时当作65536来处理<br>1000 = 1.19318KHz</li>
+<li>蜂鸣器ON/OFF<br>使用I/O端口 0x61 控制<br>ON: IN(AL, 0x61); AL |= 0x03; AL &amp;= 0x0f; OUT(0x61, AL);<br>OFF: IN(AL, 0x61); AL &amp;= 0xd; OUT(0x61, AL);</li>
+</ul>
+<p>API:</p>
+<ul>
+<li>蜂鸣器发声<br>EDX=20<br>EAX=声音频率（单位是mHz，即毫赫兹）<br>频率设置为0则表示停止发声</li>
+</ul>
+<p>添加API：</p>
+<pre><code class="c">case 20:
+    if(eax == 0)
+    {
+        i = io_in8(0x61);
+        io_out8(0x61, i &amp; 0x0d);
+    }
+    else
+    {
+        i = 1193180000 / eax;
+        io_out8(0x43, 0xb6);
+        io_out8(0x42, i &amp; 0xff);
+        io_out8(0x42, i &gt;&gt; 8);
+        i = io_in8(0x61);
+        io_out8(0x61, (i | 0x03) &amp; 0x0f);
+    }
+    break;
+</code></pre>
+<p>汇编调用：</p>
+<pre><code class="c">_api_beep:            ; void api_beep(int tone);
+        MOV        EDX,20
+        MOV        EAX,[ESP+4]            ; tone
+        INT        0x40
+        RET
+</code></pre>
+<p>测试程序：</p>
+<pre><code class="c">void HariMain(void)
+{
+    int i, timer;
+    timer = api_alloctimer();
+    api_inittimer(timer, 128);
+    for(i = 20000000; i &gt;= 20000; i -= i / 100)
+    {
+        // 20KHz ~ 20Hz，即人类可以听到的声音范围
+        // i 以 1% 的速度递减
+        api_beep(i);
+        api_settimer(timer, 1); // 0.01秒
+        if(api_getkey(1) != 128)
+        {
+            break;
+        }
+    }
+    api_beep(0);
+    api_end();
+}
+</code></pre>
+<p>当程序执行完，或者按下回车之后，程序结束。</p>
+<p>因为是模拟器，并不能听到蜂鸣器的声音。（电脑本身支持Beep的）</p>
+<h1 id="增加更多的颜色（1）"><a href="#增加更多的颜色（1）" class="headerlink" title="增加更多的颜色（1）"></a>增加更多的颜色（1）</h1><blockquote>
+<p>harib22b</p>
+</blockquote>
+<p>首先是扩展成每种都有6个色阶</p>
+<pre><code class="c">void init_palette(void)
+{
+    static unsigned char table_rgb[16 * 3] =
+    {
+        0x00, 0x00, 0x00, /*0:黑*/
+        0xff, 0x00, 0x00, /*1:亮红*/
+        0x00, 0xff, 0x00, /*2:亮绿*/
+        0xff, 0xff, 0x00, /*3:亮黄*/
+        0x00, 0x00, 0xff, /*4:亮蓝*/
+        0xff, 0x00, 0xff, /*5:亮紫*/
+        0x00, 0xff, 0xff, /*6:浅亮蓝*/
+        0xff, 0xff, 0xff, /*7:白*/
+        0xc6, 0xc6, 0xc6, /*8:亮灰*/
+        0x84, 0x00, 0x00, /*9:暗红*/
+        0x00, 0x84, 0x00, /*10:暗绿*/
+        0x84, 0x84, 0x00, /*11:暗黄*/
+        0x00, 0x00, 0x84, /*12:暗青*/
+        0x84, 0x00, 0x84, /*13:暗紫*/
+        0x00, 0x84, 0x84, /*14:浅暗蓝*/
+        0x84, 0x84, 0x84  /*15:暗灰*/
+    };
+    unsigned char table2[216 * 3];
+    int r, g, b;
+    set_palette(0, 15, table_rgb);
+    for(b = 0; b &lt; 6; ++b)
+    {
+        for(g = 0; g &lt; 6; ++g)
+        {
+            for(r = 0; r &lt; 6; ++r)
+            {
+                table2[(r + g * 6 + b * 36) * 3 + 0] = r * 51;
+                table2[(r + g * 6 + b * 36) * 3 + 1] = g * 51;
+                table2[(r + g * 6 + b * 36) * 3 + 2] = b * 51;
+            }
+        }
+    }
+    set_palette(16, 231, table2);
+    return;
+}
+</code></pre>
+<p>RGB每个都为8位（256）的时候，每51个设置一个色阶。</p>
+<p>然后是测试程序：</p>
+<pre><code class="c">void HariMain(void)
+{
+    char *buf;
+    int win, x, y, r, g, b;
+    api_initmalloc();
+    buf = api_malloc(144 * 164);
+    win = api_openwin(buf, 144, 164, -1, &quot;color&quot;);
+    for(y = 0; y &lt; 128; ++y)
+    {
+        for(x = 0; x &lt; 128; ++x)
+        {
+            r = x * 2;
+            g = y * 2;
+            b = 0;
+            buf[(x + 8) + (y + 28) * 144] = 16 + (r / 43) + (g / 43) * 6 + (b / 43) * 36;
+        }
+    }
+    api_refreshwin(win, 8, 28, 136, 156);
+    api_getkey(1); // 等待按下任意键
+    api_end();
+}
+</code></pre>
+<p>这样能显示一个6 * 6的调色板。</p>
+<h1 id="增加更多的颜色（2）"><a href="#增加更多的颜色（2）" class="headerlink" title="增加更多的颜色（2）"></a>增加更多的颜色（2）</h1><blockquote>
+<p>harib22c</p>
+</blockquote>
+<p>混合像素的应用程序：</p>
+<pre><code class="c">void HariMain(void)
+{
+    char *buf;
+    int win, x, y;
+    api_initmalloc();
+    buf = api_malloc(144 * 164);
+    win = api_openwin(buf, 144, 164, -1, &quot;color2&quot;);
+    for(y = 0; y &lt; 128; ++y)
+    {
+        for(x = 0; x &lt; 128; ++x)
+        {
+            buf[(x + 8) + (y + 28) * 144] = rgb2pal(x * 2, y * 2, 0, x, y);
+        }
+    }
+    api_refreshwin(win, 8, 28, 136, 156);
+    api_getkey(1); // 等待按下任意键
+    api_end();
+}
+
+unsigned char rgb2pal(int r, int g, int b, int x, int y)
+{
+    static int table[4] = {3, 1, 0, 2};
+    int i;
+    x &amp;= 1; // 判断是偶数还是奇数
+    y &amp;= 1;
+    i = table[x + y * 2]; // 用来生成中间色的常量
+    r = (r * 21) / 256;    // r为0~20
+    g = (g * 21) / 256;
+    b = (b * 21) / 256;
+    r = (r + i) / 4; // r为0~5
+    g = (g + i) / 4;
+    b = (b + i) / 4;
+    return 16 + r + g * 6 + b * 36;
+}
+</code></pre>
+<p>通过奇偶判断以及预设一个奇偶对应的偏移表，将一个正方形的四个格子分别染成<br>+3 +0<br>+1 +2<br>这样类似的效果。<br>这样的渐变更加平滑</p>
+<h1 id="窗口初始位置"><a href="#窗口初始位置" class="headerlink" title="窗口初始位置"></a>窗口初始位置</h1><blockquote>
+<p>harib22d</p>
+</blockquote>
+<p>更改了API申请窗口时的动作，把新申请的窗口放到最上层并放到画面中央。</p>
+<pre><code class="c">case 5:
+    sht = sheet_alloc(shtctl);
+    sht-&gt;task = task;
+    sht-&gt;flags |= 0x10;
+    sheet_setbuf(sht, (char *) ebx + ds_base, esi, edi, eax);
+    make_window8((char *) ebx + ds_base, esi, edi, (char *) ecx + ds_base, 0);
+    sheet_slide(sht, (shtctl-&gt;xsize - esi) / 2, (shtctl-&gt;ysize - edi) / 2);
+    sheet_updown(sht, shtctl-&gt;top);    // 将窗口图层高度指定为当前鼠标所在图层的高度，鼠标移到最上层
+    reg[7] = (int)sht;
+    break;
+</code></pre>
+<p>没问题</p>
+<h1 id="增加命令行窗口（1）"><a href="#增加命令行窗口（1）" class="headerlink" title="增加命令行窗口（1）"></a>增加命令行窗口（1）</h1><blockquote>
+<p>harib22e</p>
+</blockquote>
+<p>这一步先更改各种初始化的地方。放一些举例</p>
+<pre><code class="c">for(i = 0; i &lt; 2; ++i)
+{
+    sht_cons[i] = sheet_alloc(shtctl);
+    buf_cons[i] = (unsigned char *)memman_alloc_4k(memman, 256 * 165);
+    sheet_setbuf(sht_cons[i], buf_cons[i], 256, 165, -1); // 没有透明色
+    make_window8(buf_cons[i], 256, 165, &quot;console&quot;, 0);
+    make_textbox8(sht_cons[i], 8, 28, 240, 128, COL8_000000);
+    task_cons[i] = task_alloc();
+    task_cons[i]-&gt;tss.esp = memman_alloc_4k(memman, 64 * 1024) + 64 * 1024 - 12;
+    task_cons[i]-&gt;tss.eip = (int)&amp;console_task;
+    task_cons[i]-&gt;tss.es = 1 * 8;
+    task_cons[i]-&gt;tss.cs = 2 * 8;
+    task_cons[i]-&gt;tss.ss = 1 * 8;
+    task_cons[i]-&gt;tss.ds = 1 * 8;
+    task_cons[i]-&gt;tss.fs = 1 * 8;
+    task_cons[i]-&gt;tss.gs = 1 * 8;
+    *((int *)(task_cons[i]-&gt;tss.esp + 4)) = (int)sht_cons[i];
+    *((int *)(task_cons[i]-&gt;tss.esp + 8)) = memtotal;
+    task_run(task_cons[i], 2, 2); // level=2, priority=2
+    sht_cons[i]-&gt;task = task_cons[i];
+    sht_cons[i]-&gt;flags |= 0x20;    // 有光标
+}
+</code></pre>
+<p>这一部分是通过一个循环来简单地申请两个命令行，其它地方的话，没有太多需要看的）<br>但是光这样申请是不行的，还需要改其它的地方</p>
+<h1 id="增加命令行窗口（2）"><a href="#增加命令行窗口（2）" class="headerlink" title="增加命令行窗口（2）"></a>增加命令行窗口（2）</h1><blockquote>
+<p>harib22f</p>
+</blockquote>
+<p>指定打开应用程序的任务</p>
+<pre><code class="c">task-&gt;cons = &amp;cons;
+</code></pre>
+<p>指定应用程序数据段基址</p>
+<pre><code class="c">task-&gt;ds_base = (int)q;
+</code></pre>
+<p>总之之前涉及的指定cons的地方都要更改一下。<br>但是还是有问题。</p>
+<h1 id="增加命令行窗口（3）"><a href="#增加命令行窗口（3）" class="headerlink" title="增加命令行窗口（3）"></a>增加命令行窗口（3）</h1><blockquote>
+<p>harib22g</p>
+</blockquote>
+<p>增加多个数据段</p>
+<pre><code class="c">set_segmdesc(gdt + task-&gt;sel / 8 + 1000, finfo-&gt;size - 1, (int) p, AR_CODE32_ER + 0x60);
+set_segmdesc(gdt + task-&gt;sel / 8 + 2000, segsiz - 1,      (int) q, AR_DATA32_RW + 0x60);
+</code></pre>
+<p>这样的话，段号1003~2002为应用程序代码段编号，2003~3002为数据段编号。每个应用程序分配不同的sel，就不会出现问题了。</p>
+<h1 id="增加命令行窗口（4）"><a href="#增加命令行窗口（4）" class="headerlink" title="增加命令行窗口（4）"></a>增加命令行窗口（4）</h1><blockquote>
+<p>harib22h</p>
+</blockquote>
+<p>修改应用程序关闭的逻辑<br>键盘关闭：</p>
+<pre><code class="c">if(i == 256 + 0x3b &amp;&amp; key_shift != 0)
+{
+    task = key_win-&gt;task;
+    if(task != 0 &amp;&amp; task-&gt;tss.ss0 != 0) // Shift+F1
+    {
+        cons_putstr0(task-&gt;cons, &quot;\nBreak(key) :\n&quot;);
+        io_cli(); // 强制结束处理时禁止任务切换
+        task-&gt;tss.eax = (int)&amp;(task-&gt;tss.esp0);
+        task-&gt;tss.eip = (int)asm_end_app;
+        io_sti();
+    }
+}
+</code></pre>
+<p>把task改变为当前正在输入的窗口的应用程序。<br>鼠标关闭：</p>
+<pre><code class="c">if(sht-&gt;bxsize - 21 &lt;= x &amp;&amp; x &lt; sht-&gt;bxsize - 5 &amp;&amp; 5 &lt;= y &amp;&amp; y &lt; 19)
+{
+    // 点击“×”按钮
+    if((sht-&gt;flags &amp; 0x10) != 0) // 是否为应用程序窗口？
+    {
+        task = sht-&gt;task;
+        cons_putstr0(task-&gt;cons, &quot;\nBreak(mouse) :\n&quot;);
+        io_cli(); // 强制结束处理时禁止任务切换
+        task-&gt;tss.eax = (int) &amp;(task-&gt;tss.esp0);
+        task-&gt;tss.eip = (int) asm_end_app;
+        io_sti();
+    }
+}
+</code></pre>
+<p>把task改变为当前点击的窗口的应用程序<br>这样两个命令行下的问题就解决了。</p>
+<h1 id="变得更像真正的操作系统（1）"><a href="#变得更像真正的操作系统（1）" class="headerlink" title="变得更像真正的操作系统（1）"></a>变得更像真正的操作系统（1）</h1><blockquote>
+<p>harib22i</p>
+</blockquote>
+<p>删掉了各种task_a相关的部分。但是删除没法用代码展示。。就略过不提好了<br>然后删完就出bug了。。</p>
+<h1 id="变得更像真正的操作系统（2）"><a href="#变得更像真正的操作系统（2）" class="headerlink" title="变得更像真正的操作系统（2）"></a>变得更像真正的操作系统（2）</h1><blockquote>
+<p>harib22j</p>
+</blockquote>
+<p>console的task还没被初始化就使用了，于是出现了bug<br>所以把初始化的代码放到了HariMain里</p>
+<pre><code class="c">cons_fifo[i] = (int *)memman_alloc_4k(memman, 128 * 4);
+fifo32_init(&amp;task_cons[i]-&gt;fifo, 128, cons_fifo[i], task_cons[i]);
+</code></pre>
+<p>之后再把之前写的初始化删掉，就完成了。</p>
+<p>今天虽然好多个小节都在填坑，但是也可以看看之前设计的不够周全之处。还有有时候从一到多需要改变很多东西。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzY3Ni8xNDIwNw==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/OS/day24/index.html/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/1590.png" alt="CCDV2's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        ccdv21999@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: ccdv21999@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/CG/">CG<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/categories/CG/openGL/">openGL<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/">CV<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/分类算法/">分类算法<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/神经网络/">神经网络<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/CV/神经网络/分类算法/">分类算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/OS/">OS<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/VHDL/">VHDL<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/">acm<span class="sidebar_archives-count">29</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/IO/">IO<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/">dfs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/dfs/剪枝/">剪枝<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/博弈论/">博弈论<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/字符串/">字符串<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数学/">数学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/数据结构/">数据结构<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/网络流/">网络流<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/acm/计算几何/">计算几何<span class="sidebar_archives-count">17</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>CCDV2's nest
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?d+XW6aNuIPgOn1iA7NnB4g==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
