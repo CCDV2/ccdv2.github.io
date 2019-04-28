@@ -45,7 +45,7 @@
     
     <title>
         
-            多边形 | 
+            Day26 | 
         
         CCDV2&#39;s nest
     </title>
@@ -55,8 +55,8 @@
     <link rel="icon" href="/img/1590.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="一些多边形的画法。">
-    <meta name="keywords" content=",CG,openGL">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",OS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="CCDV2&#39;s nest">
-    <meta name="msapplication-starturl" content="https://ccdv2.github.io/CG/starter/polygon.html/">
+    <meta name="msapplication-starturl" content="https://ccdv2.github.io/OS/day26//">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="CCDV2&#39;s nest">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ccdv2.github.io/CG/starter/polygon.html/">
+    <meta property="og:url" content="https://ccdv2.github.io/OS/day26//">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="多边形 | CCDV2&#39;s nest">
+    <meta property="og:title" content="Day26 | CCDV2&#39;s nest">
     <meta property="og:image" content="/img/1590.png">
-    <meta property="og:description" content="一些多边形的画法。">
-    <meta property="og:article:tag" content="CG"> <meta property="og:article:tag" content="openGL"> 
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="OS"> 
 
     
-        <meta property="article:published_time" content="Sat Dec 22 2018 16:32:23 GMT+0800">
-        <meta property="article:modified_time" content="Sat Dec 22 2018 16:52:44 GMT+0800">
+        <meta property="article:published_time" content="Sat Apr 27 2019 13:37:25 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 28 2019 19:16:09 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ccdv2.github.io/CG/starter/polygon.html/index.html" />
+        <link rel="canonical" href="https://ccdv2.github.io/OS/day26/index.html/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ccdv2.github.io/CG/starter/polygon.html/index.html",
-    "headline": "多边形",
-    "datePublished": "Sat Dec 22 2018 16:32:23 GMT+0800",
-    "dateModified": "Sat Dec 22 2018 16:52:44 GMT+0800",
+    "mainEntityOfPage": "https://ccdv2.github.io/OS/day26/index.html/index.html",
+    "headline": "Day26",
+    "datePublished": "Sat Apr 27 2019 13:37:25 GMT+0800",
+    "dateModified": "Sun Apr 28 2019 19:16:09 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -282,8 +282,8 @@
             "url": "/img/1590.png"
         }
     },
-    "keywords": ",CG,openGL",
-    "description": "一些多边形的画法。",
+    "keywords": ",OS",
+    "description": "",
 }
 </script>
 
@@ -342,6 +342,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些感想"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些感想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提高窗口移动速度"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">提高窗口移动速度</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令行的开启和关闭"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">命令行的开启和关闭</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#提高窗口移动速度（1）"><span class="post-toc-number">2.</span> <span class="post-toc-text">提高窗口移动速度（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#提高窗口移动速度（2）"><span class="post-toc-number">3.</span> <span class="post-toc-text">提高窗口移动速度（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#提高窗口移动速度（3）"><span class="post-toc-number">4.</span> <span class="post-toc-text">提高窗口移动速度（3）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#提高窗口移动速度（4）"><span class="post-toc-number">5.</span> <span class="post-toc-text">提高窗口移动速度（4）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启动时只打开一个命令行窗口-amp-增加更多的命令行窗口"><span class="post-toc-number">6.</span> <span class="post-toc-text">启动时只打开一个命令行窗口 &amp; 增加更多的命令行窗口</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关闭命令行窗口（1）"><span class="post-toc-number">7.</span> <span class="post-toc-text">关闭命令行窗口（1）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关闭命令行窗口（2）"><span class="post-toc-number">8.</span> <span class="post-toc-text">关闭命令行窗口（2）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#start命令"><span class="post-toc-number">9.</span> <span class="post-toc-text">start命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ncst命令"><span class="post-toc-number">10.</span> <span class="post-toc-text">ncst命令</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -371,7 +380,7 @@
         
     
             <p class="article-headline-p">
-                多边形
+                Day26
             </p>
         </div>
 
@@ -390,7 +399,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>CCDV2</strong>
-        <span>12月 22, 2018</span>
+        <span>4月 27, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +423,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CG/">CG</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/openGL/">openGL</a>
+        <a class="post_tag-link" href="/tags/OS/">OS</a>
     </ul>
     
 
@@ -431,7 +440,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=多边形&url=https://ccdv2.github.io/CG/starter/polygon.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day26&url=https://ccdv2.github.io/OS/day26/index.html/index.html&pic=https://ccdv2.github.io/img/1590.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -440,7 +449,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=多边形&url=https://ccdv2.github.io/CG/starter/polygon.html/index.html&via=CCDV2" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day26&url=https://ccdv2.github.io/OS/day26/index.html/index.html&via=CCDV2" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -449,7 +458,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/CG/starter/polygon.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdv2.github.io/OS/day26/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -458,7 +467,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/CG/starter/polygon.html/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://ccdv2.github.io/OS/day26/index.html/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -483,167 +492,417 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>一些多边形的画法。<br><a id="more"></a></p>
+        <p>今天用了位算法来优化窗口的移动速度，之后提供了命令行的开启与关闭操作。</p>
+<h1 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h1><h2 id="提高窗口移动速度"><a href="#提高窗口移动速度" class="headerlink" title="提高窗口移动速度"></a>提高窗口移动速度</h2><p>又来到了优化图像处理算法的环节。这次是优化鼠标移动窗口时的算法。</p>
 <ol>
-<li>三角形图元<blockquote>
-<p>三角形按照逆时针的顺序，3个3个给出点坐标即可。  </p>
-</blockquote>
-</li>
-<li>三角剖分的多边形图元<ol>
-<li>GL_TRIANGLE_STRIP<blockquote>
-<p>一种连续使用之前两个顶点的三角剖分，具体可以看注释（听说效率比较高）</p>
-</blockquote>
-</li>
-<li>GL_TRIANGLE_FAN<blockquote>
-<p>扇形的三角剖分</p>
-</blockquote>
-</li>
+<li>减少if的判断次数<br>像是这种代码：<pre><code class="c">for()
+ for()
+     if()
+</code></pre>
+不难想象if在中间被判断了很多次。如果要是在外面判断完之后再进去循环，那样就会减少很多判断次数了。</li>
+<li>位操作的优化。<br>之前我们都是按BYTE来赋值的，如果采用DWORD来赋值，同样的时间会将效率提高4倍，这样的话效率就很高了。</li>
+<li>与鼠标绘图同步<br>虽然现在窗口移动已经够快了，但是还是赶不上鼠标的速度。由于考虑到鼠标移动操作很可能是连续的，因此我们没必要对于每次微小的移动都重绘鼠标与窗口，可以等缓冲区为空的时候再重绘它们。</li>
 </ol>
-</li>
-<li>凸多边形图元<blockquote>
-<p>按照逆时针次序给出</p>
+<h2 id="命令行的开启和关闭"><a href="#命令行的开启和关闭" class="headerlink" title="命令行的开启和关闭"></a>命令行的开启和关闭</h2><p>以前一直不明白，为什么有bootpack.c了，还会有console.c，这两个不应该是一个东西吗？<br>现在大概明白了：作者做了一个全局的后台处理任务，负责分发各种FIFO、调用控制台之类的。这个任务对于操作系统使用者来说是透明的，但是在操作系统编程者的视角上来说可以说它无处不在了。</p>
+<h1 id="提高窗口移动速度（1）"><a href="#提高窗口移动速度（1）" class="headerlink" title="提高窗口移动速度（1）"></a>提高窗口移动速度（1）</h1><blockquote>
+<p>harib23a</p>
 </blockquote>
-</li>
-<li>四边形图元<blockquote>
-<p>逆时针次序4个4个给出</p>
-</blockquote>
-</li>
-<li>共用边的四边形图元  <blockquote>
-<p>每次四边形用之前的两个点，具体顺序参照注释  </p>
-</blockquote>
-</li>
-</ol>
-<pre><code class="cpp">#include&lt;Windows.h&gt;
-#include&lt;GL/glut.h&gt;
-#include&lt;cstdio&gt;
-
-int p[7][2] =
+<p>改进refreshmap函数。首先是减少if的判断次数</p>
+<pre><code class="c">if(sht-&gt;col_inv == -1)
 {
-    {0, 0},
-    {100, 150},
-    {150, 100},
-    {200, 100},
-    {250, 150},
-    {200, 200},
-    {150, 200},
-};
-
-void drawTriangle()
-{
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3d(0.3, 0.4, 0.5);
-    glBegin(GL_TRIANGLES);//按照逆时针次序给出3个3个的顶点，忽略不足3个的
+    // 无透明色图层的专用告诉版
+    for(by = by0; by &lt; by1; ++by)
     {
-        glVertex2iv(p[1]);
-        glVertex2iv(p[2]);
-        glVertex2iv(p[6]);
-        glVertex2iv(p[3]);
-        glVertex2iv(p[4]);
-        glVertex2iv(p[5]);
-    }
-    glEnd();
-    glFlush();
-}
-
-void drawTriangleStrip()
-{
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3d(0.5, 0.6, 0.7);
-    glBegin(GL_TRIANGLE_STRIP);//用三角剖分的形式，把多个三角形组合成多边形，
-    //如果n是奇数，三角形顺序为n,n+1,n+2
-    //如果n是偶数，三角形顺序为n+1,n,n+2
-    //可以理解为每次三角形都是按照逆时针次序,且之前两个点排在前面的方式画出。
-    {
-        glVertex2iv(p[1]);
-        glVertex2iv(p[2]);
-        glVertex2iv(p[6]);
-        glVertex2iv(p[3]);
-        glVertex2iv(p[5]);
-        glVertex2iv(p[4]);
-    }
-    glEnd();
-    glFlush();
-}
-
-void drawTriangleFan()
-{
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3d(0.6, 0.2, 0.6);
-    glBegin(GL_TRIANGLE_FAN);//每次画三角形1,n+1,n+2
-    {
-        glVertex2iv(p[1]);
-        glVertex2iv(p[2]);
-        glVertex2iv(p[3]);
-        glVertex2iv(p[4]);
-        glVertex2iv(p[5]);
-        glVertex2iv(p[6]);
-    }
-    glEnd();
-    glFlush();
-}
-
-void drawPolygon()
-{
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3d(0.1, 0.2, 0.3);
-    glBegin(GL_POLYGON);//逆时针次序
-    {
-        for (int i = 1; i &lt;= 6; ++i)
+        vy = sht-&gt;vy0 + by;
+        for(bx = bx0; bx &lt; bx1; ++bx)
         {
-            glVertex2iv(p[i]);
+            vx = sht-&gt;vx0 + bx;
+            map[vy * ctl-&gt;xsize + vx] = sid;
         }
     }
-    glEnd();
-    glFlush();
 }
-
-void drawQuads()
+else
 {
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3d(0.3, 0.4, 0.3);
-    glBegin(GL_QUADS);//每4个4个组成四边形，按照逆时针次序
+    // 有透明色图层用的普通版
+    for(by = by0; by &lt; by1; ++by)
     {
-        for (int i = 1; i &lt;= 6; ++i)
+        vy = sht-&gt;vy0 + by;
+        for(bx = bx0; bx &lt; bx1; ++bx)
         {
-            glVertex2iv(p[i]);
+            vx = sht-&gt;vx0 + bx;
+            if(buf[by * sht-&gt;bxsize + bx] != sht-&gt;col_inv)
+            {
+                map[vy * ctl-&gt;xsize + vx] = sid;
+            }
         }
     }
-    glEnd();
-    glFlush();
-}
-
-void drawQuadsStrip()
-{
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3d(0.2, 0.5, 0.1);
-    glBegin(GL_QUAD_STRIP);//之后的四边形共用之前的两个点，
-    //逆时针画得四边形顺序为2n-1,2n,2n+2,2n+1
-    //可以理解为每次新生成的四边形，用之前的四边形的点的顺序是逆时针的
-    {
-        glVertex2iv(p[1]);
-        glVertex2iv(p[2]);
-        glVertex2iv(p[6]);
-        glVertex2iv(p[3]);
-        glVertex2iv(p[5]);
-        glVertex2iv(p[4]);
-    }
-    glEnd();
-    glFlush();
-}
-
-int main(int argc, char *argv[])
-{
-    glutInit(&amp;argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowSize(800, 600);
-    glutCreateWindow(&quot;Polygon draw&quot;);
-    glClearColor(1.0, 1.0, 1.0, 0.0);
-    glMatrixMode(GL_PROJECTION);
-    gluOrtho2D(0.0, 800.0, 0.0, 600.0);
-    glutDisplayFunc(drawQuadsStrip);
-    glutMainLoop();
 }
 </code></pre>
+<p>相当于在能省的情况下，省一些判断时间。虽然不知道有多少提升效果。</p>
+<h1 id="提高窗口移动速度（2）"><a href="#提高窗口移动速度（2）" class="headerlink" title="提高窗口移动速度（2）"></a>提高窗口移动速度（2）</h1><blockquote>
+<p>harib23b</p>
+</blockquote>
+<p>改成每4字节赋一次值：</p>
+<pre><code class="c">if(sht-&gt;col_inv == -1)
+{
+    if((sht-&gt;vx0 &amp; 3) == 0 &amp;&amp; (bx0 &amp; 3) == 0 &amp;&amp; (bx1 &amp; 3) == 0)
+    {
+        // 无透明色图层专用的高字节版（4字节型）
+        bx1 = (bx1 - bx0) / 4; // MOV次数
+        sid4 = sid | sid &lt;&lt; 8 | sid &lt;&lt; 16 | sid &lt;&lt; 24;
+        for(by = by0; by &lt; by1; ++by)
+        {
+            vy = sht-&gt;vy0 + by;
+            vx = sht-&gt;vx0 + bx0;
+            p = (int *)&amp;map[vy * ctl-&gt;xsize + vx];
+            for(bx = 0; bx &lt; bx1; ++bx)
+            {
+                p[bx] = sid4;
+            }
+        }
+    }
+    else
+    {
+        // 无透明色图层专用的高速版（1字节型）
+        for(by = by0; by &lt; by1; ++by)
+        {
+            vy = sht-&gt;vy0 + by;
+            for(bx = bx0; bx &lt; bx1; ++bx)
+            {
+                vx = sht-&gt;vx0 + bx;
+                map[vy * ctl-&gt;xsize + vx] = sid;
+            }
+        }
+    }
+}
+else
+{
+    // 有透明色图层用的普通版
+    for(by = by0; by &lt; by1; ++by)
+    {
+        vy = sht-&gt;vy0 + by;
+        for(bx = bx0; bx &lt; bx1; ++bx)
+        {
+            vx = sht-&gt;vx0 + bx;
+            if(buf[by * sht-&gt;bxsize + bx] != sht-&gt;col_inv)
+            {
+                map[vy * ctl-&gt;xsize + vx] = sid;
+            }
+        }
+    }
+}
+</code></pre>
+<p>这样提升的性能是很显著的。同时为了尽可能多地使用4字节一起赋值，在API申请的时候将窗口大小强制规定为4的倍数</p>
+<pre><code class="c">case 5:
+    sht = sheet_alloc(shtctl);
+    sht-&gt;task = task;
+    sht-&gt;flags |= 0x10;
+    sheet_setbuf(sht, (char *) ebx + ds_base, esi, edi, eax);
+    make_window8((char *) ebx + ds_base, esi, edi, (char *) ecx + ds_base, 0);
+    sheet_slide(sht, ((shtctl-&gt;xsize - esi) / 2) &amp; ~3, (shtctl-&gt;ysize - edi) / 2);
+    sheet_updown(sht, shtctl-&gt;top);    // 将窗口图层高度指定为当前鼠标所在图层的高度，鼠标移到最上层
+    reg[7] = (int)sht;
+    break;
+</code></pre>
+<p>向下取整<br>鼠标移动窗口时，四舍五入到4的倍数：</p>
+<pre><code class="c">sheet_slide(sht, (mmx2 + x + 2) &amp; ~3, sht-&gt;vy0 + y);
+</code></pre>
+<p>这样移动窗口速度就得到了显著的提升。</p>
+<h1 id="提高窗口移动速度（3）"><a href="#提高窗口移动速度（3）" class="headerlink" title="提高窗口移动速度（3）"></a>提高窗口移动速度（3）</h1><blockquote>
+<p>harib23c</p>
+</blockquote>
+<p>这一节顺便修改了其它绘制函数，使其支持4字节写入<br>于是修改refreshsub：</p>
+<pre><code class="c">if((sht-&gt;vx0 &amp; 3) == 0)
+{
+    // 4字节型
+    i  = (bx0 + 3) / 4; // bx0除以4（小数进位）
+    i1 =  bx1 / 4; // bx1除以4（小数舍去）
+    i1 = i1 - i;
+    sid4 = sid | sid &lt;&lt; 8 | sid &lt;&lt; 16 | sid &lt;&lt; 24;
+    for(by = by0; by &lt; by1; ++by)
+    {
+        vy = sht-&gt;vy0 + by;
+        for(bx = bx0; bx &lt; bx1 &amp;&amp; (bx &amp; 3) != 0; ++bx) // 前面被4除多余的部分逐个字节写入
+        {
+            vx = sht-&gt;vx0 + bx;
+            if(map[vy * ctl-&gt;xsize + vx] == sid)
+            {
+                vram[vy * ctl-&gt;xsize + vx] = buf[by * sht-&gt;bxsize + bx];
+            }
+        }
+        vx = sht-&gt;vx0 + bx;
+        p = (int *)&amp;map[vy * ctl-&gt;xsize + vx];
+        q = (int *)&amp;vram[vy * ctl-&gt;xsize + vx];
+        r = (int *)&amp;buf[by * sht-&gt;bxsize + bx];
+        for(i = 0; i &lt; i1; ++i) // 4的倍数部分
+        {
+            if(p[i] == sid4)
+            {
+                q[i] = r[i]; // 估计大多数会是这种情况，因此速度会变快
+            }
+            else
+            {
+                bx2 = bx + i * 4;
+                vx = sht-&gt;vx0 + bx2;
+                if(map[vy * ctl-&gt;xsize + vx + 0] == sid)
+                {
+                    vram[vy * ctl-&gt;xsize + vx + 0] = buf[by * sht-&gt;bxsize + bx2 + 0];
+                }
+                if(map[vy * ctl-&gt;xsize + vx + 1] == sid)
+                {
+                    vram[vy * ctl-&gt;xsize + vx + 1] = buf[by * sht-&gt;bxsize + bx2 + 1];
+                }
+                if(map[vy * ctl-&gt;xsize + vx + 2] == sid)
+                {
+                    vram[vy * ctl-&gt;xsize + vx + 2] = buf[by * sht-&gt;bxsize + bx2 + 2];
+                }
+                if(map[vy * ctl-&gt;xsize + vx + 3] == sid)
+                {
+                    vram[vy * ctl-&gt;xsize + vx + 3] = buf[by * sht-&gt;bxsize + bx2 + 3];
+                }
+            }
+        }
+        for(bx += i1 * 4; bx &lt; bx1; ++bx) // 后面被4除多余的部分逐个字节写入
+        {
+            vx = sht-&gt;vx0 + bx;
+            if(map[vy * ctl-&gt;xsize + vx] == sid)
+            {
+                vram[vy * ctl-&gt;xsize + vx] = buf[by * sht-&gt;bxsize + bx];
+            }
+        }
+    }
+}
+else
+{
+    // 1字节型
+    for(by = by0; by &lt; by1; ++by)
+    {
+        vy = sht-&gt;vy0 + by;
+        for(bx = bx0; bx &lt; bx1; ++bx)
+        {
+            vx = sht-&gt;vx0 + bx;
+            if(map[vy * ctl-&gt;xsize + vx] == sid)
+            {
+                vram[vy * ctl-&gt;xsize + vx] = buf[by * sht-&gt;bxsize + bx];
+            }
+        }
+    }
+}
+</code></pre>
+<h1 id="提高窗口移动速度（4）"><a href="#提高窗口移动速度（4）" class="headerlink" title="提高窗口移动速度（4）"></a>提高窗口移动速度（4）</h1><blockquote>
+<p>harib23d</p>
+</blockquote>
+<p>解决鼠标与窗口的速度不匹配问题</p>
+<pre><code class="c">if(fifo32_status(&amp;fifo) == 0)
+{
+    // FIFO为空，当存在搁置的绘图操作时立即执行
+    if(new_mx &gt;= 0)
+    {
+        io_sti();
+        sheet_slide(sht_mouse, new_mx, new_my);
+        new_mx = -1;
+    }
+    else if(new_wx != 0x7fffffff)
+    {
+        io_sti();
+        sheet_slide(sht, new_wx, new_wy);
+        new_wx = 0x7fffffff;
+    }
+    else
+    {
+        task_sleep(task_a);
+        io_sti();
+    }
+}
+</code></pre>
+<p>new_mx为鼠标移动后，暂时存储的鼠标移动后坐标的x值。<br>new_wx为鼠标移动后，暂时存储的窗口移动后坐标的x值。<br>这样省去了过多微小的重绘操作。</p>
+<h1 id="启动时只打开一个命令行窗口-amp-增加更多的命令行窗口"><a href="#启动时只打开一个命令行窗口-amp-增加更多的命令行窗口" class="headerlink" title="启动时只打开一个命令行窗口 &amp; 增加更多的命令行窗口"></a>启动时只打开一个命令行窗口 &amp; 增加更多的命令行窗口</h1><blockquote>
+<p>harib23e<br>harib23f</p>
+</blockquote>
+<p>按下shift+F2，就会新建一个命令行窗口。<br>这里把命令行的初始化封装了起来：</p>
+<pre><code class="c">struct SHEET *open_console(struct SHTCTL *shtctl, unsigned int memtotal)
+{
+    struct MEMMAN *memman = (struct MEMMAN *)MEMMAN_ADDR;
+    struct SHEET *sht = sheet_alloc(shtctl);
+    unsigned char *buf = (unsigned char *)memman_alloc_4k(memman, 256 * 165);
+    struct TASK *task = task_alloc();
+    int *cons_fifo = (int *)memman_alloc_4k(memman, 128 * 4);
+    sheet_setbuf(sht, buf, 256, 165, -1); // 无透明色
+    make_window8(buf, 256, 165, &quot;console&quot;, 0);
+    make_textbox8(sht, 8, 28, 240, 128, COL8_000000);
+    task-&gt;tss.esp = memman_alloc_4k(memman, 64 * 1024) + 64 * 1024 - 12;
+    task-&gt;tss.eip = (int)&amp;console_task;
+    task-&gt;tss.es = 1 * 8;
+    task-&gt;tss.cs = 2 * 8;
+    task-&gt;tss.ss = 1 * 8;
+    task-&gt;tss.ds = 1 * 8;
+    task-&gt;tss.fs = 1 * 8;
+    task-&gt;tss.gs = 1 * 8;
+    *((int *)(task-&gt;tss.esp + 4)) = (int) sht;
+    *((int *)(task-&gt;tss.esp + 8)) = memtotal;
+    task_run(task, 2, 2); // level=2, priority=2
+    sht-&gt;task = task;
+    sht-&gt;flags |= 0x20;    // 有光标
+    fifo32_init(&amp;task-&gt;fifo, 128, cons_fifo, task);
+    return sht;
+}
+</code></pre>
+<p>判断shift+F2：</p>
+<pre><code class="c">if(i == 256 + 0x3c &amp;&amp; key_shift != 0) // Shift+F2
+{
+    // 自动将输入焦点切换到新打开的命令行窗口（这样比较方便吧？）
+    keywin_off(key_win);
+    key_win = open_console(shtctl, memtotal);
+    sheet_slide(key_win, 32, 4);
+    sheet_updown(key_win, shtctl-&gt;top);
+    keywin_on(key_win);
+}
+</code></pre>
+<p>上面用了是f小节的逻辑，因为sht_cons已经没有用了。</p>
+<h1 id="关闭命令行窗口（1）"><a href="#关闭命令行窗口（1）" class="headerlink" title="关闭命令行窗口（1）"></a>关闭命令行窗口（1）</h1><blockquote>
+<p>harib23g</p>
+</blockquote>
+<p>这次是输入exit指令，就可以关闭命令行<br>因为命令行窗口有自己的栈，所以释放的时候也要将其释放。于是TASK结构体要多记录一个cons_stack，用于表示（如果是命令行任务的情况下）栈大小。</p>
+<pre><code class="c">task-&gt;cons_stack = memman_alloc_4k(memman, 64 * 1024);
+task-&gt;tss.esp = task-&gt;cons_stack + 64 * 1024 - 12;
+</code></pre>
+<p>新增释放命令行任务、释放命令行图层的函数：</p>
+<pre><code class="c">void close_constask(struct TASK *task)
+{
+    struct MEMMAN *memman = (struct MEMMAN *) MEMMAN_ADDR;
+    task_sleep(task);
+    memman_free_4k(memman, task-&gt;cons_stack, 64 * 1024);
+    memman_free_4k(memman, (int)task-&gt;fifo.buf, 128 * 4);
+    task-&gt;flags = 0; // 用来替代task_free(task);
+    return;
+}
+
+void close_console(struct SHEET *sht)
+{
+    struct MEMMAN *memman = (struct MEMMAN *)MEMMAN_ADDR;
+    struct TASK *task = sht-&gt;task;
+    memman_free_4k(memman, (int)sht-&gt;buf, 256 * 165);
+    sheet_free(sht);
+    close_constask(task);
+    return;
+}
+</code></pre>
+<p>输入exit指令之后，调用以下函数：</p>
+<pre><code class="c">void cmd_exit(struct CONSOLE *cons, int *fat)
+{
+    struct MEMMAN *memman = (struct MEMMAN *)MEMMAN_ADDR;
+    struct TASK *task = task_now();
+    struct SHTCTL *shtctl = (struct SHTCTL *)*((int *)0x0fe4);
+    struct FIFO32 *fifo = (struct FIFO32 *)*((int *)0x0fec);
+    timer_cancel(cons-&gt;timer);
+    memman_free_4k(memman, (int) fat, 4 * 2880);
+    io_cli();
+    fifo32_put(fifo, cons-&gt;sht - shtctl-&gt;sheets0 + 768); // 768～1023
+    io_sti();
+    for(;;)
+    {
+        task_sleep(task);
+    }
+}
+</code></pre>
+<p>这里并没有立即终止掉命令行程序，而是将一个信息发送给task_a，让它来帮忙终止命令行。但是不能在当前任务为命令行的时候终止自己，那样就不能继续执行之后的程序了。emm简单来说就是不能自己终结自己。</p>
+<pre><code class="c">if(768 &lt;= i &amp;&amp; i &lt;= 1023) // 命令行窗口关闭处理
+{
+    close_console(shtctl-&gt;sheets0 + (i - 768));
+}
+</code></pre>
+<p>如果所有窗口都被关闭的话，此时key_win应该等于0（没有地方可以发数据）。因此在各种输入的情况下，要判断key_win是否等于0。</p>
+<h1 id="关闭命令行窗口（2）"><a href="#关闭命令行窗口（2）" class="headerlink" title="关闭命令行窗口（2）"></a>关闭命令行窗口（2）</h1><blockquote>
+<p>harib23h</p>
+</blockquote>
+<p>增加对鼠标点击的支持：</p>
+<pre><code class="c">if(sht-&gt;bxsize - 21 &lt;= x &amp;&amp; x &lt; sht-&gt;bxsize - 5 &amp;&amp; 5 &lt;= y &amp;&amp; y &lt; 19)
+{
+    // 点击“×”按钮
+    if((sht-&gt;flags &amp; 0x10) != 0) // 是否为应用程序窗口？
+    {
+        task = sht-&gt;task;
+        cons_putstr0(task-&gt;cons, &quot;\nBreak(mouse) :\n&quot;);
+        io_cli(); // 强制结束处理时禁止任务切换
+        task-&gt;tss.eax = (int) &amp;(task-&gt;tss.esp0);
+        task-&gt;tss.eip = (int) asm_end_app;
+        io_sti();
+    }
+    else // 命令行窗口
+    {
+        task = sht-&gt;task;
+        io_cli();
+        fifo32_put(&amp;task-&gt;fifo, 4);
+        io_sti();
+    }
+}
+</code></pre>
+<p>往命令行发了个4，告诉命令行该自己结束了，之后就和键盘结束没有什么区别了。<br>为什么不直接在这里结束呢？是因为让命令行处理完手头的工作（比如显示字符什么的），再安全结束它。</p>
+<h1 id="start命令"><a href="#start命令" class="headerlink" title="start命令"></a>start命令</h1><blockquote>
+<p>harib23i</p>
+</blockquote>
+<p>新建一个控制台窗口，并在里面启动后序指令。</p>
+<pre><code class="c">void cmd_start(struct CONSOLE *cons, char *cmdline, int memtotal)
+{
+    struct SHTCTL *shtctl = (struct SHTCTL *)*((int *)0x0fe4);
+    struct SHEET *sht = open_console(shtctl, memtotal);
+    struct FIFO32 *fifo = &amp;sht-&gt;task-&gt;fifo;
+    int i;
+    sheet_slide(sht, 32, 4);
+    sheet_updown(sht, shtctl-&gt;top);
+    // 将命令行输入的字符串逐字复制到新的命令行窗口中
+    for(i = 6; cmdline[i] != 0; ++i)
+    {
+        fifo32_put(fifo, cmdline[i] + 256);
+    }
+    fifo32_put(fifo, 10 + 256);    // 回车键
+    cons_newline(cons);
+    return;
+}
+</code></pre>
+<p>新建一个命令行之后，把后序指令输入到对应的FIFO中就可以了。</p>
+<h1 id="ncst命令"><a href="#ncst命令" class="headerlink" title="ncst命令"></a>ncst命令</h1><blockquote>
+<p>harib23j</p>
+</blockquote>
+<p>不打开新的命令行，直接打开应用程序。<br>与之前直接打开的不同是之前的打开是阻塞命令行的，而这个不会。<br>但其实是打开了一个隐藏的命令行，并不是在原来的命令行上执行的）</p>
+<pre><code class="c">void cmd_ncst(struct CONSOLE *cons, char *cmdline, int memtotal)
+{
+    struct TASK *task = open_constask(0, memtotal);
+    struct FIFO32 *fifo = &amp;task-&gt;fifo;
+    int i;
+    // 将命令行输入的字符串逐字复制到新的命令行窗口中
+    for(i = 5; cmdline[i] != 0; ++i)
+    {
+        fifo32_put(fifo, cmdline[i] + 256);
+    }
+    fifo32_put(fifo, 10 + 256);    // 回车键
+    cons_newline(cons);
+    return;
+}
+</code></pre>
+<p>当cons-&gt;sht指定为0的时候，需要禁用字符显示等操作。和之前key_win一样，需要修改相关的函数。</p>
+<p>为了创建一个隐藏的命令行，console_task这个函数也需要修改。当sheet为0时，禁用光标定时器，退出时cons为0.<br>cmd_exit:</p>
+<pre><code class="c">if(cons-&gt;sht != 0)
+{
+    fifo32_put(fifo, cons-&gt;sht - shtctl-&gt;sheets0 + 768); // 768～1023
+}
+else
+{
+    fifo32_put(fifo, task - taskctl-&gt;tasks0 + 1024); // 1024～2023
+}
+</code></pre>
+<p>下面是无窗口的情况，将任务地址告知task_a</p>
+<p>最开始打开命令行的函数也被分成了打开图层与打开任务。<br>最后能够处理单独关闭任务的情况就行了：</p>
+<pre><code class="c">if(768 &lt;= i &amp;&amp; i &lt;= 1023) // 命令行窗口关闭处理
+{
+    close_console(shtctl-&gt;sheets0 + (i - 768));
+}
+else if(1024 &lt;= i &amp;&amp; i &lt;= 2023)
+{
+    close_constask(taskctl-&gt;tasks0 + (i - 1024));
+}
+</code></pre>
+<p>目前还有点bug。。看起来明天才会讲</p>
 
         
     
@@ -686,21 +945,13 @@ int main(int argc, char *argv[])
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/CG/starter/vertexarray.html/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/CG/starter/lines.html/" id="post_nav-older" class="next-content">
+        <a href="/OS/day25/index.html/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
