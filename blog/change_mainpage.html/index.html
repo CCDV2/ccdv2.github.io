@@ -241,7 +241,7 @@
 
     
         <meta property="article:published_time" content="Sat Feb 22 2020 15:37:32 GMT+0800">
-        <meta property="article:modified_time" content="Sat Feb 22 2020 21:34:36 GMT+0800">
+        <meta property="article:modified_time" content="Sat Feb 22 2020 21:37:43 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +264,7 @@
     "mainEntityOfPage": "https://ccdv2.github.io/blog/blog/change_mainpage.html/index.html",
     "headline": "hexo自定义主页 & 服务器同步github网页",
     "datePublished": "Sat Feb 22 2020 15:37:32 GMT+0800",
-    "dateModified": "Sat Feb 22 2020 21:34:36 GMT+0800",
+    "dateModified": "Sat Feb 22 2020 21:37:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "CCDV2",
@@ -505,7 +505,7 @@ def hook():
         d = json.loads(data.decode())
         if d[&#39;repository&#39;][&#39;name&#39;] == &#39;仓库名称&#39; and \
             d[&#39;pusher&#39;][&#39;name&#39;] == &#39;你的pusher name&#39;:
-            _thread.start_new_thread(os.system, (&#39;cd /var/www/html &amp;&amp; git pull&#39;))
+            _thread.start_new_thread(os.system, (&#39;cd /var/www/html &amp;&amp; git pull&#39;, ))
             return &#39;ok&#39;
     except Exception as e:
         print(type(e), e)
